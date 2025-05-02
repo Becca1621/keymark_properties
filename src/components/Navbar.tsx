@@ -31,31 +31,31 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-8">
           <button 
             onClick={() => scrollToSection('hero')} 
-            className="font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Home
           </button>
           <button 
             onClick={() => scrollToSection('properties')} 
-            className="font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Properties
           </button>
           <button 
             onClick={() => scrollToSection('amenities')} 
-            className="font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Amenities
           </button>
           <button 
             onClick={() => scrollToSection('contact')} 
-            className="font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Book a Tour
           </button>
           <Button 
             onClick={() => scrollToSection('contact')} 
-            className="bg-luxury-gold hover:bg-luxury-dark text-white"
+            className="bg-luxury-green hover:bg-luxury-dark text-white"
           >
             Book a Tour
           </Button>
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden">
           <button 
             onClick={toggleMobileMenu}
-            className="text-gray-800 hover:text-luxury-gold focus:outline-none"
+            className="text-gray-800 hover:text-luxury-green focus:outline-none"
           >
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
@@ -78,31 +78,31 @@ const Navbar: React.FC = () => {
           <div className="px-6 py-4 space-y-4">
             <button
               onClick={() => scrollToSection('hero')}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection('properties')}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
             >
               Properties
             </button>
             <button
               onClick={() => scrollToSection('amenities')}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
             >
               Amenities
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-gold transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
             >
               Book a Tour
             </button>
             <Button 
               onClick={() => scrollToSection('contact')} 
-              className="w-full bg-luxury-gold hover:bg-luxury-dark text-white"
+              className="w-full bg-luxury-green hover:bg-luxury-dark text-white"
             >
               Book a Tour
             </Button>

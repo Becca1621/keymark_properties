@@ -237,7 +237,7 @@ const BookTourForm: React.FC = () => {
               
               <Button 
                 type="submit" 
-                className="w-full sm:w-auto bg-luxury-gold hover:bg-luxury-dark text-black hover:text-white"
+                className="w-full sm:w-auto bg-luxury-green hover:bg-luxury-dark text-black hover:text-white"
               >
                 Request Tour
               </Button>

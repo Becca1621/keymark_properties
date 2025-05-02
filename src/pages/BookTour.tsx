@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -227,7 +226,7 @@ const BookTour: React.FC = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="w-full bg-luxury-gold hover:bg-luxury-dark text-white">
+                <Button type="submit" className="w-full bg-luxury-green hover:bg-luxury-dark text-white">
                   Schedule Tour
                 </Button>
                 
