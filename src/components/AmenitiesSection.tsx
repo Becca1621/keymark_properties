@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { WashingMachine, Building, Users, Elevator } from "lucide-react";
+import { Washer, Dryer, HotTub, Building, Community, Elevator } from "lucide-react";
 
 const interiorAmenities = [
   {
-    icon: <WashingMachine className="w-6 h-6" />,
+    icon: <Washer className="w-6 h-6" />,
     title: "In-unit washer & dryer",
     description: "Convenient in-unit laundry facilities for your comfort."
   },
@@ -14,7 +14,7 @@ const interiorAmenities = [
     description: "Modern kitchens with premium stainless steel appliance packages."
   },
   {
-    icon: "🛁",
+    icon: <HotTub className="w-6 h-6" />,
     title: "In-unit Hot tub/ Sauna",
     description: "Luxury spa experience in the comfort of your own home."
   },
@@ -67,7 +67,7 @@ const buildingAmenities = [
     description: "Reliable backup power system for peace of mind."
   },
   {
-    icon: <Users className="w-6 h-6" />,
+    icon: <Community className="w-6 h-6" />,
     title: "Community lounge",
     description: "Elegant social spaces for relaxation and entertaining."
   },
