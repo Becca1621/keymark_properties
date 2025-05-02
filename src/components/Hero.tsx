@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
-    <div className="relative h-[90vh] w-full">
+    <div id="hero" className="relative h-[90vh] w-full">
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
@@ -23,12 +24,18 @@ const Hero: React.FC = () => {
             Exclusive 3 & 4 bedroom residences available for rent and purchase in the heart of the city
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-luxury-gold hover:bg-white hover:text-luxury-dark text-black font-medium px-8">
+            <Button 
+              size="lg" 
+              className="bg-luxury-gold hover:bg-white hover:text-luxury-dark text-black font-medium px-8"
+              onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               View Properties
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-dark px-8">
-              Book a Tour
-            </Button>
+            <Link to="/book-tour">
+              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-dark px-8">
+                Book a Tour
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
