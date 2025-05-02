@@ -51,11 +51,14 @@ const Navbar: React.FC = () => {
             onClick={() => scrollToSection('contact')} 
             className="font-medium text-gray-800 hover:text-luxury-gold transition-colors"
           >
-            Contact
+            Book a Tour
           </button>
-          <Link to="/book-tour">
-            <Button className="bg-luxury-gold hover:bg-luxury-dark text-white">Book a Tour</Button>
-          </Link>
+          <Button 
+            onClick={() => scrollToSection('contact')} 
+            className="bg-luxury-gold hover:bg-luxury-dark text-white"
+          >
+            Book a Tour
+          </Button>
         </div>
         
         {/* Mobile menu button */}
@@ -95,13 +98,14 @@ const Navbar: React.FC = () => {
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left font-medium text-gray-800 hover:text-luxury-gold transition-colors"
             >
-              Contact
+              Book a Tour
             </button>
-            <Link to="/book-tour" onClick={() => setMobileMenuOpen(false)}>
-              <Button className="w-full bg-luxury-gold hover:bg-luxury-dark text-white">
-                Book a Tour
-              </Button>
-            </Link>
+            <Button 
+              onClick={() => scrollToSection('contact')} 
+              className="w-full bg-luxury-gold hover:bg-luxury-dark text-white"
+            >
+              Book a Tour
+            </Button>
           </div>
         </div>
       )}

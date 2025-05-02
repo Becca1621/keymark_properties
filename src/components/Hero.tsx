@@ -1,9 +1,16 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
+  // Function to handle smooth scrolling
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div id="hero" className="relative h-[90vh] w-full">
       <div 
@@ -27,15 +34,18 @@ const Hero: React.FC = () => {
             <Button 
               size="lg" 
               className="bg-luxury-gold hover:bg-white hover:text-luxury-dark text-black font-medium px-8"
-              onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('properties')}
             >
               View Properties
             </Button>
-            <Link to="/book-tour">
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-dark px-8">
-                Book a Tour
-              </Button>
-            </Link>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-dark px-8"
+              onClick={() => scrollToSection('contact')}
+            >
+              Book a Tour
+            </Button>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PropertyGrid from '@/components/PropertyGrid';
 import AmenitiesSection from '@/components/AmenitiesSection';
-import ContactSection from '@/components/ContactSection';
+import BookTourForm from '@/components/BookTourForm';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -19,7 +19,7 @@ const Index = () => {
         <AmenitiesSection />
       </div>
       <div id="contact">
-        <ContactSection />
+        <BookTourForm />
       </div>
       <Footer />
     </div>
