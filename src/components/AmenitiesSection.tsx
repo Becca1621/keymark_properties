@@ -1,37 +1,96 @@
 
 import React from 'react';
+import { Washer, Dryer, HotTub, Building, Community, Elevator } from "lucide-react";
 
-const amenities = [
+const interiorAmenities = [
   {
-    icon: "🏊‍♂️",
-    title: "Infinity Pool",
-    description: "A stunning rooftop infinity pool with panoramic city views."
+    icon: <Washer className="w-6 h-6" />,
+    title: "In-unit washer & dryer",
+    description: "Convenient in-unit laundry facilities for your comfort."
   },
   {
-    icon: "🏋️",
-    title: "Fitness Center",
-    description: "State-of-the-art fitness center with personal training services."
+    icon: "🍽️",
+    title: "Stainless steel appliances",
+    description: "Modern kitchens with premium stainless steel appliance packages."
   },
   {
-    icon: "🍷",
-    title: "Wine Cellar",
-    description: "Temperature-controlled wine storage for residents."
+    icon: <HotTub className="w-6 h-6" />,
+    title: "In-unit Hot tub/ Sauna",
+    description: "Luxury spa experience in the comfort of your own home."
   },
   {
-    icon: "🎭",
-    title: "Private Theater",
-    description: "Intimate screening room for private film viewings."
+    icon: "🧩",
+    title: "Granite or quartz countertops",
+    description: "Elegant, durable stone countertops in kitchens and bathrooms."
   },
   {
-    icon: "🛋️",
-    title: "Resident Lounge",
-    description: "Elegant lounge space for socializing and entertaining."
+    icon: "🏠",
+    title: "Open and traditional layouts",
+    description: "Choose from modern open concept or classic traditional floor plans."
   },
   {
-    icon: "🧖",
-    title: "Spa & Sauna",
-    description: "Full-service spa with treatment rooms and sauna."
+    icon: "🪑",
+    title: "Luxury floors",
+    description: "Hardwood and premium ceramic flooring throughout."
+  },
+  {
+    icon: "👗",
+    title: "Walk-in closets",
+    description: "Spacious walk-in closets with custom organization options."
+  },
+  {
+    icon: "🌆",
+    title: "Private balconies",
+    description: "Enjoy outdoor living with private balconies and stunning views."
+  },
+  {
+    icon: "💡",
+    title: "Modern lighting",
+    description: "Designer lighting packages throughout each residence."
   }
+];
+
+const buildingAmenities = [
+  {
+    icon: "🚗",
+    title: "Garage parking",
+    description: "Secure, covered parking for residents and guests."
+  },
+  {
+    icon: "🔌",
+    title: "EV charging station",
+    description: "Convenient charging stations for electric vehicles."
+  },
+  {
+    icon: "⚡",
+    title: "Emergency backup power",
+    description: "Reliable backup power system for peace of mind."
+  },
+  {
+    icon: <Community className="w-6 h-6" />,
+    title: "Community lounge",
+    description: "Elegant social spaces for relaxation and entertaining."
+  },
+  {
+    icon: <Elevator className="w-6 h-6" />,
+    title: "Elevator access",
+    description: "Modern elevators for convenient building navigation."
+  },
+  {
+    icon: <Building className="w-6 h-6" />,
+    title: "On-site management",
+    description: "Professional management team located on premises."
+  },
+  {
+    icon: "🕒",
+    title: "24/7 maintenance",
+    description: "Round-the-clock maintenance services available."
+  },
+  {
+    icon: "🛎️",
+    title: "Concierge services",
+    description: "Personalized concierge services to enhance your lifestyle."
+  },
 ];
 
 const AmenitiesSection: React.FC = () => {
@@ -39,28 +98,58 @@ const AmenitiesSection: React.FC = () => {
     <div id="amenities" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-luxury-dark">
             Unparalleled Amenities
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-luxury-gray max-w-2xl mx-auto">
             Our residences are complemented by a suite of premium amenities designed to elevate your lifestyle and provide the ultimate in comfort and convenience.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {amenities.map((amenity, index) => (
-            <div 
-              key={index} 
-              className="amenity-card animate-fade-in" 
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="text-4xl mb-4">{amenity.icon}</div>
-              <h3 className="font-serif text-xl font-semibold mb-3">
-                {amenity.title}
-              </h3>
-              <p className="text-gray-600">{amenity.description}</p>
-            </div>
-          ))}
+        <div className="mb-16">
+          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-gold">Interior Features</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {interiorAmenities.map((amenity, index) => (
+              <div 
+                key={index} 
+                className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="text-luxury-gold mb-4">{typeof amenity.icon === 'string' ? (
+                  <div className="text-4xl">{amenity.icon}</div>
+                ) : (
+                  amenity.icon
+                )}</div>
+                <h3 className="font-serif text-xl font-semibold mb-3 text-luxury-dark">
+                  {amenity.title}
+                </h3>
+                <p className="text-luxury-gray">{amenity.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="mb-16">
+          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-gold">Building & Community Highlights</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {buildingAmenities.map((amenity, index) => (
+              <div 
+                key={index} 
+                className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-gold" 
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="text-luxury-green mb-4">{typeof amenity.icon === 'string' ? (
+                  <div className="text-4xl">{amenity.icon}</div>
+                ) : (
+                  amenity.icon
+                )}</div>
+                <h3 className="font-serif text-xl font-semibold mb-3 text-luxury-dark">
+                  {amenity.title}
+                </h3>
+                <p className="text-luxury-gray">{amenity.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="mt-16 relative overflow-hidden rounded-xl">

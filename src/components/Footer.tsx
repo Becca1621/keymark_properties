@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-serif text-2xl font-bold text-white mb-6">LivingLuxe</h3>
+            <h3 className="font-serif text-2xl font-bold text-white mb-6">KEYMARK Properties</h3>
             <p className="text-gray-300 mb-6">
               Redefining luxury living with exceptional residences in the most coveted locations. Experience the perfect blend of sophistication, convenience, and comfort.
             </p>
@@ -86,14 +86,14 @@ const Footer: React.FC = () => {
             </p>
             <p className="text-gray-300">
               <span className="block mb-1">Phone: (212) 555-1234</span>
-              <span className="block">Email: inquiries@livingluxe.com</span>
+              <span className="block">Email: inquiries@keymarkproperties.com</span>
             </p>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
-            © {new Date().getFullYear()} LivingLuxe. All rights reserved.
+            © {new Date().getFullYear()} KEYMARK Properties. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <img src="https://via.placeholder.com/200x40?text=Broker+Logos" alt="Broker Logos" className="h-10" />

@@ -40,14 +40,10 @@ const Hero: React.FC = () => {
             <p className="font-serif text-lg">Prime Central Location</p>
           </div>
           <div className="text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <p className="text-sm uppercase tracking-wider mb-1">Starting Price</p>
-            <p className="font-serif text-lg">$11,000/mo — $2.85M</p>
-          </div>
-          <div className="text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-sm uppercase tracking-wider mb-1">Bedrooms</p>
             <p className="font-serif text-lg">3 & 4 Bedrooms</p>
           </div>
-          <div className="text-center md:text-right animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <div className="text-center md:text-right animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-sm uppercase tracking-wider mb-1">Status</p>
             <p className="font-serif text-lg">For Rent & Sale</p>
           </div>

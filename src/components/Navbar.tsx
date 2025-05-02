@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="font-serif text-2xl font-bold text-luxury-dark">LivingLuxe</span>
+          <span className="font-serif text-2xl font-bold text-luxury-dark">KEYMARK Properties</span>
         </Link>
         
         {/* Desktop Menu */}

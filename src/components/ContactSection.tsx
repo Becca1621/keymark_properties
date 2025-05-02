@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { building } from 'lucide-react';
+import { Building } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const { toast } = useToast();
@@ -48,10 +48,10 @@ const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="animate-fade-in">
             <div className="flex items-center mb-6">
-              <building className="h-8 w-8 text-luxury-gold mr-3" />
+              <Building className="h-8 w-8 text-luxury-gold mr-3" />
               <h2 className="font-serif text-3xl font-bold">Get in Touch</h2>
             </div>
-            <p className="text-gray-600 mb-6">
+            <p className="text-luxury-gray mb-6">
               Interested in learning more about our luxury residences? Complete the form and one of our dedicated property specialists will be in touch to answer your questions and schedule a personalized tour.
             </p>
             
@@ -64,7 +64,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Phone</h3>
-                  <p className="text-gray-600">(212) 555-1234</p>
+                  <p className="text-luxury-gray">(212) 555-1234</p>
                 </div>
               </div>
               
@@ -76,7 +76,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Email</h3>
-                  <p className="text-gray-600">inquiries@livingluxe.com</p>
+                  <p className="text-luxury-gray">inquiries@keymarkproperties.com</p>
                 </div>
               </div>
               
@@ -89,7 +89,7 @@ const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Address</h3>
-                  <p className="text-gray-600">345 Park Avenue, New York, NY 10022</p>
+                  <p className="text-luxury-gray">345 Park Avenue, New York, NY 10022</p>
                 </div>
               </div>
             </div>

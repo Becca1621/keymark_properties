@@ -31,6 +31,8 @@ export default {
 					cream: '#F5F5F0',
 					light: '#F9F9F7',
 					dark: '#1A1A1A',
+					green: '#8FBC8F',  // Added light green color
+					gray: '#8E9196',   // Added gray accent color
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
