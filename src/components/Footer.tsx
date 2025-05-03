@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-luxury-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-serif text-2xl font-bold text-white mb-6">KEYMARK Properties</h3>
             <p className="text-gray-300 mb-6">
@@ -71,23 +71,6 @@ const Footer: React.FC = () => {
                 <a href="#" className="text-gray-300 hover:text-luxury-gold transition-colors">Terms of Service</a>
               </li>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-serif text-lg font-semibold text-white mb-6">Sales Office</h3>
-            <p className="text-gray-300 mb-4">
-              345 Park Avenue<br />
-              New York, NY 10022
-            </p>
-            <p className="text-gray-300 mb-4">
-              Monday - Friday: 9am - 6pm<br />
-              Saturday: 10am - 5pm<br />
-              Sunday: By appointment
-            </p>
-            <p className="text-gray-300">
-              <span className="block mb-1">Phone: (212) 555-1234</span>
-              <span className="block">Email: inquiries@keymarkproperties.com</span>
-            </p>
           </div>
         </div>
         
