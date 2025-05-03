@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   WashingMachine, 
@@ -5,14 +6,14 @@ import {
   Users, 
   Cctv, 
   Car, 
-  EvCharging, 
+  BatteryCharging, // Replacing EvCharging
   Power, 
   Users2, 
-  Elevator, 
+  ArrowUpDown, // Replacing Elevator
   Clock, 
-  Conciergebell, 
+  ConciergeBell, // Fixed casing of Conciergebell
   Accessibility, 
-  Fitness 
+  Dumbbell // Replacing Fitness
 } from "lucide-react";
 
 const interiorAmenities = [
@@ -85,7 +86,7 @@ const buildingAmenities = [
     description: "Secure, covered parking for residents and guests."
   },
   {
-    icon: <EvCharging className="w-6 h-6" />,
+    icon: <BatteryCharging className="w-6 h-6" />, // Changed from EvCharging
     title: "EV charging station",
     description: "Convenient charging stations for electric vehicles."
   },
@@ -100,7 +101,7 @@ const buildingAmenities = [
     description: "Elegant social spaces for relaxation and entertaining."
   },
   {
-    icon: <Elevator className="w-6 h-6" />,
+    icon: <ArrowUpDown className="w-6 h-6" />, // Changed from Elevator
     title: "Elevator access",
     description: "Modern elevators for convenient building navigation."
   },
@@ -115,17 +116,17 @@ const buildingAmenities = [
     description: "Round-the-clock maintenance services available."
   },
   {
-    icon: <Conciergebell className="w-6 h-6" />,
+    icon: <ConciergeBell className="w-6 h-6" />, // Fixed casing
     title: "Concierge service",
     description: "Personalized concierge services to enhance your lifestyle."
   },
   {
-    icon: <SwimmingPool className="w-6 h-6" />,
+    icon: <Users className="w-6 h-6" />, // Changed from SwimmingPool
     title: "Swimming pool (coming soon)",
     description: "Luxurious swimming facilities for recreation and relaxation."
   },
   {
-    icon: <Fitness className="w-6 h-6" />,
+    icon: <Dumbbell className="w-6 h-6" />, // Changed from Fitness
     title: "Resident fitness center (coming soon)",
     description: "State-of-the-art fitness equipment and facilities."
   },
