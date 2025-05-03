@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { WashingMachine, Building, Users } from "lucide-react";
+import { WashingMachine, Building, Users, Cctv, Car, EvCharging, Power, Community, Elevator, Clock, Conciergebell, SwimmingPool, Accessibility, Fitness } from "lucide-react";
 
 const interiorAmenities = [
   {
@@ -52,27 +51,42 @@ const interiorAmenities = [
 
 const buildingAmenities = [
   {
-    icon: "🚗",
-    title: "Garage parking",
+    icon: <Cctv className="w-6 h-6" />,
+    title: "Security service with CCTV surveillance",
+    description: "State-of-the-art security monitoring for your peace of mind."
+  },
+  {
+    icon: "🔍",
+    title: "X-ray & walk-through scanners",
+    description: "Enhanced security measures at building entrances."
+  },
+  {
+    icon: <Accessibility className="w-6 h-6" />,
+    title: "Accessible building entrance",
+    description: "Designed for accessibility and convenience for all residents."
+  },
+  {
+    icon: <Car className="w-6 h-6" />,
+    title: "Secure garage parking",
     description: "Secure, covered parking for residents and guests."
   },
   {
-    icon: "🔌",
+    icon: <EvCharging className="w-6 h-6" />,
     title: "EV charging station",
     description: "Convenient charging stations for electric vehicles."
   },
   {
-    icon: "⚡",
-    title: "Emergency backup power",
+    icon: <Power className="w-6 h-6" />,
+    title: "Emergency backup power system",
     description: "Reliable backup power system for peace of mind."
   },
   {
-    icon: <Users className="w-6 h-6" />,
+    icon: <Community className="w-6 h-6" />,
     title: "Community lounge",
     description: "Elegant social spaces for relaxation and entertaining."
   },
   {
-    icon: "🛗",
+    icon: <Elevator className="w-6 h-6" />,
     title: "Elevator access",
     description: "Modern elevators for convenient building navigation."
   },
@@ -82,14 +96,24 @@ const buildingAmenities = [
     description: "Professional management team located on premises."
   },
   {
-    icon: "🕒",
-    title: "24/7 maintenance",
+    icon: <Clock className="w-6 h-6" />,
+    title: "24/7 maintenance support",
     description: "Round-the-clock maintenance services available."
   },
   {
-    icon: "🛎️",
-    title: "Concierge services",
+    icon: <Conciergebell className="w-6 h-6" />,
+    title: "Concierge service",
     description: "Personalized concierge services to enhance your lifestyle."
+  },
+  {
+    icon: <SwimmingPool className="w-6 h-6" />,
+    title: "Swimming pool (coming soon)",
+    description: "Luxurious swimming facilities for recreation and relaxation."
+  },
+  {
+    icon: <Fitness className="w-6 h-6" />,
+    title: "Resident fitness center (coming soon)",
+    description: "State-of-the-art fitness equipment and facilities."
   },
 ];
 
@@ -130,12 +154,12 @@ const AmenitiesSection: React.FC = () => {
         </div>
         
         <div className="mb-16">
-          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-gold">Building & Community Highlights</h3>
+          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-green">Building & Community Highlights</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {buildingAmenities.map((amenity, index) => (
               <div 
                 key={index} 
-                className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-gold" 
+                className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="text-luxury-green mb-4">{typeof amenity.icon === 'string' ? (
