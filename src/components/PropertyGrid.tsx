@@ -46,21 +46,21 @@ const PropertyGrid: React.FC = () => {
             <Button 
               variant={activeBedrooms === 'all' ? 'default' : 'outline'} 
               onClick={() => setActiveBedrooms('all')}
-              className={activeBedrooms === 'all' ? 'bg-luxury-gold hover:bg-luxury-dark text-white' : ''}
+              className={activeBedrooms === 'all' ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
             >
               All Bedrooms
             </Button>
             <Button 
               variant={activeBedrooms === 3 ? 'default' : 'outline'} 
               onClick={() => setActiveBedrooms(3)}
-              className={activeBedrooms === 3 ? 'bg-luxury-gold hover:bg-luxury-dark text-white' : ''}
+              className={activeBedrooms === 3 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
             >
               3 Bedrooms
             </Button>
             <Button 
               variant={activeBedrooms === 4 ? 'default' : 'outline'} 
               onClick={() => setActiveBedrooms(4)}
-              className={activeBedrooms === 4 ? 'bg-luxury-gold hover:bg-luxury-dark text-white' : ''}
+              className={activeBedrooms === 4 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
             >
               4 Bedrooms
             </Button>

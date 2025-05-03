@@ -20,13 +20,13 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
           alt={property.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute top-4 right-4 bg-luxury-gold text-white text-sm font-medium px-3 py-1 rounded-full">
+        <div className="absolute top-4 right-4 bg-luxury-green text-white text-sm font-medium px-3 py-1 rounded-full">
           {property.type === 'rent' ? 'For Rent' : 'For Sale'}
         </div>
       </div>
       
       <div className="p-6">
-        <h3 className="font-serif text-xl font-semibold mb-2 group-hover:text-luxury-gold transition-colors">
+        <h3 className="font-serif text-xl font-semibold mb-2 group-hover:text-luxury-green transition-colors">
           {property.title}
         </h3>
         
