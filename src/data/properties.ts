@@ -56,7 +56,7 @@ export const properties: Property[] = [
       "Two Kitchen Layout",
       "Private balcony",
       "Walk-in closets",
-      "Hardwood/Ceramic floors",
+      "Hardwood/Ceramic floors"
     ],
     images: [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -82,7 +82,7 @@ export const properties: Property[] = [
       "Two Kitchen Layout",
       "Private balcony",
       "Walk-in closets",
-      "Hardwood/Ceramic floors",
+      "Hardwood/Ceramic floors"
     ],
     images: [
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -108,7 +108,7 @@ export const properties: Property[] = [
       "Two Kitchen Layout",
       "Private balcony",
       "Walk-in closets",
-      "Hardwood/Ceramic floors",
+      "Hardwood/Ceramic floors"
     ],
     images: [
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -133,7 +133,7 @@ export const properties: Property[] = [
       "Two Kitchen Layout",
       "Private balcony",
       "Walk-in closets",
-      "Hardwood/Ceramic floors",
+      "Hardwood/Ceramic floors"
     ],
     images: [
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
