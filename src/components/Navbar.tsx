@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
               <path d="M70 100L100 70L130 100L100 130L70 100z" />
             </svg>
           </div>
-          <span className="font-serif text-2xl font-bold text-luxury-dark">EYMARK Properties</span>
+          <span className="font-serif text-2xl font-bold text-luxury-dark">KEYMARK Properties</span>
         </Link>
         
         {/* Desktop Menu */}
