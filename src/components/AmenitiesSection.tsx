@@ -1,50 +1,68 @@
-
 import React from 'react';
-import { WashingMachine, Building, Users, Cctv, Car, BatteryCharging, Power, HeartHandshake, ArrowUpDown, Clock, Bell, Waves, Accessibility, Dumbbell } from "lucide-react";
+import { 
+  Shirt, 
+  Building, 
+  Cctv, 
+  Car, 
+  BatteryCharging, 
+  Power, 
+  Users, 
+  ArrowUpDown, 
+  Home, 
+  Clock, 
+  Bell, 
+  Dumbbell,
+  Accessibility,
+  UtensilsCrossed,
+  Bath,
+  LayoutDashboard,
+  FloorLamp,
+  Warehouse
+} from "lucide-react";
 
 const interiorAmenities = [
   {
-    icon: <WashingMachine className="w-6 h-6" />,
+    icon: <Shirt className="w-6 h-6" />,
     title: "In-unit washer & dryer",
     description: "Convenient in-unit laundry facilities for your comfort."
   },
   {
-    icon: "🍽️",
+    icon: <UtensilsCrossed className="w-6 h-6" />,
     title: "Stainless steel appliances",
     description: "Modern kitchens with premium stainless steel appliance packages."
   },
   {
-    icon: "🛁",
+    icon: <Bath className="w-6 h-6" />,
     title: "In-unit Hot tub/ Sauna",
     description: "Luxury spa experience in the comfort of your own home."
   },
   {
-    icon: "🧩",
+    icon: <Warehouse className="w-6 h-6" />,
     title: "Granite or quartz countertops",
     description: "Elegant, durable stone countertops in kitchens and bathrooms."
   },
   {
-    icon: "🏠",
+    icon: <LayoutDashboard className="w-6 h-6" />,
     title: "Open and traditional layouts",
     description: "Choose from modern open concept or classic traditional floor plans."
   },
   {
-    icon: "🪑",
+    icon: <Home className="w-6 h-6" />,
     title: "Luxury floors",
     description: "Hardwood and premium ceramic flooring throughout."
   },
   {
-    icon: "👗",
+    icon: <Warehouse className="w-6 h-6" />,
     title: "Walk-in closets",
     description: "Spacious walk-in closets with custom organization options."
   },
   {
-    icon: "🌆",
+    icon: <Home className="w-6 h-6" />,
     title: "Private balconies",
     description: "Enjoy outdoor living with private balconies and stunning views."
   },
   {
-    icon: "💡",
+    icon: <FloorLamp className="w-6 h-6" />,
     title: "Modern lighting",
     description: "Designer lighting packages throughout each residence."
   }
@@ -57,7 +75,7 @@ const buildingAmenities = [
     description: "State-of-the-art security monitoring for your peace of mind."
   },
   {
-    icon: "🔍",
+    icon: <Cctv className="w-6 h-6" />,
     title: "X-ray & walk-through scanners",
     description: "Enhanced security measures at building entrances."
   },
@@ -82,7 +100,7 @@ const buildingAmenities = [
     description: "Reliable backup power system for peace of mind."
   },
   {
-    icon: <HeartHandshake className="w-6 h-6" />,
+    icon: <Users className="w-6 h-6" />,
     title: "Community lounge",
     description: "Elegant social spaces for relaxation and entertaining."
   },
@@ -105,11 +123,6 @@ const buildingAmenities = [
     icon: <Bell className="w-6 h-6" />,
     title: "Concierge service",
     description: "Personalized concierge services to enhance your lifestyle."
-  },
-  {
-    icon: <Waves className="w-6 h-6" />,
-    title: "Swimming pool (coming soon)",
-    description: "Luxurious swimming facilities for recreation and relaxation."
   },
   {
     icon: <Dumbbell className="w-6 h-6" />,
