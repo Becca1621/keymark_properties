@@ -23,12 +23,12 @@ import {
 const interiorAmenities = [
   {
     icon: <Shirt className="w-6 h-6" />,
-    title: "In-unit washer & dryer",
+    title: "In-unit Washer & Dryer",
     description: "Convenient in-unit laundry facilities for your comfort."
   },
   {
     icon: <UtensilsCrossed className="w-6 h-6" />,
-    title: "Stainless steel appliances",
+    title: "Stainless Steel Appliances",
     description: "Modern kitchens with premium stainless steel appliance packages."
   },
   {
@@ -38,17 +38,17 @@ const interiorAmenities = [
   },
   {
     icon: <Warehouse className="w-6 h-6" />,
-    title: "Granite or quartz countertops",
+    title: "Granite Countertops",
     description: "Elegant, durable stone countertops in kitchens and bathrooms."
   },
   {
     icon: <LayoutDashboard className="w-6 h-6" />,
-    title: "Open and traditional layouts",
+    title: "Open and Traditional layouts",
     description: "Choose from modern open concept or classic traditional floor plans."
   },
   {
     icon: <Home className="w-6 h-6" />,
-    title: "Luxury floors",
+    title: "Hardwood & Luxury Ceramic floors",
     description: "Hardwood and premium ceramic flooring throughout."
   },
   {
@@ -58,7 +58,7 @@ const interiorAmenities = [
   },
   {
     icon: <Home className="w-6 h-6" />,
-    title: "Private balconies",
+    title: "Private Balconies",
     description: "Enjoy outdoor living with private balconies and stunning views."
   },
   {
@@ -76,17 +76,17 @@ const buildingAmenities = [
   },
   {
     icon: <Cctv className="w-6 h-6" />,
-    title: "X-ray & walk-through scanners",
+    title: "X-ray and Entry scanners",
     description: "Enhanced security measures at building entrances."
   },
   {
     icon: <Accessibility className="w-6 h-6" />,
-    title: "Accessible building entrance",
+    title: "Accessible Building Entrance",
     description: "Designed for accessibility and convenience for all residents."
   },
   {
     icon: <Car className="w-6 h-6" />,
-    title: "Secure garage parking",
+    title: "Secure Garage Parking",
     description: "Secure, covered parking for residents and guests."
   },
   {
@@ -96,7 +96,7 @@ const buildingAmenities = [
   },
   {
     icon: <Power className="w-6 h-6" />,
-    title: "Emergency backup power system",
+    title: "Emergency backup Power system",
     description: "Reliable backup power system for peace of mind."
   },
   {
@@ -116,7 +116,7 @@ const buildingAmenities = [
   },
   {
     icon: <Clock className="w-6 h-6" />,
-    title: "24/7 maintenance support",
+    title: "24/7 Maintenance support",
     description: "Round-the-clock maintenance services available."
   },
   {
@@ -127,7 +127,7 @@ const buildingAmenities = [
   {
     icon: <Dumbbell className="w-6 h-6" />,
     title: "Resident fitness center (coming soon)",
-    description: "State-of-the-art fitness equipment and facilities."
+    description: "Modern fitness area and amenities"
   },
 ];
 
@@ -145,7 +145,7 @@ const AmenitiesSection: React.FC = () => {
         </div>
         
         <div className="mb-16">
-          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-gold">Interior Features</h3>
+          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-green">Interior Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {interiorAmenities.map((amenity, index) => (
               <div 
@@ -153,7 +153,7 @@ const AmenitiesSection: React.FC = () => {
                 className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-luxury-gold mb-4">{typeof amenity.icon === 'string' ? (
+                <div className="text-luxury-green mb-4">{typeof amenity.icon === 'string' ? (
                   <div className="text-4xl">{amenity.icon}</div>
                 ) : (
                   amenity.icon
