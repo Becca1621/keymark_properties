@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { WashingMachine, Building, Users, Cctv, Car, EvCharging, Power, Community, Elevator, Clock, Conciergebell, SwimmingPool, Accessibility, Fitness } from "lucide-react";
+import { WashingMachine, Building, Users, Cctv, Car, BatteryCharging, Power, HeartHandshake, ArrowUpDown, Clock, Bell, Waves, Accessibility, Dumbbell } from "lucide-react";
 
 const interiorAmenities = [
   {
@@ -71,7 +72,7 @@ const buildingAmenities = [
     description: "Secure, covered parking for residents and guests."
   },
   {
-    icon: <EvCharging className="w-6 h-6" />,
+    icon: <BatteryCharging className="w-6 h-6" />,
     title: "EV charging station",
     description: "Convenient charging stations for electric vehicles."
   },
@@ -81,12 +82,12 @@ const buildingAmenities = [
     description: "Reliable backup power system for peace of mind."
   },
   {
-    icon: <Community className="w-6 h-6" />,
+    icon: <HeartHandshake className="w-6 h-6" />,
     title: "Community lounge",
     description: "Elegant social spaces for relaxation and entertaining."
   },
   {
-    icon: <Elevator className="w-6 h-6" />,
+    icon: <ArrowUpDown className="w-6 h-6" />,
     title: "Elevator access",
     description: "Modern elevators for convenient building navigation."
   },
@@ -101,17 +102,17 @@ const buildingAmenities = [
     description: "Round-the-clock maintenance services available."
   },
   {
-    icon: <Conciergebell className="w-6 h-6" />,
+    icon: <Bell className="w-6 h-6" />,
     title: "Concierge service",
     description: "Personalized concierge services to enhance your lifestyle."
   },
   {
-    icon: <SwimmingPool className="w-6 h-6" />,
+    icon: <Waves className="w-6 h-6" />,
     title: "Swimming pool (coming soon)",
     description: "Luxurious swimming facilities for recreation and relaxation."
   },
   {
-    icon: <Fitness className="w-6 h-6" />,
+    icon: <Dumbbell className="w-6 h-6" />,
     title: "Resident fitness center (coming soon)",
     description: "State-of-the-art fitness equipment and facilities."
   },
