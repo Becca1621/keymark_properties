@@ -1,68 +1,49 @@
 import React from 'react';
-import { 
-  Shirt, 
-  Building, 
-  Cctv, 
-  Car, 
-  BatteryCharging, 
-  Power, 
-  Users, 
-  ArrowUpDown, 
-  Home, 
-  Clock, 
-  Bell, 
-  Dumbbell,
-  Accessibility,
-  UtensilsCrossed,
-  Bath,
-  LayoutDashboard,
-  FloorLamp,
-  Warehouse
-} from "lucide-react";
+import { WashingMachine, Building, Users, Cctv, Car, EvCharging, Power, Community, Elevator, Clock, Conciergebell, SwimmingPool, Accessibility, Fitness } from "lucide-react";
 
 const interiorAmenities = [
   {
-    icon: <Shirt className="w-6 h-6" />,
-    title: "In-unit Washer & Dryer",
+    icon: <WashingMachine className="w-6 h-6" />,
+    title: "In-unit washer & dryer",
     description: "Convenient in-unit laundry facilities for your comfort."
   },
   {
-    icon: <UtensilsCrossed className="w-6 h-6" />,
-    title: "Stainless Steel Appliances",
+    icon: "🍽️",
+    title: "Stainless steel appliances",
     description: "Modern kitchens with premium stainless steel appliance packages."
   },
   {
-    icon: <Bath className="w-6 h-6" />,
+    icon: "🛁",
     title: "In-unit Hot tub/ Sauna",
     description: "Luxury spa experience in the comfort of your own home."
   },
   {
-    icon: <Warehouse className="w-6 h-6" />,
-    title: "Granite Countertops",
+    icon: "🧩",
+    title: "Granite or quartz countertops",
     description: "Elegant, durable stone countertops in kitchens and bathrooms."
   },
   {
-    icon: <LayoutDashboard className="w-6 h-6" />,
-    title: "Open and Traditional layouts",
+    icon: "🏠",
+    title: "Open and traditional layouts",
     description: "Choose from modern open concept or classic traditional floor plans."
   },
   {
-    icon: <Home className="w-6 h-6" />,
-    title: "Hardwood & Luxury Ceramic floors",
+    icon: "🪑",
+    title: "Luxury floors",
     description: "Hardwood and premium ceramic flooring throughout."
   },
   {
-    icon: <Warehouse className="w-6 h-6" />,
+    icon: "👗",
     title: "Walk-in closets",
     description: "Spacious walk-in closets with custom organization options."
   },
   {
-    icon: <Home className="w-6 h-6" />,
-    title: "Private Balconies",
+    icon: "🌆",
+    title: "Private balconies",
     description: "Enjoy outdoor living with private balconies and stunning views."
   },
   {
-    icon: <FloorLamp className="w-6 h-6" />,
+    icon: "💡",
     title: "Modern lighting",
     description: "Designer lighting packages throughout each residence."
   }
@@ -75,37 +56,37 @@ const buildingAmenities = [
     description: "State-of-the-art security monitoring for your peace of mind."
   },
   {
-    icon: <Cctv className="w-6 h-6" />,
-    title: "X-ray and Entry scanners",
+    icon: "🔍",
+    title: "X-ray & walk-through scanners",
     description: "Enhanced security measures at building entrances."
   },
   {
     icon: <Accessibility className="w-6 h-6" />,
-    title: "Accessible Building Entrance",
+    title: "Accessible building entrance",
     description: "Designed for accessibility and convenience for all residents."
   },
   {
     icon: <Car className="w-6 h-6" />,
-    title: "Secure Garage Parking",
+    title: "Secure garage parking",
     description: "Secure, covered parking for residents and guests."
   },
   {
-    icon: <BatteryCharging className="w-6 h-6" />,
+    icon: <EvCharging className="w-6 h-6" />,
     title: "EV charging station",
     description: "Convenient charging stations for electric vehicles."
   },
   {
     icon: <Power className="w-6 h-6" />,
-    title: "Emergency backup Power system",
+    title: "Emergency backup power system",
     description: "Reliable backup power system for peace of mind."
   },
   {
-    icon: <Users className="w-6 h-6" />,
+    icon: <Community className="w-6 h-6" />,
     title: "Community lounge",
     description: "Elegant social spaces for relaxation and entertaining."
   },
   {
-    icon: <ArrowUpDown className="w-6 h-6" />,
+    icon: <Elevator className="w-6 h-6" />,
     title: "Elevator access",
     description: "Modern elevators for convenient building navigation."
   },
@@ -116,18 +97,23 @@ const buildingAmenities = [
   },
   {
     icon: <Clock className="w-6 h-6" />,
-    title: "24/7 Maintenance support",
+    title: "24/7 maintenance support",
     description: "Round-the-clock maintenance services available."
   },
   {
-    icon: <Bell className="w-6 h-6" />,
+    icon: <Conciergebell className="w-6 h-6" />,
     title: "Concierge service",
     description: "Personalized concierge services to enhance your lifestyle."
   },
   {
-    icon: <Dumbbell className="w-6 h-6" />,
+    icon: <SwimmingPool className="w-6 h-6" />,
+    title: "Swimming pool (coming soon)",
+    description: "Luxurious swimming facilities for recreation and relaxation."
+  },
+  {
+    icon: <Fitness className="w-6 h-6" />,
     title: "Resident fitness center (coming soon)",
-    description: "Modern fitness area and amenities"
+    description: "State-of-the-art fitness equipment and facilities."
   },
 ];
 
@@ -145,7 +131,7 @@ const AmenitiesSection: React.FC = () => {
         </div>
         
         <div className="mb-16">
-          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-green">Interior Features</h3>
+          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-gold">Interior Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {interiorAmenities.map((amenity, index) => (
               <div 
@@ -153,7 +139,7 @@ const AmenitiesSection: React.FC = () => {
                 className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-luxury-green mb-4">{typeof amenity.icon === 'string' ? (
+                <div className="text-luxury-gold mb-4">{typeof amenity.icon === 'string' ? (
                   <div className="text-4xl">{amenity.icon}</div>
                 ) : (
                   amenity.icon
