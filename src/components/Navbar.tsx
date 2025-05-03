@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
             onClick={() => scrollToSection('contact')} 
             className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
-            Book a Tour
+            Contact Us
           </button>
           <Button 
             onClick={() => scrollToSection('contact')} 
@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
             >
-              Book a Tour
+              Contact Us
             </button>
             <Button 
               onClick={() => scrollToSection('contact')} 
