@@ -5,7 +5,7 @@ import Hero from '@/components/Hero';
 import PropertiesSection from '@/components/PropertiesSection';
 import AmenitiesSection from '@/components/AmenitiesSection';
 import BookTourForm from '@/components/BookTourForm';
-import ContactSection from '@/components/ContactSection';
+import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
 
 const Index = () => {
