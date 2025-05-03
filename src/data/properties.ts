@@ -6,7 +6,7 @@ export interface Property {
   bedrooms: 3 | 4;
   bathrooms: number;
   squareFeet: number;
-  price: number;
+  price: string;
   address: string;
   description: string;
   features: string[];
@@ -16,21 +16,20 @@ export interface Property {
 export const properties: Property[] = [
   {
     id: "p001",
-    title: "The Pendleton Penthouse",
-    type: "sale",
-    bedrooms: 3,
-    bathrooms: 3.5,
-    squareFeet: 2850,
-    price: 2850000,
-    address: "175 Park Avenue South, New York, NY",
+    title: "The Penthouse",
+    type: "rent",
+    bedrooms: 4,
+    bathrooms: 5,
+    squareFeet: 800,
+    price: "Call for Details",
+    address: "Bole, Addis Ababa",
     description: "Spanning the entire top floor, this stunning penthouse offers breathtaking views of the city skyline. Featuring high ceilings, floor-to-ceiling windows, and a private terrace, this residence epitomizes luxury urban living.",
     features: [
-      "Private elevator access",
+      "Elevator access",
       "Chef's kitchen with marble countertops",
-      "Custom Italian cabinetry",
-      "Home automation system",
+      "Private In-Unit Spa",
+      "Secure Entrance",
       "Private rooftop terrace",
-      "Wine cellar",
       "Home office/library"
     ],
     images: [
@@ -43,22 +42,21 @@ export const properties: Property[] = [
   },
   {
     id: "p002",
-    title: "The Madison Residence",
-    type: "rent",
+    title: "The Three Bedroom Residence",
+    type: "sale",
     bedrooms: 3,
-    bathrooms: 2.5,
-    squareFeet: 2200,
-    price: 12500,
-    address: "420 Madison Ave, New York, NY",
+    bathrooms: 3.5,
+    squareFeet: 400,
+    price: "Call for Details",
+    address: "Bole, Addis Ababa",
     description: "This impeccable residence offers a perfect blend of comfort and elegance. The open floor plan creates a seamless flow throughout the home, while oversized windows bathe the space in natural light. The chef's kitchen is equipped with professional-grade appliances.",
     features: [
       "24-hour concierge",
-      "Fitness center",
-      "Heated indoor pool",
+      "In Unit Washer/Dryer",
+      "Two Kitchen Layout",
       "Private balcony",
       "Walk-in closets",
-      "Hardwood floors",
-      "Smart home technology"
+      "Hardwood/Ceramic floors",
     ],
     images: [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -70,22 +68,21 @@ export const properties: Property[] = [
   },
   {
     id: "p003",
-    title: "The Belmont Grand Suite",
-    type: "sale",
-    bedrooms: 4,
-    bathrooms: 4,
-    squareFeet: 3500,
-    price: 4250000,
-    address: "80 Columbus Circle, New York, NY",
-    description: "Experience ultimate luxury in this extraordinary four-bedroom residence. From the custom millwork to the imported marble, no detail has been overlooked. The expansive living areas are perfect for entertaining, while the private bedroom wing offers serene retreats.",
+    title: "The Three Bedroom Suite",
+    type: "rent",
+    bedrooms: 3,
+    bathrooms: 3.5,
+    squareFeet: 400,
+    price: "Call for Details",
+    address: "Bole, Addis Ababa",
+    description: "Experience ultimate luxury in this extraordinary three-bedroom apartment.",
     features: [
-      "Double-height ceilings",
-      "Panoramic city views",
-      "Private gym",
-      "Sauna and steam room",
-      "Custom walk-in closets",
-      "Media room",
-      "Service entrance"
+      "24-hour concierge",
+      "In Unit Washer/Dryer",
+      "Two Kitchen Layout",
+      "Private balcony",
+      "Walk-in closets",
+      "Hardwood/Ceramic floors",
     ],
     images: [
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -97,22 +94,21 @@ export const properties: Property[] = [
   },
   {
     id: "p004",
-    title: "The Lexington Heights",
-    type: "rent",
+    title: "The Four Bedroom Residence",
+    type: "sale",
     bedrooms: 4,
-    bathrooms: 3.5,
-    squareFeet: 3200,
-    price: 18000,
-    address: "355 Lexington Avenue, New York, NY",
-    description: "Nestled in a coveted neighborhood, this exceptional residence offers both space and sophistication. With four spacious bedrooms and almost 3,200 square feet of living space, this home provides ample room for both family living and elegant entertaining.",
+    bathrooms: 4.5,
+    squareFeet: 400,
+    price: "Call for Details",
+    address: "Bole, Addis Ababa",
+    description: "This exceptional residence offers both space and sophistication. With four spacious bedrooms, this home provides ample room for both family living and elegant entertaining.",
     features: [
-      "Private elevator landing",
-      "Separate dining room",
-      "Gourmet kitchen",
-      "Home office",
-      "In-unit laundry",
-      "Pet friendly building",
-      "Climate-controlled wine storage"
+      "24-hour concierge",
+      "In Unit Washer/Dryer",
+      "Two Kitchen Layout",
+      "Private balcony",
+      "Walk-in closets",
+      "Hardwood/Ceramic floors",
     ],
     images: [
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -124,22 +120,20 @@ export const properties: Property[] = [
   },
   {
     id: "p005",
-    title: "The Wellington Tower",
-    type: "sale",
-    bedrooms: 3,
-    bathrooms: 3,
-    squareFeet: 2600,
-    price: 3100000,
+    title: "The Four Bedroom Suite",
+    type: "rent",
+    bedrooms: 4,
+    bathrooms: 4.5,
+    squareFeet: 400,
+    price: "Call for Details",
     address: "250 West 50th Street, New York, NY",
-    description: "This stunning corner unit offers spectacular views and abundant natural light through its floor-to-ceiling windows. The sophisticated interior features custom finishes throughout, from the herringbone hardwood floors to the marble-clad bathrooms.",
-    features: [
-      "Corner exposure",
-      "Custom built-ins",
-      "Spa-inspired bathrooms",
-      "Chef's kitchen",
-      "Library/den",
+     description: "This exceptional apartment offers both space and sophistication. With four spacious bedrooms, this home provides ample room for both family living and elegant entertaining.",
+      "24-hour concierge",
+      "In Unit Washer/Dryer",
+      "Two Kitchen Layout",
+      "Private balcony",
       "Walk-in closets",
-      "Motorized window treatments"
+      "Hardwood/Ceramic floors",
     ],
     images: [
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -149,31 +143,4 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=2122&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   },
-  {
-    id: "p006",
-    title: "The Remington Loft",
-    type: "rent",
-    bedrooms: 3,
-    bathrooms: 2,
-    squareFeet: 2100,
-    price: 11000,
-    address: "55 Thompson Street, New York, NY",
-    description: "Located in a historic converted building, this stunning loft combines industrial character with modern luxury. The soaring 12-foot ceilings and original architectural elements create a dramatic backdrop for contemporary living.",
-    features: [
-      "Exposed brick walls",
-      "Original timber beams",
-      "Oversized windows",
-      "Open concept layout",
-      "Designer fixtures",
-      "Custom lighting",
-      "Central air conditioning"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=2092&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1617098650990-217c7cf9d124?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
-    ]
-  }
 ];
