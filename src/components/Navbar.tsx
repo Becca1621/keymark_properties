@@ -24,12 +24,6 @@ const Navbar: React.FC = () => {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <div className="mr-2 text-luxury-green">
-            <svg width="30" height="30" viewBox="0 0 200 200" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M100 20L20 100h30v80h100v-80h30L100 20z" />
-              <path d="M70 100L100 70L130 100L100 130L70 100z" />
-            </svg>
-          </div>
           <span className="font-serif text-2xl font-bold text-luxury-dark">KEYMARK Properties</span>
         </Link>
         
