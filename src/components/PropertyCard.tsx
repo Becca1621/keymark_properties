@@ -1,14 +1,29 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Property } from '@/data/properties';
 import { formatPrice } from '@/lib/utils';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PropertyCardProps {
   property: Property;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % property.images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => prev === 0 ? property.images.length - 1 : prev - 1);
+  };
+
   return (
     <Link 
       to={`/property/${property.id}`}
@@ -16,12 +31,33 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
     >
       <div className="relative h-64 overflow-hidden">
         <img 
-          src={property.images[0]} 
+          src={property.images[currentImageIndex]} 
           alt={property.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
+        {property.images.length > 1 && (
+          <>
+            <button 
+              onClick={prevImage}
+              className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-4 w-4 text-gray-800" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-4 w-4 text-gray-800" />
+            </button>
+          </>
+        )}
         <div className="absolute top-4 right-4 bg-luxury-green text-white text-sm font-medium px-3 py-1 rounded-full">
           {property.type === 'rent' ? 'For Rent' : 'For Sale'}
+        </div>
+        <div className="absolute bottom-4 right-4 bg-white text-luxury-dark text-sm font-medium px-3 py-1 rounded-full">
+          {property.bedrooms} Bedrooms
         </div>
       </div>
       

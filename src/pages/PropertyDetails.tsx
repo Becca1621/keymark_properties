@@ -74,38 +74,44 @@ const PropertyDetails: React.FC = () => {
                   alt={property.title}
                   className="w-full h-full object-cover"
                 />
-                <button
-                  onClick={handlePrevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={handleNextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
+                {property.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={handlePrevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      onClick={handleNextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
                 <div className="absolute top-4 right-4 bg-luxury-gold text-white text-sm font-medium px-3 py-1 rounded-full">
                   {property.type === 'rent' ? 'For Rent' : 'For Sale'}
                 </div>
               </div>
               
-              <div className="flex gap-4 overflow-x-auto pb-2">
-                {property.images.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleImageChange(index)}
-                    className={`flex-shrink-0 w-20 h-20 overflow-hidden rounded-md ${activeImage === index ? 'ring-2 ring-luxury-gold' : ''}`}
-                  >
-                    <img 
-                      src={image} 
-                      alt={`${property.title} - Image ${index + 1}`} 
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
+              {property.images.length > 1 && (
+                <div className="flex gap-4 overflow-x-auto pb-2">
+                  {property.images.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleImageChange(index)}
+                      className={`flex-shrink-0 w-20 h-20 overflow-hidden rounded-md ${activeImage === index ? 'ring-2 ring-luxury-gold' : ''}`}
+                    >
+                      <img 
+                        src={image} 
+                        alt={`${property.title} - Image ${index + 1}`} 
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
             
             <div className="space-y-8">

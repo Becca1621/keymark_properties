@@ -4,16 +4,23 @@ import PropertyCard from './PropertyCard';
 import { Property, properties } from '@/data/properties';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Filter, Grid2X2, Grid3X3 } from 'lucide-react';
 
 const PropertyGrid: React.FC = () => {
   const [activeType, setActiveType] = useState<'all' | 'rent' | 'sale'>('all');
   const [activeBedrooms, setActiveBedrooms] = useState<'all' | 3 | 4>('all');
+  const [gridColumns, setGridColumns] = useState<2 | 3>(3);
+  const [filtersVisible, setFiltersVisible] = useState(true);
   
   const filteredProperties = properties.filter(property => {
     const typeMatch = activeType === 'all' || property.type === activeType;
     const bedroomsMatch = activeBedrooms === 'all' || property.bedrooms === activeBedrooms;
     return typeMatch && bedroomsMatch;
   });
+
+  const toggleFilters = () => {
+    setFiltersVisible(!filtersVisible);
+  };
   
   return (
     <div id="properties" className="bg-luxury-cream py-20">
@@ -28,51 +35,97 @@ const PropertyGrid: React.FC = () => {
         </div>
         
         <div className="mb-8">
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-6">
-            <Tabs 
-              defaultValue="all" 
-              onValueChange={(value) => setActiveType(value as 'all' | 'rent' | 'sale')}
-              className="w-full max-w-md mx-auto"
+          <div className="flex justify-between items-center mb-6">
+            <Button 
+              variant="outline" 
+              onClick={toggleFilters}
+              className="flex items-center gap-2"
             >
-              <TabsList className="grid grid-cols-3 w-full">
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="rent">For Rent</TabsTrigger>
-                <TabsTrigger value="sale">For Sale</TabsTrigger>
-              </TabsList>
-            </Tabs>
+              <Filter className="h-4 w-4" />
+              {filtersVisible ? 'Hide Filters' : 'Show Filters'}
+            </Button>
+            
+            <div className="flex items-center gap-2">
+              <Button
+                variant={gridColumns === 2 ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setGridColumns(2)}
+                className={gridColumns === 2 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
+              >
+                <Grid2X2 className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={gridColumns === 3 ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setGridColumns(3)}
+                className={gridColumns === 3 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
+              >
+                <Grid3X3 className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant={activeBedrooms === 'all' ? 'default' : 'outline'} 
-              onClick={() => setActiveBedrooms('all')}
-              className={activeBedrooms === 'all' ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
-            >
-              All Bedrooms
-            </Button>
-            <Button 
-              variant={activeBedrooms === 3 ? 'default' : 'outline'} 
-              onClick={() => setActiveBedrooms(3)}
-              className={activeBedrooms === 3 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
-            >
-              3 Bedrooms
-            </Button>
-            <Button 
-              variant={activeBedrooms === 4 ? 'default' : 'outline'} 
-              onClick={() => setActiveBedrooms(4)}
-              className={activeBedrooms === 4 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
-            >
-              4 Bedrooms
-            </Button>
-          </div>
+          {filtersVisible && (
+            <div className="space-y-6 mb-8 p-6 bg-white rounded-lg shadow-sm">
+              <div>
+                <h3 className="text-lg font-medium mb-3">Property Type</h3>
+                <Tabs 
+                  defaultValue="all" 
+                  value={activeType}
+                  onValueChange={(value) => setActiveType(value as 'all' | 'rent' | 'sale')}
+                  className="w-full max-w-md"
+                >
+                  <TabsList className="grid grid-cols-3 w-full">
+                    <TabsTrigger value="all">All</TabsTrigger>
+                    <TabsTrigger value="rent">For Rent</TabsTrigger>
+                    <TabsTrigger value="sale">For Sale</TabsTrigger>
+                  </TabsList>
+                </Tabs>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-medium mb-3">Bedrooms</h3>
+                <div className="flex flex-wrap gap-3">
+                  <Button 
+                    variant={activeBedrooms === 'all' ? 'default' : 'outline'} 
+                    onClick={() => setActiveBedrooms('all')}
+                    className={activeBedrooms === 'all' ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
+                  >
+                    All Bedrooms
+                  </Button>
+                  <Button 
+                    variant={activeBedrooms === 3 ? 'default' : 'outline'} 
+                    onClick={() => setActiveBedrooms(3)}
+                    className={activeBedrooms === 3 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
+                  >
+                    3 Bedrooms
+                  </Button>
+                  <Button 
+                    variant={activeBedrooms === 4 ? 'default' : 'outline'} 
+                    onClick={() => setActiveBedrooms(4)}
+                    className={activeBedrooms === 4 ? 'bg-luxury-green hover:bg-luxury-dark text-white' : ''}
+                  >
+                    4 Bedrooms
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         
         {filteredProperties.length === 0 ? (
-          <div className="text-center py-12">
+          <div className="text-center py-12 bg-white rounded-lg shadow-sm">
             <p className="text-gray-500 text-lg">No properties found matching your criteria.</p>
+            <Button 
+              variant="outline" 
+              onClick={() => {setActiveType('all'); setActiveBedrooms('all');}}
+              className="mt-4"
+            >
+              Reset Filters
+            </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className={`grid grid-cols-1 md:grid-cols-${gridColumns === 2 ? '2' : '2 lg:grid-cols-3'} gap-8`}>
             {filteredProperties.map((property) => (
               <PropertyCard key={property.id} property={property} />
             ))}
