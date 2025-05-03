@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -99,19 +98,21 @@ const PropertyCard = ({ property }: { property: Property }) => {
   };
 
   return (
-    <Card className="overflow-hidden h-full animate-slide-in">
+    <Card className="overflow-hidden h-full animate-slide-in shadow-lg">
       <div className="relative h-64">
         <img 
           src={property.images[currentImageIndex]} 
           alt={property.name} 
           className="w-full h-full object-cover" 
         />
+        {/* Add dark gradient overlay for better text contrast */}
+        <div className="property-overlay"></div>
         {property.images.length > 1 && (
           <>
             <Button 
               variant="ghost" 
               size="icon" 
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 text-white hover:bg-black/50"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70 z-10"
               onClick={prevImage}
             >
               <ArrowLeft size={18} />
@@ -119,7 +120,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 text-white hover:bg-black/50"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white hover:bg-black/70 z-10"
               onClick={nextImage}
             >
               <ArrowRight size={18} />
@@ -127,9 +128,9 @@ const PropertyCard = ({ property }: { property: Property }) => {
           </>
         )}
       </div>
-      <CardContent className="p-6">
+      <CardContent className="p-6 card-content">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-semibold">{property.name}</h3>
+          <h3 className="text-xl font-semibold text-luxury-dark">{property.name}</h3>
           <div>
             <Tabs value={viewType} onValueChange={(v) => setViewType(v as 'rent' | 'sale')} className="w-[140px]">
               <TabsList className="grid w-full grid-cols-2">
@@ -137,16 +138,16 @@ const PropertyCard = ({ property }: { property: Property }) => {
                 <TabsTrigger value="sale">Sale</TabsTrigger>
               </TabsList>
               <TabsContent value="rent" className="mt-2">
-                <p className="text-lg font-bold text-primary">{property.price}</p>
+                <p className="text-lg font-bold text-luxury-green">{property.price}</p>
               </TabsContent>
               <TabsContent value="sale" className="mt-2">
-                <p className="text-lg font-bold text-primary">{property.salePrice}</p>
+                <p className="text-lg font-bold text-luxury-green">{property.salePrice}</p>
               </TabsContent>
             </Tabs>
           </div>
         </div>
 
-        <div className="flex mb-4 text-sm text-gray-600 gap-4">
+        <div className="flex mb-4 text-sm text-luxury-charcoal gap-4">
           <div className="flex items-center">
             <Bed size={16} className="mr-1" />
             <span>{property.bedrooms} Beds</span>
@@ -159,21 +160,21 @@ const PropertyCard = ({ property }: { property: Property }) => {
           </div>
         </div>
 
-        <p className="text-gray-700 mb-4">{property.description}</p>
+        <p className="text-luxury-charcoal mb-4">{property.description}</p>
 
         <div className="mb-4">
-          <h4 className="text-sm font-medium mb-2">Features:</h4>
+          <h4 className="text-sm font-medium mb-2 text-luxury-charcoal">Features:</h4>
           <div className="flex flex-wrap gap-2">
             {property.features.slice(0, 3).map((feature, index) => (
-              <span key={index} className="text-xs bg-gray-100 px-2 py-1 rounded">{feature}</span>
+              <span key={index} className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">{feature}</span>
             ))}
             {property.features.length > 3 && (
-              <span className="text-xs bg-gray-100 px-2 py-1 rounded">+{property.features.length - 3} more</span>
+              <span className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">+{property.features.length - 3} more</span>
             )}
           </div>
         </div>
 
-        <Button className="w-full">View Details</Button>
+        <Button className="w-full bg-luxury-green hover:bg-luxury-dark text-white">View Details</Button>
       </CardContent>
     </Card>
   );
@@ -209,11 +210,11 @@ const PropertiesSection = () => {
   }, []);
 
   return (
-    <section id="properties" ref={sectionRef} className="py-20 bg-gray-50 animate-on-scroll">
+    <section id="properties" ref={sectionRef} className="py-20 bg-luxury-cream animate-on-scroll">
       <div className="container-custom">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Available Properties</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments, each designed with elegant finishes and modern amenities.</p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-luxury-dark">Available Properties</h2>
+          <p className="text-luxury-charcoal max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments, each designed with elegant finishes and modern amenities.</p>
         </div>
 
         <div className="mb-8">

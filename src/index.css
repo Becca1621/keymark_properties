@@ -106,3 +106,35 @@
     transform: translateY(0);
   }
 }
+
+/* Text visibility helper classes */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+}
+
+/* Card text visibility improvements */
+.card-content {
+  @apply bg-white/95 backdrop-filter backdrop-blur-sm;
+}
+
+.property-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent;
+}
+
+/* Improved background overlays */
+.dark-overlay {
+  @apply absolute inset-0 bg-black/40;
+}
+
+.content-backdrop {
+  @apply bg-white/90 backdrop-filter backdrop-blur-md;
+}
+
