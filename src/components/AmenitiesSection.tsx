@@ -1,19 +1,5 @@
 import React from 'react';
-import { 
-  WashingMachine, 
-  Building, 
-  Users, 
-  Cctv, 
-  Car, 
-  EvCharging, 
-  Power, 
-  Users2, 
-  Elevator, 
-  Clock, 
-  Conciergebell, 
-  Accessibility, 
-  Fitness 
-} from "lucide-react";
+import { WashingMachine, Building, Users, Cctv, Car, EvCharging, Power, Community, Elevator, Clock, Conciergebell, SwimmingPool, Accessibility, Fitness } from "lucide-react";
 
 const interiorAmenities = [
   {
@@ -95,7 +81,7 @@ const buildingAmenities = [
     description: "Reliable backup power system for peace of mind."
   },
   {
-    icon: <Users2 className="w-6 h-6" />,
+    icon: <Community className="w-6 h-6" />,
     title: "Community lounge",
     description: "Elegant social spaces for relaxation and entertaining."
   },
