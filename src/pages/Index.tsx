@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import PropertiesSection from '@/components/PropertiesSection';
 import AmenitiesSection from '@/components/AmenitiesSection';
 import ContactSection from '@/components/ContactSection';
-import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -19,7 +18,6 @@ const Index = () => {
       </div>
       <div id="contact">
         <ContactSection />
-        <ContactInfo />
       </div>
       <Footer />
     </div>
