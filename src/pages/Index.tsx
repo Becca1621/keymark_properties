@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import PropertyGrid from '@/components/PropertyGrid';
 import AmenitiesSection from '@/components/AmenitiesSection';
 import BookTourForm from '@/components/BookTourForm';
-import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -21,9 +20,6 @@ const Index = () => {
       </div>
       <div id="contact">
         <BookTourForm />
-      </div>
-      <div id="contact-us">
-        <ContactSection />
       </div>
       <Footer />
     </div>
