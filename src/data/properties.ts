@@ -115,7 +115,8 @@ export const properties: Property[] = [
     squareFeet: 400,
     price: "Call for Details",
     address: "250 West 50th Street, New York, NY",
-     description: "This exceptional apartment offers both space and sophistication. With four spacious bedrooms, this home provides ample room for both family living and elegant entertaining.",
+    description: "This exceptional apartment offers both space and sophistication. With four spacious bedrooms, this home provides ample room for both family living and elegant entertaining.",
+    features: [
       "24-hour concierge",
       "In Unit Washer/Dryer",
       "Two Kitchen Layout",
