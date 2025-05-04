@@ -1,3 +1,4 @@
+
 export interface Property {
   id: string;
   title: string;
@@ -108,54 +109,6 @@ export const properties: Property[] = [
       "/4bed 2.jpg",
       "/4bed 3.jpg",
       "/4bed 4.jpg"
-    ]
-  },
-  {
-    id: "p005",
-    title: "Elegant 3-Bedroom Residence",
-    type: "sale",
-    bedrooms: 3,
-    bathrooms: 3,
-    squareFeet: 2100,
-    price: 1750000,
-    address: "The Apex Residences, 175 Park Avenue South, New York, NY",
-    description: "This stunning unit offers spectacular views and abundant natural light through its floor-to-ceiling windows. The sophisticated interior features custom finishes throughout, from the herringbone hardwood floors to the marble-clad bathrooms.",
-    features: [
-      "Eastern exposure",
-      "Custom built-ins",
-      "Spa-inspired bathrooms",
-      "Chef's kitchen",
-      "Library/den",
-      "Walk-in closets",
-      "Motorized window treatments"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1600563438938-a9a27215d610?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
-    ]
-  },
-  {
-    id: "p006",
-    title: "Modern 4-Bedroom Skyline View",
-    type: "rent",
-    bedrooms: 4,
-    bathrooms: 3,
-    squareFeet: 2600,
-    price: 16500,
-    address: "The Apex Residences, 175 Park Avenue South, New York, NY",
-    description: "Located on a high floor, this stunning four-bedroom apartment combines expansive space with modern luxury. The soaring 11-foot ceilings and floor-to-ceiling windows provide breathtaking views of the city skyline.",
-    features: [
-      "Western sunset views",
-      "Oversized windows",
-      "Open concept layout",
-      "Designer fixtures",
-      "Custom lighting",
-      "Central air conditioning",
-      "Smart home features"
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3"
     ]
   }
 ];
