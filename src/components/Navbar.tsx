@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
-import Logo from './Logo';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,7 +30,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Logo onClick={() => scrollToSection('hero')} />
+        <button
+          onClick={() => scrollToSection('hero')}
+          className="flex items-center cursor-pointer"
+        >
+          <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-green transition-colors">KEYMARK Properties</span>
+        </button>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
