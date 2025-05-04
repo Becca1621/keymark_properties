@@ -22,7 +22,7 @@ const ZapierSetupModal: React.FC<ZapierSetupModalProps> = ({ open, onOpenChange,
   const { toast } = useToast();
   const [useGoogleSheets, setUseGoogleSheets] = useState(true);
 
-  const HARDCODED_WEBHOOK = "https://hooks.zapier.com/hooks/catch/22774326/2pvngka/";
+  const HARDCODED_WEBHOOK = "https://hooks.zapier.com/hooks/catch/22774326/2noue6f/";
   const NOTIFICATION_EMAIL = "keymarkproperties@gmail.com";
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const ZapierSetupModal: React.FC<ZapierSetupModalProps> = ({ open, onOpenChange,
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             Cancel
           </Button>
-          <Button onClick={handleSave} className="bg-luxury-gold hover:bg-luxury-gold/90">
+          <Button onClick={handleSave} className="bg-luxury-green hover:bg-luxury-green/90">
             Save Configuration
           </Button>
         </DialogFooter>
