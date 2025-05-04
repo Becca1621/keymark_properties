@@ -12,7 +12,8 @@ import {
   Clock, 
   ConciergeBell, // Fixed casing of Conciergebell
   Accessibility, 
-  Dumbbell // Replacing Fitness
+  Dumbbell, // Replacing Fitness
+  Droplet // Added Droplet icon for Ground Water
 } from "lucide-react";
 
 const interiorAmenities = [
@@ -70,9 +71,9 @@ const buildingAmenities = [
     description: "State-of-the-art security monitoring for your peace of mind."
   },
   {
-    icon: "🔍",
+    icon: <Droplet className="w-6 h-6" />, // Updated to Droplet icon
     title: "Ground Water",
-    description: ""
+    description: "Sustainable ground water system providing clean, filtered water throughout the property."
   },
   {
     icon: <Accessibility className="w-6 h-6" />,
