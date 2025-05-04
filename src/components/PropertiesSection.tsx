@@ -34,7 +34,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
     ],
-    features: ["Central Air Conditioning", "In-unit Washer/Dryer", "Walk-in Closets", "Smart Home Features", "Hardwood Floors"]
+    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"]
   },
   {
     id: 2,
@@ -50,7 +50,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["Central Air Conditioning", "In-unit Washer/Dryer", "Walk-in Closets", "Granite Countertops", "Private Terrace"]
+    features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"]
   },
   {
     id: 3,
@@ -66,7 +66,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["Central Air Conditioning", "In-unit Washer/Dryer", "Walk-in Closets", "Smart Home Features", "Custom Cabinetry"]
+    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"]
   },
   {
     id: 4,
