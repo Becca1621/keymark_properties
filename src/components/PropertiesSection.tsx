@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -51,8 +50,9 @@ const properties: Property[] = [
     size: "400 sq m",
     description: "Luxury unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
     images: [
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
+      "/4bed 2.jpg",
+      "/4bed 3.jpg",
+      "/4bed 4.jpg"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
