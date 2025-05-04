@@ -5,6 +5,11 @@ import BuildingAmenities from './amenities/BuildingAmenities';
 import ZapierSetupModal, { loadSavedFormConfig } from './ZapierSetupModal';
 import { Button } from '@/components/ui/button';
 import { Settings } from 'lucide-react';
+import { 
+  setFormDestinationConfig, 
+  getFormDestinationConfig, 
+  getSubmissionsList 
+} from '@/utils/formSubmission';
 
 const AmenitiesSection: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -20,8 +25,46 @@ const AmenitiesSection: React.FC = () => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('adminMode') === 'true') {
       setIsAdmin(true);
+
+      // If in admin mode, also set up notification email if needed
+      const config = getFormDestinationConfig();
+      if (!config.notificationEmail) {
+        const savedEmail = localStorage.getItem('notificationEmail');
+        if (savedEmail) {
+          setFormDestinationConfig({
+            ...config,
+            notificationEmail: savedEmail
+          });
+        }
+      }
     }
   }, []);
+
+  // Custom handler for the ZapierSetupModal to also save email settings
+  const handleZapierModalSave = (webhookUrl: string, useGoogleSheets: boolean) => {
+    // Get existing email from config
+    const config = getFormDestinationConfig();
+    const notificationEmail = prompt('Enter email address for form notifications:', config.notificationEmail || '');
+    
+    // Save all settings
+    setFormDestinationConfig({
+      zapierWebhookUrl: webhookUrl,
+      useGoogleSheets,
+      notificationEmail: notificationEmail || config.notificationEmail,
+      createSubmissionList: true
+    });
+    
+    // Save email separately for persistence
+    if (notificationEmail) {
+      localStorage.setItem('notificationEmail', notificationEmail);
+    }
+
+    // View recent submissions if available
+    const submissions = getSubmissionsList();
+    if (submissions.length > 0) {
+      console.log('Recent form submissions:', submissions);
+    }
+  };
 
   return (
     <div id="amenities" className="py-20 gradient-flow-middle">
@@ -74,6 +117,7 @@ const AmenitiesSection: React.FC = () => {
         <ZapierSetupModal 
           open={showZapierSetup} 
           onOpenChange={setShowZapierSetup}
+          onSave={handleZapierModalSave}
         />
       </div>
     </div>

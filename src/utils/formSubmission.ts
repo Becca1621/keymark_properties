@@ -27,21 +27,54 @@ export type TourFormData = {
 export type FormDestinationConfig = {
   zapierWebhookUrl?: string;
   useGoogleSheets?: boolean;
+  notificationEmail?: string;
+  createSubmissionList?: boolean;
 };
 
 // Default configuration - replace with your actual Zapier webhook URL
 const defaultConfig: FormDestinationConfig = {
   zapierWebhookUrl: "", // Users will need to set this in the UI
-  useGoogleSheets: true
+  useGoogleSheets: true,
+  notificationEmail: "",
+  createSubmissionList: true
 };
 
 // Global form destination config
 let globalConfig: FormDestinationConfig = { ...defaultConfig };
 
+// For storing submissions in memory (when createSubmissionList is enabled)
+let submissionsList: Array<{
+  formData: ContactFormData | TourFormData;
+  formType: string;
+  timestamp: string;
+  source: string;
+}> = [];
+
+// Get stored submissions list
+export const getSubmissionsList = () => {
+  return [...submissionsList];
+};
+
+// Clear submissions list
+export const clearSubmissionsList = () => {
+  submissionsList = [];
+  return true;
+};
+
 // Set global form destination configuration
 export const setFormDestinationConfig = (config: FormDestinationConfig): void => {
   globalConfig = { ...globalConfig, ...config };
   console.log("Form destination config updated:", globalConfig);
+  
+  // Try to retrieve existing submissions list from localStorage
+  try {
+    const savedSubmissions = localStorage.getItem('formSubmissions');
+    if (savedSubmissions) {
+      submissionsList = JSON.parse(savedSubmissions);
+    }
+  } catch (error) {
+    console.error("Error loading saved submissions:", error);
+  }
 };
 
 // Get current form destination configuration
@@ -51,6 +84,9 @@ export const getFormDestinationConfig = (): FormDestinationConfig => {
 
 // API endpoint - replace with your actual API endpoint when available
 const API_ENDPOINT = "https://api.formcatcher.com/f/process-form";
+
+// API endpoint for email notifications
+const EMAIL_NOTIFICATION_ENDPOINT = "https://api.formcatcher.com/f/email-notification";
 
 /**
  * Sends form data to the backend API and/or configured destinations
@@ -63,6 +99,26 @@ export const submitFormData = async (data: ContactFormData | TourFormData, formT
     console.log(`Submitting ${formType} form data:`, data);
 
     const results: {success: boolean; message: string}[] = [];
+    
+    // Create submission object
+    const submissionData = {
+      formData: data,
+      formType,
+      timestamp: new Date().toISOString(),
+      source: window.location.href
+    };
+
+    // Store submission in list if enabled
+    if (globalConfig.createSubmissionList) {
+      submissionsList.push(submissionData);
+      
+      try {
+        // Save to localStorage for persistence
+        localStorage.setItem('formSubmissions', JSON.stringify(submissionsList));
+      } catch (error) {
+        console.error('Error saving submissions to localStorage:', error);
+      }
+    }
 
     // Send to API endpoint if configured
     try {
@@ -103,6 +159,39 @@ export const submitFormData = async (data: ContactFormData | TourFormData, formT
       });
     }
 
+    // Send email notification if configured
+    if (globalConfig.notificationEmail) {
+      try {
+        console.log(`Sending email notification to: ${globalConfig.notificationEmail}`);
+        
+        await fetch(EMAIL_NOTIFICATION_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            to: globalConfig.notificationEmail,
+            subject: `New ${formType} form submission from your website`,
+            formData: data,
+            formType,
+            timestamp: new Date().toISOString(),
+            source: window.location.href
+          }),
+        });
+        
+        results.push({ 
+          success: true, 
+          message: 'A notification email has been sent.'
+        });
+      } catch (error) {
+        console.error('Email notification error:', error);
+        results.push({ 
+          success: false, 
+          message: 'There was an issue sending the notification email.'
+        });
+      }
+    }
+
     // Send to Zapier webhook for Google Sheets integration (if configured)
     if (globalConfig.useGoogleSheets && globalConfig.zapierWebhookUrl) {
       try {
@@ -114,12 +203,7 @@ export const submitFormData = async (data: ContactFormData | TourFormData, formT
             'Content-Type': 'application/json',
           },
           mode: 'no-cors', // Handle CORS issues with Zapier
-          body: JSON.stringify({
-            formData: data,
-            formType,
-            timestamp: new Date().toISOString(),
-            source: window.location.href
-          }),
+          body: JSON.stringify(submissionData),
         });
         
         // With no-cors, we won't get a proper response status to check
