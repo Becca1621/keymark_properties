@@ -37,7 +37,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
-    propertyType: 'sale'
+    propertyType: 'rent'  // Changed from 'sale' to 'rent'
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"],
-    propertyType: 'sale'
+    propertyType: 'rent'  // Changed from 'sale' to 'rent'
   },
   {
     id: 3,
