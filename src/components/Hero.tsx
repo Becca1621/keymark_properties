@@ -17,16 +17,18 @@ const Hero: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
           backgroundImage: "url('/lovable-uploads/bed67368-504c-4dba-bc24-6b13554b2ce3.png')",
-          backgroundPosition: "center 30%",
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
         }}
       >
         {/* Enhanced dark gradient overlay with a more sophisticated fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/60"></div>
         
         {/* Add a subtle luxury pattern overlay */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:20px_20px]"></div>
       </div>
       
+      {/* Content section */}
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 md:px-8 z-10">
         <div className="animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
@@ -55,6 +57,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
+      {/* Bottom info bar */}
       <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-md p-4 md:p-6">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between gap-8 text-white">
           <div className="text-center md:text-left animate-slide-up">
