@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between gap-8 text-white">
           <div className="text-center md:text-left animate-slide-up">
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Location</p>
-            <p className="font-serif text-lg text-white drop-shadow-sm">Prime Central Location</p>
+            <p className="font-serif text-lg text-white drop-shadow-sm">Bole, Addis Ababa</p>
           </div>
           <div className="text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Property Types</p>
