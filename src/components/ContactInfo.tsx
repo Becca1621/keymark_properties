@@ -16,7 +16,7 @@ const ContactInfo: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
-              <MapPin className="h-10 w-10 text-luxury-gold" />
+              <MapPin className="h-10 w-10 text-luxury-green" />
             </div>
             <h3 className="font-serif text-xl font-semibold mb-2">Visit Us</h3>
             <p className="text-luxury-gray">
@@ -27,7 +27,7 @@ const ContactInfo: React.FC = () => {
 
           <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
-              <Phone className="h-10 w-10 text-luxury-gold" />
+              <Phone className="h-10 w-10 text-luxury-green" />
             </div>
             <h3 className="font-serif text-xl font-semibold mb-2">Call Us</h3>
             <p className="text-luxury-gray">
@@ -38,7 +38,7 @@ const ContactInfo: React.FC = () => {
 
           <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
-              <Mail className="h-10 w-10 text-luxury-gold" />
+              <Mail className="h-10 w-10 text-luxury-green" />
             </div>
             <h3 className="font-serif text-xl font-semibold mb-2">Email Us</h3>
             <p className="text-luxury-gray">
@@ -49,7 +49,7 @@ const ContactInfo: React.FC = () => {
 
           <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
-              <Clock className="h-10 w-10 text-luxury-gold" />
+              <Clock className="h-10 w-10 text-luxury-green" />
             </div>
             <h3 className="font-serif text-xl font-semibold mb-2">Office Hours</h3>
             <p className="text-luxury-gray">

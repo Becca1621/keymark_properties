@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   WashingMachine, 
@@ -146,7 +145,7 @@ const AmenitiesSection: React.FC = () => {
         </div>
         
         <div className="mb-16">
-          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-gold">Interior Features</h3>
+          <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-green">Interior Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {interiorAmenities.map((amenity, index) => (
               <div 
@@ -154,7 +153,7 @@ const AmenitiesSection: React.FC = () => {
                 className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-luxury-gold mb-4">{typeof amenity.icon === 'string' ? (
+                <div className="text-luxury-green mb-4">{typeof amenity.icon === 'string' ? (
                   <div className="text-4xl">{amenity.icon}</div>
                 ) : (
                   amenity.icon
