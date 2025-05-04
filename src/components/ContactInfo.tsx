@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Building, Navigation } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const ContactInfo: React.FC = () => {
   const address = "345 Park Avenue, New York, NY 10022";
@@ -46,15 +47,24 @@ const ContactInfo: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-luxury-cream">Address</h3>
-                <a 
-                  href={mapUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-luxury-cream/80 hover:text-luxury-cream flex items-center gap-1 transition-colors"
-                >
-                  {address}
-                  <Navigation className="h-4 w-4 inline-block ml-1" />
-                </a>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <a 
+                        href={mapUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-luxury-cream/80 hover:text-luxury-cream flex items-center gap-1 transition-colors"
+                      >
+                        {address}
+                        <Navigation className="h-4 w-4 inline-block ml-1" />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent className="bg-luxury-neutral-800/90 text-luxury-cream border-luxury-neutral-600">
+                      Open Directions on Maps
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </div>
           </div>
