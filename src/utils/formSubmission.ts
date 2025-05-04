@@ -35,7 +35,7 @@ export type FormDestinationConfig = {
 const defaultConfig: FormDestinationConfig = {
   zapierWebhookUrl: "", // Users will need to set this in the UI
   useGoogleSheets: true,
-  notificationEmail: "",
+  notificationEmail: "keymarkproperties@gmail.com",
   createSubmissionList: true
 };
 
