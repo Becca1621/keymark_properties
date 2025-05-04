@@ -86,7 +86,7 @@ interface BuildingAmenitiesProps {
 const BuildingAmenities: React.FC<BuildingAmenitiesProps> = ({ className = '' }) => {
   return (
     <div className={className}>
-      <h3 className="text-center font-serif text-2xl font-bold mb-8 text-luxury-green">Building & Community Highlights</h3>
+      <h3 className="text-center font-serif text-3xl font-bold mb-10 text-white">Building & Community Highlights</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {buildingAmenities.map((amenity, index) => (
           <AmenityCard 
