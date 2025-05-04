@@ -1,4 +1,3 @@
-
 export interface Property {
   id: string;
   title: string;
@@ -106,8 +105,9 @@ export const properties: Property[] = [
       "Floor-to-ceiling windows"
     ],
     images: [
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3",
-      "https://images.unsplash.com/photo-1560448205-d5b9922aa43b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
+      "/4bed 2.jpg",
+      "/4bed 3.jpg",
+      "/4bed 4.jpg"
     ]
   },
   {
