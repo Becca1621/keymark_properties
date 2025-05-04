@@ -1,22 +1,20 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { submitFormData, TourFormData } from '@/utils/formSubmission';
 
 const BookTourForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState<TourFormData>({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     date: '',
-    interest: 'tour', // Default value
-    propertyType: '3-bedroom', // Default value for property type
+    interest: 'tour',
+    propertyType: '3-bedroom',
     message: ''
   });
 
@@ -28,30 +26,57 @@ const BookTourForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
-      const result = await submitFormData(formData, 'tour');
-      
-      toast({
-        title: result.success ? "Tour Request Submitted" : "Submission Error",
-        description: result.message,
-        variant: result.success ? "default" : "destructive",
+      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer YOUR_SENDGRID_API_KEY`
+        },
+        body: JSON.stringify({
+          personalizations: [
+            {
+              to: [{ email: 'your-business@example.com' }],
+              subject: 'New Book a Tour Request'
+            }
+          ],
+          from: { email: formData.email, name: formData.name },
+          content: [
+            {
+              type: 'text/plain',
+              value: 
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Phone: ${formData.phone || 'Not provided'}\n` +
+                `Preferred Date: ${formData.date}\n` +
+                `Interest: ${formData.interest}\n` +
+                `Property Type: ${formData.propertyType}\n\n` +
+                `Message:\n${formData.message}`
+            }
+          ]
+        })
       });
-      
-      if (result.success) {
-        // Reset form on success
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          date: '',
-          interest: 'tour',
-          propertyType: '3-bedroom',
-          message: ''
-        });
-      }
+
+      if (!response.ok) throw new Error('Failed to send tour request');
+
+      toast({
+        title: "Tour Request Submitted",
+        description: "Your request has been received. We'll contact you shortly.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        interest: 'tour',
+        propertyType: '3-bedroom',
+        message: ''
+      });
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error('Tour form submission error:', error);
       toast({
         title: "Submission Error",
         description: "There was a problem submitting your request. Please try again.",
@@ -99,7 +124,7 @@ const BookTourForm = () => {
                 />
               </div>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
@@ -152,10 +177,11 @@ const BookTourForm = () => {
                   <option value="3-bedroom">3 Bedroom</option>
                   <option value="4-bedroom">4 Bedroom</option>
                   <option value="penthouse">Penthouse</option>
+                  <option value="penthouse">Retail</option>
                 </select>
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="message">Additional Notes</Label>
               <Textarea 
@@ -167,7 +193,7 @@ const BookTourForm = () => {
                 rows={4}
               />
             </div>
-            
+
             <Button 
               type="submit" 
               className="w-full bg-luxury-green hover:bg-luxury-green/90 text-white"
@@ -175,7 +201,7 @@ const BookTourForm = () => {
             >
               {isSubmitting ? "Submitting..." : "Request Tour"}
             </Button>
-            
+
             {isSubmitting && (
               <div className="text-center text-sm text-luxury-gray">
                 <p>Submitting your request...</p>
