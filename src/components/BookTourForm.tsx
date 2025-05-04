@@ -45,7 +45,7 @@ const BookTourForm = () => {
   };
 
   return (
-    <div id="book-tour" className="py-16 bg-ombre-dark-green">
+    <div id="book-tour" className="pt-16 bg-gradient-to-b from-luxury-dark to-luxury-darkgray">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-serif font-bold mb-4 text-white text-shadow">Book a Tour</h2>

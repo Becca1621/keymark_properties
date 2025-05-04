@@ -158,6 +158,11 @@
   background: linear-gradient(135deg, #8FBC8F 20%, #F1F0FB 100%);
 }
 
+/* Continuous gradient for book tour and contact sections */
+.continuous-gradient {
+  background: linear-gradient(to bottom, #333333 0%, #444444 50%, #8FBC8F 100%);
+}
+
 .section-gradient {
   background: linear-gradient(to bottom, #444444 0%, #8FBC8F 100%);
   color: white;

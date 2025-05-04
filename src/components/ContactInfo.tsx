@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const ContactInfo: React.FC = () => {
   return (
-    <div id="contact-info" className="py-16 bg-ombre-gray-green">
+    <div id="contact-info" className="pb-16 bg-gradient-to-b from-luxury-darkgray to-luxury-green">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-white text-shadow mb-4">Contact Us</h2>
