@@ -76,6 +76,15 @@
   }
 }
 
+/* Custom toggle styles for better visibility */
+.toggle-group-item {
+  @apply text-white/90 transition-colors;
+}
+
+.toggle-group-item[data-state='on'] {
+  @apply text-white;
+}
+
 /* Custom CSS for animations used in PropertiesSection */
 .container-custom {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
