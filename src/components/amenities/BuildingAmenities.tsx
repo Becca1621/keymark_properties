@@ -11,7 +11,7 @@ import {
   ArrowUpDown, 
   Building, 
   Clock, 
-  ConciergeBell, 
+  Trash2, 
   Dumbbell
 } from "lucide-react";
 import AmenityCard from './AmenityCard';
@@ -68,9 +68,9 @@ const buildingAmenities = [
     description: "Round-the-clock maintenance services available."
   },
   {
-    icon: <ConciergeBell className="w-6 h-6" />,
-    title: "Concierge service",
-    description: "Personalized concierge services to enhance your lifestyle."
+    icon: <Trash2 className="w-6 h-6" />,
+    title: "Garbage shooter",
+    description: "Convenient waste disposal system on each floor."
   },
   {
     icon: <Dumbbell className="w-6 h-6" />,
