@@ -1,248 +1,144 @@
 
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { format } from 'date-fns';
-import { CalendarIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { toast } from '@/hooks/use-toast';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import { Input } from '@/components/ui/input';
-import { Calendar } from '@/components/ui/calendar';
+import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Checkbox } from '@/components/ui/checkbox';
+import { useToast } from '@/hooks/use-toast';
 
-const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters' }),
-  email: z.string().email({ message: 'Please enter a valid email address' }),
-  phone: z.string().min(8, { message: 'Please enter a valid phone number' }),
-  date: z.date({
-    required_error: 'Please select a date for your tour',
-  }),
-  timePreference: z.string().min(1, { message: 'Please indicate your preferred time' }),
-  message: z.string().optional(),
-  propertyInterest: z.string().min(1, { message: 'Please specify which property you are interested in' }),
-  consent: z.boolean().refine(val => val === true, {
-    message: 'You must agree to be contacted',
-  }),
-});
+const BookTourForm = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    date: '',
+    interest: 'tour', // Default value
+    message: ''
+  });
 
-type FormValues = z.infer<typeof formSchema>;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
-const BookTourForm: React.FC = () => {
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    
+    toast({
+      title: "Tour Request Submitted",
+      description: "We'll be in touch with you shortly to confirm your tour details.",
+    });
+    
+    // Reset form
+    setFormData({
       name: '',
       email: '',
       phone: '',
-      timePreference: '',
-      message: '',
-      propertyInterest: '',
-      consent: false,
-    },
-  });
-
-  function onSubmit(data: FormValues) {
-    toast({
-      title: "Tour booking submitted!",
-      description: "We'll contact you soon to confirm your tour details.",
+      date: '',
+      interest: 'tour',
+      message: ''
     });
-    console.log(data);
-    form.reset();
-  }
+  };
 
   return (
-    <div id="contact" className="py-16 bg-gradient-to-br from-luxury-cream to-luxury-lime">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-luxury-dark mb-4">Book Your Private Tour</h2>
-          <p className="text-luxury-gray text-lg max-w-2xl mx-auto">
-            Experience the luxury firsthand. Schedule a guided tour of our properties at your convenience.
+    <div id="book-tour" className="py-16 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-serif font-bold mb-4">Book a Tour</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Experience the luxury of our properties firsthand. Schedule a private tour with one of our property specialists.
           </p>
         </div>
 
-        <div className="bg-white p-6 sm:p-10 rounded-lg shadow-elegant">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <FormField
-                  control={form.control}
+        <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-elegant">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name</Label>
+                <Input 
+                  id="name"
                   name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Full Name</FormLabel>
-                      <FormControl>
-                        <Input placeholder="John Doe" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email Address</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="john@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone Number</FormLabel>
-                      <FormControl>
-                        <Input placeholder="+1 555 123 4567" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="date"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <FormLabel>Preferred Date</FormLabel>
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <FormControl>
-                            <Button
-                              variant={"outline"}
-                              className={cn(
-                                "pl-3 text-left font-normal",
-                                !field.value && "text-muted-foreground"
-                              )}
-                            >
-                              {field.value ? (
-                                format(field.value, "PPP")
-                              ) : (
-                                <span>Pick a date</span>
-                              )}
-                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                            </Button>
-                          </FormControl>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0" align="start">
-                          <Calendar
-                            mode="single"
-                            selected={field.value}
-                            onSelect={field.onChange}
-                            disabled={(date) => date < new Date()}
-                            initialFocus
-                            className="p-3 pointer-events-auto"
-                          />
-                        </PopoverContent>
-                      </Popover>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="timePreference"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Preferred Time</FormLabel>
-                      <FormControl>
-                        <Input placeholder="e.g. Morning, Afternoon, 2 PM" {...field} />
-                      </FormControl>
-                      <FormDescription>
-                        Let us know what time works best for you
-                      </FormDescription>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="propertyInterest"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Property Interest</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Which property are you interested in?" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="John Doe" 
+                  required
                 />
               </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input 
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="john@example.com" 
+                  required
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input 
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="(555) 123-4567" 
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="date">Preferred Date</Label>
+                <Input 
+                  id="date"
+                  name="date"
+                  type="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
 
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Additional Information</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        placeholder="Please share any specific questions or requirements"
-                        className="min-h-[100px]"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="consent"
-                render={({ field }) => (
-                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                    <FormControl>
-                      <Checkbox
-                        checked={field.value}
-                        onCheckedChange={field.onChange}
-                      />
-                    </FormControl>
-                    <div className="space-y-1 leading-none">
-                      <FormLabel>
-                        I agree to be contacted regarding my tour request
-                      </FormLabel>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
-              
-              <Button 
-                type="submit" 
-                className="w-full sm:w-auto bg-luxury-green hover:bg-luxury-dark text-black hover:text-white"
+            <div className="space-y-2">
+              <Label htmlFor="interest">I'm interested in</Label>
+              <select
+                id="interest"
+                name="interest"
+                value={formData.interest}
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold"
               >
-                Request Tour
-              </Button>
-            </form>
-          </Form>
+                <option value="tour">Scheduling a tour</option>
+                <option value="rent">Renting a property</option>
+                <option value="buy">Buying a property</option>
+                <option value="info">General information</option>
+              </select>
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="message">Additional Notes</Label>
+              <Textarea 
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell us about your specific interests or questions..."
+                rows={4}
+              />
+            </div>
+            
+            <Button 
+              type="submit" 
+              className="w-full bg-luxury-gold hover:bg-luxury-gold/90 text-white"
+            >
+              Request Tour
+            </Button>
+          </form>
         </div>
       </div>
     </div>
