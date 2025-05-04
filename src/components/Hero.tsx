@@ -3,11 +3,18 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const Hero: React.FC = () => {
-  // Function to handle smooth scrolling
+  // Function to handle smooth scrolling with offset for navbar
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
