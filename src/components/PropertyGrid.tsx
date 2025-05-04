@@ -1,10 +1,51 @@
 
 import React, { useState } from 'react';
-import PropertyCard from './PropertyCard';
 import { Property, properties } from '@/data/properties';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Filter, Grid2X2, Grid3X3 } from 'lucide-react';
+
+// Create an inline PropertyCard component since the external one was removed
+const PropertyCardInline = ({ property }: { property: Property }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % property.images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => prev === 0 ? property.images.length - 1 : prev - 1);
+  };
+
+  return (
+    <div className="bg-white rounded-lg overflow-hidden shadow-elegant hover:shadow-xl transition-all duration-300">
+      <div className="relative h-64 overflow-hidden">
+        <img 
+          src={property.images[currentImageIndex]} 
+          alt={property.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute top-4 right-4 bg-luxury-green text-white text-sm font-medium px-3 py-1 rounded-full">
+          {property.type === 'rent' ? 'For Rent' : 'For Sale'}
+        </div>
+      </div>
+      
+      <div className="p-6">
+        <h3 className="font-serif text-xl font-semibold mb-2 group-hover:text-luxury-green transition-colors">
+          {property.title}
+        </h3>
+        
+        <p className="text-gray-500 text-sm mb-4">
+          {property.address}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const PropertyGrid: React.FC = () => {
   const [activeType, setActiveType] = useState<'all' | 'rent' | 'sale'>('all');
@@ -30,7 +71,7 @@ const PropertyGrid: React.FC = () => {
             Discover Our Luxury Properties
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our collection of premium 3 & 4 bedroom residences, thoughtfully designed for those who appreciate the finest things in life.
+            Explore our collection of premium properties, thoughtfully designed for those who appreciate the finest things in life.
           </p>
         </div>
         
@@ -127,7 +168,7 @@ const PropertyGrid: React.FC = () => {
         ) : (
           <div className={`grid grid-cols-1 md:grid-cols-${gridColumns === 2 ? '2' : '2 lg:grid-cols-3'} gap-8`}>
             {filteredProperties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
+              <PropertyCardInline key={property.id} property={property} />
             ))}
           </div>
         )}

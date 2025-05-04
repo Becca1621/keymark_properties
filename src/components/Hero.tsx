@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             Luxury Living at Its Finest
           </h1>
           <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 drop-shadow-md">
-            Exclusive 3 & 4 bedroom residences available for rent and purchase in the heart of the city
+            Exclusive 3 & 4 bedroom residences and premium retail spaces available in the heart of the city
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -60,8 +60,8 @@ const Hero: React.FC = () => {
             <p className="font-serif text-lg text-white drop-shadow-sm">Prime Central Location</p>
           </div>
           <div className="text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Bedrooms</p>
-            <p className="font-serif text-lg text-white drop-shadow-sm">3 & 4 Bedrooms</p>
+            <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Property Types</p>
+            <p className="font-serif text-lg text-white drop-shadow-sm">Residences & Retail</p>
           </div>
           <div className="text-center md:text-right animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Status</p>

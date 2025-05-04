@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ArrowLeft, ArrowRight, Bed, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Bed, Phone, Store } from "lucide-react";
 
 interface Property {
   id: number;
@@ -151,25 +151,37 @@ const PropertyCard = ({ property }: { property: Property }) => {
           <h3 className="text-xl font-semibold text-luxury-dark">{property.name}</h3>
         </div>
 
-        <div className="flex mb-4 text-sm text-luxury-charcoal gap-4">
-          <div className="flex items-center">
-            <Bed size={16} className="mr-1" />
-            <span>{property.bedrooms} Beds</span>
+        {property.type === "retail" ? (
+          <div className="flex mb-4 text-sm text-luxury-charcoal gap-4">
+            <div className="flex items-center">
+              <Store size={16} className="mr-1" />
+              <span>Commercial</span>
+            </div>
+            <div>
+              <span>{property.size}</span>
+            </div>
           </div>
-          <div>
-            <span>{property.bathrooms} Baths</span>
+        ) : (
+          <div className="flex mb-4 text-sm text-luxury-charcoal gap-4">
+            <div className="flex items-center">
+              <Bed size={16} className="mr-1" />
+              <span>{property.bedrooms} Beds</span>
+            </div>
+            <div>
+              <span>{property.bathrooms} Baths</span>
+            </div>
+            <div>
+              <span>{property.size}</span>
+            </div>
           </div>
-          <div>
-            <span>{property.size}</span>
-          </div>
-        </div>
+        )}
 
         <p className="text-luxury-charcoal mb-4">{property.description}</p>
 
         <div className="mb-4">
           <h4 className="text-sm font-medium mb-2 text-luxury-charcoal">Features:</h4>
           <div className="flex flex-wrap gap-2">
-            {availableStandardFeatures.map((feature, index) => (
+            {property.features.slice(0, 3).map((feature, index) => (
               <span key={index} className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">{feature}</span>
             ))}
             {hasMoreFeatures && (
@@ -193,7 +205,9 @@ const PropertiesSection = () => {
   
   const filteredProperties = filter === 'all' 
     ? properties 
-    : properties.filter(p => p.bedrooms === parseInt(filter));
+    : filter === 'retail'
+    ? properties.filter(p => p.type === 'retail')
+    : properties.filter(p => p.bedrooms === parseInt(filter) && p.type === 'apartment');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -221,15 +235,16 @@ const PropertiesSection = () => {
       <div className="container-custom">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white text-shadow">Available Properties</h2>
-          <p className="text-white/90 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments, each designed with elegant finishes and modern amenities.</p>
+          <p className="text-white/90 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments and retail spaces, designed with elegant finishes and modern amenities.</p>
         </div>
 
         <div className="mb-8">
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-[400px] max-w-full grid-cols-3 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
+            <TabsList className="grid w-[500px] max-w-full grid-cols-4 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
               <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">All</TabsTrigger>
               <TabsTrigger value="3" onClick={() => setFilter('3')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">3 Bedroom</TabsTrigger>
               <TabsTrigger value="4" onClick={() => setFilter('4')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">4 Bedroom</TabsTrigger>
+              <TabsTrigger value="retail" onClick={() => setFilter('retail')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">Retail</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
