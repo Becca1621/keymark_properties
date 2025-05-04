@@ -35,7 +35,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
   },
   {
@@ -47,12 +47,12 @@ const properties: Property[] = [
     bedrooms: 4,
     bathrooms: 4.5,
     size: "400 sq m",
-    description: "Luxury corner unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
+    description: "Luxury unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
     images: [
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
   },
   {
@@ -69,7 +69,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "In-unit Spa", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
   },
   {
@@ -86,7 +86,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
     ],
-    features: ["Elevator Access", "Garage Parking", "Office", "Shops", "24/7 Building Security"],
+    features: ["Elevator Access", "Parking", "Office", "Shops", "24/7 Building Security"],
     propertyType: 'rent'
   },
   {
@@ -103,7 +103,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'sale'
   },
   {
@@ -115,12 +115,12 @@ const properties: Property[] = [
     bedrooms: 4,
     bathrooms: 4.5,
     size: "400 sq m",
-    description: "Luxury corner unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
+    description: "Luxury unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
     images: [
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'sale'
   }
 ];
