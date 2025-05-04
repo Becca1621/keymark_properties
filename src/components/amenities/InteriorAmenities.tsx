@@ -9,7 +9,8 @@ import {
   LampFloor, 
   ShoppingBag, 
   Sofa, 
-  Power 
+  Power,
+  Sun 
 } from "lucide-react";
 import AmenityCard from './AmenityCard';
 
@@ -54,7 +55,11 @@ const interiorAmenities = [
     title: "Private balconies",
     description: "Enjoy outdoor living with private balconies and stunning views."
   },
-
+  {
+    icon: <Sun className="w-6 h-6" />,
+    title: "Large windows for natural light",
+    description: "Bright, open interiors enhanced by large windows throughout."
+  },
 ];
 
 interface InteriorAmenitiesProps {
