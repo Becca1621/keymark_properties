@@ -276,7 +276,7 @@ const PropertiesSection = () => {
               onValueChange={(value) => {
                 if (value) setPropertyTypeFilter(value as 'all' | 'rent' | 'sale');
               }}
-              className="bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/50"
+              className="bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/20"
             >
               <ToggleGroupItem value="all" className="data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
                 All
