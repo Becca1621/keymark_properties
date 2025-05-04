@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -146,7 +145,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
           </>
         )}
       </div>
-      <CardContent className={`p-6 card-content ${property.type === 'retail' ? 'bg-luxury-cream/95' : 'card-gradient'}`}>
+      <CardContent className="p-6 card-content bg-luxury-cream/95">
         <div className="mb-4">
           <h3 className="text-xl font-semibold text-luxury-dark">{property.name}</h3>
         </div>
@@ -182,10 +181,10 @@ const PropertyCard = ({ property }: { property: Property }) => {
           <h4 className="text-sm font-medium mb-2 text-luxury-charcoal">Features:</h4>
           <div className="flex flex-wrap gap-2">
             {property.features.slice(0, 3).map((feature, index) => (
-              <span key={index} className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">{feature}</span>
+              <span key={index} className="text-xs bg-white/80 text-luxury-charcoal px-2 py-1 rounded">{feature}</span>
             ))}
             {hasMoreFeatures && (
-              <span className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">and more</span>
+              <span className="text-xs bg-white/80 text-luxury-charcoal px-2 py-1 rounded">and more</span>
             )}
           </div>
         </div>
