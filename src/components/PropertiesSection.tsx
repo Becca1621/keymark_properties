@@ -74,8 +74,8 @@ const properties: Property[] = [
     price: "",
     salePrice: "",
     type: "retail",
-    bedrooms: ,
-    bathrooms: ,
+    bedrooms: 1,
+    bathrooms: 1,
     size: "Various sq m",
     description: "Various productivity enhancing Retail Space in a prime location.",
     images: [
