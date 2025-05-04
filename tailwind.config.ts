@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -36,6 +37,17 @@ export default {
 					softgray: '#F1F0FB', // Added soft gray for subtle backgrounds
 					darkgray: '#444444', // Darker gray for ombre effect
 					mediumgray: '#666666', // Medium gray for gradients
+					neutral: {
+						100: '#F9F9F7', // Softest white
+						200: '#F5F5F0', // Cream
+						300: '#E6E6E0', // Light cream
+						400: '#C8C8C9', // Light gray
+						500: '#8E9196', // Medium gray
+						600: '#666666', // Dark gray
+						700: '#444444', // Charcoal gray
+						800: '#333333', // Dark charcoal
+						900: '#1A1A1A', // Near black
+					}
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -125,6 +137,8 @@ export default {
 				'ombre-green-dark': 'linear-gradient(135deg, #8FBC8F 0%, #333333 100%)',
 				'ombre-gray-green': 'linear-gradient(135deg, #444444 0%, #C1E1C1 100%)',
 				'ombre-green-gray': 'linear-gradient(135deg, #C1E1C1 0%, #444444 100%)',
+				'ombre-charcoal-cream': 'linear-gradient(135deg, #333333 0%, #F5F5F0 100%)',
+				'ombre-cream-charcoal': 'linear-gradient(135deg, #F5F5F0 0%, #333333 100%)',
 			}
 		}
 	},

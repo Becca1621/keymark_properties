@@ -9,54 +9,54 @@ const ContactInfo: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="animate-fade-in">
             <div className="flex items-center mb-6 mt-4">
-              <Building className="h-8 w-8 text-white mr-3" />
-              <h2 className="font-serif text-3xl font-bold text-white">Contact Us</h2>
+              <Building className="h-8 w-8 text-luxury-cream mr-3" />
+              <h2 className="font-serif text-3xl font-bold text-luxury-cream">Contact Us</h2>
             </div>
-            <p className="text-white/90 mb-6">
+            <p className="text-luxury-cream/90 mb-6">
               Interested in learning more about our luxury residences? Complete the form and one of our dedicated property specialists will be in touch to answer your questions and schedule a personalized tour.
             </p>
             
             <div className="space-y-6">
               <div className="flex items-center">
-                <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <Phone className="h-6 w-6 text-white" />
+                <div className="bg-luxury-neutral-700/30 p-3 rounded-full mr-4">
+                  <Phone className="h-6 w-6 text-luxury-cream" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white">Phone</h3>
-                  <p className="text-white/80">(212) 555-1234</p>
+                  <h3 className="font-semibold text-lg text-luxury-cream">Phone</h3>
+                  <p className="text-luxury-cream/80">(212) 555-1234</p>
                 </div>
               </div>
               
               <div className="flex items-center">
-                <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <Mail className="h-6 w-6 text-white" />
+                <div className="bg-luxury-neutral-700/30 p-3 rounded-full mr-4">
+                  <Mail className="h-6 w-6 text-luxury-cream" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white">Email</h3>
-                  <p className="text-white/80">inquiries@keymarkproperties.com</p>
+                  <h3 className="font-semibold text-lg text-luxury-cream">Email</h3>
+                  <p className="text-luxury-cream/80">inquiries@keymarkproperties.com</p>
                 </div>
               </div>
               
               <div className="flex items-center">
-                <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <MapPin className="h-6 w-6 text-white" />
+                <div className="bg-luxury-neutral-700/30 p-3 rounded-full mr-4">
+                  <MapPin className="h-6 w-6 text-luxury-cream" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-white">Address</h3>
-                  <p className="text-white/80">345 Park Avenue, New York, NY 10022</p>
+                  <h3 className="font-semibold text-lg text-luxury-cream">Address</h3>
+                  <p className="text-luxury-cream/80">345 Park Avenue, New York, NY 10022</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-elegant">
-            <h3 className="font-serif text-2xl font-semibold mb-6">
+          <div className="bg-luxury-neutral-100/90 backdrop-blur-sm p-8 rounded-lg shadow-elegant">
+            <h3 className="font-serif text-2xl font-semibold mb-6 text-luxury-neutral-800">
               Our Location
             </h3>
-            <div className="aspect-[16/9] w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+            <div className="aspect-[16/9] w-full h-64 bg-luxury-neutral-200 rounded-lg overflow-hidden">
               {/* Placeholder for map - in real application, you'd use a mapping service like Google Maps */}
-              <div className="w-full h-full flex items-center justify-center bg-gray-100/40">
-                <p className="text-gray-700 text-lg font-medium">Interactive Map Coming Soon</p>
+              <div className="w-full h-full flex items-center justify-center bg-luxury-neutral-200/40">
+                <p className="text-luxury-neutral-700 text-lg font-medium">Interactive Map Coming Soon</p>
               </div>
             </div>
           </div>
