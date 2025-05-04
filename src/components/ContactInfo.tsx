@@ -1,8 +1,12 @@
 
 import React from 'react';
-import { MapPin, Phone, Mail, Building } from 'lucide-react';
+import { MapPin, Phone, Mail, Building, Navigation } from 'lucide-react';
 
 const ContactInfo: React.FC = () => {
+  const address = "345 Park Avenue, New York, NY 10022";
+  // Google Maps URL with the address encoded for directions
+  const mapUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+
   return (
     <div id="contact-info" className="pb-16 gradient-flow-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
@@ -42,7 +46,15 @@ const ContactInfo: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-luxury-cream">Address</h3>
-                <p className="text-luxury-cream/80">345 Park Avenue, New York, NY 10022</p>
+                <a 
+                  href={mapUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-luxury-cream/80 hover:text-luxury-cream flex items-center gap-1 transition-colors"
+                >
+                  {address}
+                  <Navigation className="h-4 w-4 inline-block ml-1" />
+                </a>
               </div>
             </div>
           </div>
