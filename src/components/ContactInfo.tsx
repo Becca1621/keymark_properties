@@ -1,12 +1,11 @@
-
 import React from 'react';
 import { MapPin, Phone, Mail, Building, Navigation } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const ContactInfo: React.FC = () => {
   const address = "345 Park Avenue, New York, NY 10022";
-  // Google Maps URL with the address encoded for directions
-  const mapUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+  // Using the provided direct Google Maps URL instead of constructing one
+  const mapUrl = "https://maps.app.goo.gl/aWCqpiESn7VkvfnW6";
 
   return (
     <div id="contact-info" className="pb-16 gradient-flow-start">
