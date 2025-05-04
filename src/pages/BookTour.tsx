@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -32,6 +32,7 @@ import {
 import { toast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { submitFormData } from '@/utils/formSubmission';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -46,6 +47,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const BookTour: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,13 +59,42 @@ const BookTour: React.FC = () => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    toast({
-      title: "Tour Request Submitted!",
-      description: "We will contact you soon to confirm your appointment.",
-    });
-    console.log(data);
-    form.reset();
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Convert the data to our TourFormData format
+      const tourData = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        date: data.date ? format(data.date, 'yyyy-MM-dd') : undefined,
+        time: data.time,
+        propertyType: data.propertyInterest,
+        message: data.message,
+      };
+      
+      const result = await submitFormData(tourData, 'tour');
+      
+      toast({
+        title: result.success ? "Tour Request Submitted!" : "Submission Error",
+        description: result.message,
+        variant: result.success ? "default" : "destructive",
+      });
+      
+      if (result.success) {
+        form.reset();
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was a problem submitting your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -226,8 +257,12 @@ const BookTour: React.FC = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="w-full bg-luxury-green hover:bg-luxury-dark text-white">
-                  Schedule Tour
+                <Button 
+                  type="submit" 
+                  className="w-full bg-luxury-green hover:bg-luxury-dark text-white"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Schedule Tour"}
                 </Button>
                 
                 <div className="text-center text-sm text-luxury-gray mt-4">

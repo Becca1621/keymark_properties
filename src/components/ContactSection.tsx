@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,10 +5,12 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Building } from 'lucide-react';
+import { submitFormData, ContactFormData } from '@/utils/formSubmission';
 
 const ContactSection: React.FC = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
@@ -22,24 +23,39 @@ const ContactSection: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
     
-    // Show success toast
-    toast({
-      title: "Inquiry Submitted",
-      description: "We'll be in touch with you shortly.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-      interest: 'rent',
-    });
+    try {
+      const result = await submitFormData(formData, 'contact');
+      
+      toast({
+        title: result.success ? "Inquiry Submitted" : "Submission Error",
+        description: result.message,
+        variant: result.success ? "default" : "destructive",
+      });
+      
+      if (result.success) {
+        // Reset form on success
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          interest: 'rent',
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Submission Error",
+        description: "There was a problem submitting your inquiry. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -167,9 +183,19 @@ const ContactSection: React.FC = () => {
                 />
               </div>
               
-              <Button type="submit" className="w-full bg-luxury-gold hover:bg-luxury-dark text-white">
-                Submit Inquiry
+              <Button 
+                type="submit" 
+                className="w-full bg-luxury-gold hover:bg-luxury-dark text-white"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Submit Inquiry"}
               </Button>
+              
+              {isSubmitting && (
+                <div className="text-center text-sm text-luxury-gray">
+                  <p>Submitting your inquiry...</p>
+                </div>
+              )}
             </form>
           </div>
         </div>
