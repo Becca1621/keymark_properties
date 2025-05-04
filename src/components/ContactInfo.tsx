@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Building } from 'lucide-react';
+import Map from './Map';
 
 const ContactInfo: React.FC = () => {
+  // Coordinates for: 8.991795633773634, 38.78806300926156
+  const longitude = 8.991795633773634;
+  const latitude = 38.78806300926156;
+
   return (
     <div id="contact-info" className="pb-16 gradient-flow-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
@@ -53,11 +58,12 @@ const ContactInfo: React.FC = () => {
             <h3 className="font-serif text-2xl font-semibold mb-6 text-luxury-neutral-800">
               Our Location
             </h3>
-            <div className="aspect-[16/9] w-full h-64 bg-luxury-neutral-200 rounded-lg overflow-hidden">
-              {/* Placeholder for map - in real application, you'd use a mapping service like Google Maps */}
-              <div className="w-full h-full flex items-center justify-center bg-luxury-neutral-200/40">
-                <p className="text-luxury-neutral-700 text-lg font-medium">Interactive Map Coming Soon</p>
-              </div>
+            <div className="h-64 w-full rounded-lg overflow-hidden">
+              <Map 
+                longitude={longitude} 
+                latitude={latitude} 
+                className="h-full"
+              />
             </div>
           </div>
         </div>
