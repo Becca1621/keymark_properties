@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -45,7 +44,7 @@ const BookTourForm = () => {
   };
 
   return (
-    <div id="book-tour" className="pt-16 bg-gradient-to-b from-luxury-dark to-luxury-darkgray">
+    <div id="book-tour" className="pt-16 gradient-flow-start">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-serif font-bold mb-4 text-white text-shadow">Book a Tour</h2>
