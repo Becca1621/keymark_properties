@@ -16,7 +16,9 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&auto=format&fit=crop')",
+          backgroundImage: "url('/HeroSectionImage.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center"
         }}
       >
         {/* Stronger dark gradient overlay for better text visibility */}
