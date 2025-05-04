@@ -16,7 +16,9 @@ const Index = () => {
       <div id="amenities">
         <AmenitiesSection />
       </div>
-      <ContactSection />
+      <div id="contact">
+        <ContactSection />
+      </div>
       <Footer />
     </div>
   );

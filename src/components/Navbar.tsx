@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             Contact Us
           </button>
           <Button 
-            onClick={() => scrollToSection('contact')} 
+            onClick={() => scrollToSection('request-info')} 
             className="bg-luxury-green hover:bg-luxury-dark text-white"
           >
             Book a Tour
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
               Contact Us
             </button>
             <Button 
-              onClick={() => scrollToSection('contact')} 
+              onClick={() => scrollToSection('request-info')} 
               className="w-full bg-luxury-green hover:bg-luxury-dark text-white"
             >
               Book a Tour
