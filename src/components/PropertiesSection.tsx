@@ -33,8 +33,9 @@ const properties: Property[] = [
     size: "400 sq m",
     description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony with city views.",
     images: [
-      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
+      "url('/4bed 3.jpg')",
+      "url('/4bed 2.jpg')",
+      "url('/4bed 4.jpg')"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
