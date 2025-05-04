@@ -18,7 +18,7 @@ interface Property {
   description: string;
   images: string[];
   features: string[];
-  propertyType: 'rent' | 'sale'; // Add this property
+  propertyType: 'rent' | 'sale';
 }
 
 const properties: Property[] = [
@@ -261,48 +261,51 @@ const PropertiesSection = () => {
   }, []);
 
   return (
-    <section id="properties" ref={sectionRef} className="py-20 gradient-flow-start animate-on-scroll">
+    <section id="properties" ref={sectionRef} className="py-12 gradient-flow-start animate-on-scroll">
       <div className="container-custom">
-        <div className="mb-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4 text-white text-shadow">Live. Work. Thrive.</h2>
-          <p className="text-sm md:text-base text-white/90 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments and retail spaces, designed with elegant finishes and modern amenities.</p>
+        {/* Compact header with intro text */}
+        <div className="mb-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2 text-white text-shadow">Live. Work. Thrive.</h2>
+          <p className="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-6">
+            Discover our premium selection of 3 & 4 bedroom apartments and retail spaces, designed with elegant finishes and modern amenities.
+          </p>
         </div>
 
-        <div className="mb-8 space-y-4">
-          {/* Property Type Toggle (Rent/Sale) with improved visibility */}
-          <div className="flex justify-center mb-4">
-            <ToggleGroup 
-              type="single" 
-              value={propertyTypeFilter}
-              onValueChange={(value) => {
-                if (value) setPropertyTypeFilter(value as 'all' | 'rent' | 'sale');
-              }}
-              className="bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/20"
-            >
-              <ToggleGroupItem value="all" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
-                All
-              </ToggleGroupItem>
-              <ToggleGroupItem value="rent" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
-                Rent
-              </ToggleGroupItem>
-              <ToggleGroupItem value="sale" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
-                Sale
-              </ToggleGroupItem>
-            </ToggleGroup>
-          </div>
+        {/* Compact filtering layout - all filters in one line for desktop, stacked for mobile */}
+        <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-center md:space-x-4 space-y-3 md:space-y-0">
+          {/* Property Type Toggle (Rent/Sale) */}
+          <ToggleGroup 
+            type="single" 
+            value={propertyTypeFilter}
+            onValueChange={(value) => {
+              if (value) setPropertyTypeFilter(value as 'all' | 'rent' | 'sale');
+            }}
+            className="bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/20 self-center md:self-auto"
+          >
+            <ToggleGroupItem value="all" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-4 py-1">
+              All
+            </ToggleGroupItem>
+            <ToggleGroupItem value="rent" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-4 py-1">
+              Rent
+            </ToggleGroupItem>
+            <ToggleGroupItem value="sale" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-4 py-1">
+              Sale
+            </ToggleGroupItem>
+          </ToggleGroup>
 
-          {/* Apartment Filter with improved visibility */}
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-[500px] max-w-full grid-cols-4 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
-              <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">All</TabsTrigger>
-              <TabsTrigger value="3" onClick={() => setFilter('3')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">3 Bedroom</TabsTrigger>
-              <TabsTrigger value="4" onClick={() => setFilter('4')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">4 Bedroom</TabsTrigger>
-              <TabsTrigger value="retail" onClick={() => setFilter('retail')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">Retail</TabsTrigger>
+          {/* Apartment Type Filter */}
+          <Tabs defaultValue="all" className="w-auto">
+            <TabsList className="grid grid-cols-4 max-w-xs bg-luxury-dark/50 backdrop-blur-sm">
+              <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80 px-3 py-1">All</TabsTrigger>
+              <TabsTrigger value="3" onClick={() => setFilter('3')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80 px-3 py-1">3 Bedroom</TabsTrigger>
+              <TabsTrigger value="4" onClick={() => setFilter('4')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80 px-3 py-1">4 Bedroom</TabsTrigger>
+              <TabsTrigger value="retail" onClick={() => setFilter('retail')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80 px-3 py-1">Retail</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {/* More compact property grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredProperties.map(property => (
             <PropertyCard key={property.id} property={property} />
           ))}
