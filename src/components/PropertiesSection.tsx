@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -144,7 +145,11 @@ const PropertyCard = ({ property }: { property: Property }) => {
         <img 
           src={property.images[currentImageIndex]} 
           alt={property.name} 
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            console.error(`Failed to load image: ${property.images[currentImageIndex]}`);
+            e.currentTarget.src = '/placeholder.svg'; // Fallback to placeholder image
+          }}
         />
         {/* Add dark gradient overlay for better text contrast */}
         <div className="property-overlay"></div>
