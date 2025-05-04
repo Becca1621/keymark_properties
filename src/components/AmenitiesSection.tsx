@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   WashingMachine, 
@@ -5,15 +6,23 @@ import {
   Users, 
   Cctv, 
   Car, 
-  BatteryCharging, // Replacing EvCharging
+  BatteryCharging, 
   Power, 
   Users2, 
-  ArrowUpDown, // Replacing Elevator
+  ArrowUpDown, 
   Clock, 
-  ConciergeBell, // Fixed casing of Conciergebell
+  ConciergeBell, 
   Accessibility, 
-  Dumbbell, // Replacing Fitness
-  Droplet // Added Droplet icon for Ground Water
+  Dumbbell, 
+  Droplet,
+  // Adding new icons for interior amenities
+  UtensilsCrossed,
+  Bath,
+  LayoutDashboard,
+  Columns,
+  Sofa,
+  LampFloor,
+  ShoppingBag
 } from "lucide-react";
 
 const interiorAmenities = [
@@ -23,42 +32,42 @@ const interiorAmenities = [
     description: "Convenient in-unit laundry facilities for your comfort."
   },
   {
-    icon: "🍽️",
+    icon: <UtensilsCrossed className="w-6 h-6" />,
     title: "Stainless steel appliances",
     description: "Modern kitchens with premium stainless steel appliance packages."
   },
   {
-    icon: "🛁",
+    icon: <Bath className="w-6 h-6" />,
     title: "In-unit Hot tub/ Sauna",
     description: "Luxury spa experience in the comfort of your own home."
   },
   {
-    icon: "🧩",
+    icon: <LayoutDashboard className="w-6 h-6" />,
     title: "Granite countertops",
     description: "Elegant, durable stone countertops in kitchens and bathrooms."
   },
   {
-    icon: "🏠",
+    icon: <Columns className="w-6 h-6" />,
     title: "Open and Traditional Kitchen layouts",
     description: "Choose from modern open concept or classic traditional floor plans."
   },
   {
-    icon: "🪑",
+    icon: <LampFloor className="w-6 h-6" />,
     title: "Luxury Hardwood and Ceramic floors",
     description: "Hardwood and premium ceramic flooring throughout."
   },
   {
-    icon: "👗",
+    icon: <ShoppingBag className="w-6 h-6" />,
     title: "Walk-in closets",
     description: "Spacious walk-in closets with custom organization options."
   },
   {
-    icon: "🌆",
+    icon: <Sofa className="w-6 h-6" />,
     title: "Private balconies",
     description: "Enjoy outdoor living with private balconies and stunning views."
   },
   {
-    icon: "💡",
+    icon: <Power className="w-6 h-6" />,
     title: "Modern lighting",
     description: "Designer lighting packages throughout each residence."
   }
