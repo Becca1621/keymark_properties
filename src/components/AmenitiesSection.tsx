@@ -1,12 +1,44 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import InteriorAmenities from './amenities/InteriorAmenities';
 import BuildingAmenities from './amenities/BuildingAmenities';
+import ZapierSetupModal, { loadSavedFormConfig } from './ZapierSetupModal';
+import { Button } from '@/components/ui/button';
+import { Settings } from 'lucide-react';
 
 const AmenitiesSection: React.FC = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [showZapierSetup, setShowZapierSetup] = useState(false);
+  
+  // Simple admin check via URL parameter - for demo purposes only
+  // In a real application, use proper authentication
+  useEffect(() => {
+    // Load saved form configuration on component mount
+    loadSavedFormConfig();
+    
+    // Check for admin mode via URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('adminMode') === 'true') {
+      setIsAdmin(true);
+    }
+  }, []);
+
   return (
     <div id="amenities" className="py-20 gradient-flow-middle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {isAdmin && (
+          <div className="mb-6 flex justify-end">
+            <Button 
+              variant="outline" 
+              className="bg-black/20 text-white hover:bg-black/40 flex items-center gap-2"
+              onClick={() => setShowZapierSetup(true)}
+            >
+              <Settings size={16} />
+              Configure Form Notifications
+            </Button>
+          </div>
+        )}
+        
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-white text-shadow">
             Premium Amenities
@@ -37,6 +69,12 @@ const AmenitiesSection: React.FC = () => {
             </div>
           </div>
         </div>
+        
+        {/* Zapier Setup Modal */}
+        <ZapierSetupModal 
+          open={showZapierSetup} 
+          onOpenChange={setShowZapierSetup}
+        />
       </div>
     </div>
   );
