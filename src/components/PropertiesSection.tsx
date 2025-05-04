@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -37,7 +36,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
-    propertyType: 'rent'  // Changed from 'sale' to 'rent'
+    propertyType: 'rent'
   },
   {
     id: 2,
@@ -54,7 +53,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"],
-    propertyType: 'rent'  // Changed from 'sale' to 'rent'
+    propertyType: 'rent'
   },
   {
     id: 3,
@@ -89,6 +88,40 @@ const properties: Property[] = [
     ],
     features: ["Elevator Access", "Garage Parking", "Office", "Shops", "24/7 Building Security"],
     propertyType: 'rent'
+  },
+  {
+    id: 5,
+    name: "Deluxe Three Bedroom",
+    price: "",
+    salePrice: "",
+    type: "apartment",
+    bedrooms: 3,
+    bathrooms: 3.5,
+    size: "400 sq m",
+    description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony with city views.",
+    images: [
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
+    ],
+    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
+    propertyType: 'sale'
+  },
+  {
+    id: 6,
+    name: "Premium Four Bedroom",
+    price: "",
+    salePrice: "",
+    type: "apartment",
+    bedrooms: 4,
+    bathrooms: 4.5,
+    size: "400 sq m",
+    description: "Luxury corner unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
+    images: [
+      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
+    ],
+    features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"],
+    propertyType: 'sale'
   }
 ];
 
