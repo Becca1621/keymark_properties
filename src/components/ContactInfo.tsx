@@ -4,17 +4,17 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const ContactInfo: React.FC = () => {
   return (
-    <div id="contact-info" className="py-16 bg-white">
+    <div id="contact-info" className="py-16 bg-ombre-gray-green">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-luxury-dark mb-4">Contact Us</h2>
-          <p className="text-luxury-gray text-lg max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white text-shadow mb-4">Contact Us</h2>
+          <p className="text-white/90 text-lg max-w-2xl mx-auto">
             Visit our office or get in touch with our team for more information about our luxury properties.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-elegant hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
               <MapPin className="h-10 w-10 text-luxury-green" />
             </div>
@@ -25,7 +25,7 @@ const ContactInfo: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-elegant hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
               <Phone className="h-10 w-10 text-luxury-green" />
             </div>
@@ -36,7 +36,7 @@ const ContactInfo: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-elegant hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
               <Mail className="h-10 w-10 text-luxury-green" />
             </div>
@@ -47,7 +47,7 @@ const ContactInfo: React.FC = () => {
             </p>
           </div>
 
-          <div className="bg-luxury-cream/20 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+          <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-elegant hover:shadow-md transition-shadow text-center">
             <div className="flex justify-center mb-4">
               <Clock className="h-10 w-10 text-luxury-green" />
             </div>
@@ -59,7 +59,7 @@ const ContactInfo: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-12 p-6 bg-luxury-light rounded-lg">
+        <div className="mt-12 p-6 bg-white/80 backdrop-blur-sm rounded-lg">
           <div className="text-center">
             <h3 className="font-serif text-xl font-semibold mb-4">Our Location</h3>
             <div className="aspect-[16/9] w-full h-64 bg-gray-200 rounded-lg overflow-hidden">

@@ -45,16 +45,16 @@ const BookTourForm = () => {
   };
 
   return (
-    <div id="book-tour" className="py-16 bg-white">
+    <div id="book-tour" className="py-16 bg-ombre-dark-green">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-bold mb-4">Book a Tour</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-serif font-bold mb-4 text-white text-shadow">Book a Tour</h2>
+          <p className="text-white/90 max-w-2xl mx-auto">
             Experience the luxury of our properties firsthand. Schedule a private tour with one of our property specialists.
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-elegant">
+        <div className="max-w-3xl mx-auto bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-elegant">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
@@ -152,7 +152,7 @@ const BookTourForm = () => {
             
             <Button 
               type="submit" 
-              className="w-full bg-luxury-gold hover:bg-luxury-gold/90 text-white"
+              className="w-full bg-luxury-green hover:bg-luxury-green/90 text-white"
             >
               Request Tour
             </Button>
