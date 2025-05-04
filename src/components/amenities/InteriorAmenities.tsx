@@ -54,11 +54,7 @@ const interiorAmenities = [
     title: "Private balconies",
     description: "Enjoy outdoor living with private balconies and stunning views."
   },
-  {
-    icon: <Power className="w-6 h-6" />,
-    title: "Modern lighting",
-    description: "Designer lighting packages throughout each residence."
-  }
+
 ];
 
 interface InteriorAmenitiesProps {
