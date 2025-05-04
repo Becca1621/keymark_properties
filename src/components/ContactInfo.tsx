@@ -5,10 +5,10 @@ import { MapPin, Phone, Mail, Building } from 'lucide-react';
 const ContactInfo: React.FC = () => {
   return (
     <div id="contact-info" className="pb-16 gradient-flow-end">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="animate-fade-in">
-            <div className="flex items-center mb-6">
+            <div className="flex items-center mb-6 mt-4">
               <Building className="h-8 w-8 text-white mr-3" />
               <h2 className="font-serif text-3xl font-bold text-white">Get in Touch</h2>
             </div>
