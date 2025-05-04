@@ -178,7 +178,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
           </div>
         </div>
 
-        <div className="w-full text-center py-2 border border-luxury-green text-luxury-green rounded flex items-center justify-center gap-2">
+        <div className="w-full text-center py-2 border border-black text-black rounded flex items-center justify-center gap-2">
           <Phone size={16} /> 
           <span>Call for details</span>
         </div>
