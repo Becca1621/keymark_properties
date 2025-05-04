@@ -4,7 +4,8 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PropertiesSection from '@/components/PropertiesSection';
 import AmenitiesSection from '@/components/AmenitiesSection';
-import ContactSection from '@/components/ContactSection';
+import BookTourForm from '@/components/BookTourForm';
+import ContactInfo from '@/components/ContactInfo';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -17,7 +18,8 @@ const Index = () => {
         <AmenitiesSection />
       </div>
       <div id="contact">
-        <ContactSection />
+        <BookTourForm />
+        <ContactInfo />
       </div>
       <Footer />
     </div>
