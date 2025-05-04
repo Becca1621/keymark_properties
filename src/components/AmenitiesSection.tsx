@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import InteriorAmenities from './amenities/InteriorAmenities';
 import BuildingAmenities from './amenities/BuildingAmenities';
-import ZapierSetupModal, { loadSavedFormConfig } from './ZapierSetupModal';
-import SubmissionsListModal from './SubmissionsListModal';
 import { Button } from '@/components/ui/button';
 import { Settings, FileText } from 'lucide-react';
+import ZapierSetupModal, { loadSavedFormConfig } from './ZapierSetupModal';
+import SubmissionsListModal from './SubmissionsListModal';
 import { 
   setFormDestinationConfig, 
   getFormDestinationConfig, 
@@ -17,7 +18,6 @@ const AmenitiesSection: React.FC = () => {
   const [showSubmissionsList, setShowSubmissionsList] = useState(false);
   
   // Simple admin check via URL parameter - for demo purposes only
-  // In a real application, use proper authentication
   useEffect(() => {
     // Load saved form configuration on component mount
     loadSavedFormConfig();
@@ -123,14 +123,13 @@ const AmenitiesSection: React.FC = () => {
           </div>
         </div>
         
-        {/* Zapier Setup Modal */}
+        {/* Modals */}
         <ZapierSetupModal 
           open={showZapierSetup} 
           onOpenChange={setShowZapierSetup}
           onSave={handleZapierModalSave}
         />
         
-        {/* Submissions List Modal */}
         <SubmissionsListModal 
           open={showSubmissionsList} 
           onOpenChange={setShowSubmissionsList}

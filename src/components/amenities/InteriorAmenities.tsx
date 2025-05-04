@@ -9,7 +9,6 @@ import {
   LampFloor, 
   ShoppingBag, 
   Sofa, 
-  Power,
   Sun 
 } from "lucide-react";
 import AmenityCard from './AmenityCard';

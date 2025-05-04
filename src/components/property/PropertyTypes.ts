@@ -18,8 +18,7 @@ export const properties: Property[] = [
   {
     id: 1,
     name: "Deluxe Three Bedroom",
-    price: "",
-    salePrice: "",
+    price: "Contact for price",
     type: "apartment",
     bedrooms: 3,
     bathrooms: 3.5,
@@ -35,8 +34,7 @@ export const properties: Property[] = [
   {
     id: 2,
     name: "Premium Four Bedroom",
-    price: "",
-    salePrice: "",
+    price: "Contact for price",
     type: "apartment",
     bedrooms: 4,
     bathrooms: 4.5,
@@ -53,8 +51,7 @@ export const properties: Property[] = [
   {
     id: 3,
     name: "Penthouse Four Bedroom",
-    price: "",
-    salePrice: "",
+    price: "Contact for price",
     type: "apartment",
     bedrooms: 4,
     bathrooms: 5,
@@ -71,8 +68,7 @@ export const properties: Property[] = [
   {
     id: 4,
     name: "Retail Space",
-    price: "",
-    salePrice: "",
+    price: "Contact for price",
     type: "retail",
     bedrooms: 1,
     bathrooms: 1,
@@ -88,8 +84,8 @@ export const properties: Property[] = [
   {
     id: 5,
     name: "Deluxe Three Bedroom",
-    price: "",
-    salePrice: "",
+    price: "Contact for price",
+    salePrice: "Contact for price",
     type: "apartment",
     bedrooms: 3,
     bathrooms: 3.5,
@@ -105,8 +101,8 @@ export const properties: Property[] = [
   {
     id: 6,
     name: "Premium Four Bedroom",
-    price: "",
-    salePrice: "",
+    price: "Contact for price",
+    salePrice: "Contact for price",
     type: "apartment",
     bedrooms: 4,
     bathrooms: 4.5,

@@ -1,8 +1,44 @@
 
-import React from 'react';
-import { Facebook, Instagram, MessageSquare } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Facebook, Instagram, MessageSquare, FileText, Settings } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import ZapierSetupModal from './ZapierSetupModal';
+import SubmissionsListModal from './SubmissionsListModal';
+import { getFormDestinationConfig, setFormDestinationConfig, getSubmissionsList } from '@/utils/formSubmission';
 
 const Footer: React.FC = () => {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [showZapierSetup, setShowZapierSetup] = useState(false);
+  const [showSubmissionsList, setShowSubmissionsList] = useState(false);
+
+  useEffect(() => {
+    // Check for admin mode via URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('adminMode') === 'true') {
+      setIsAdmin(true);
+    }
+  }, []);
+
+  // Custom handler for the ZapierSetupModal
+  const handleZapierModalSave = (webhookUrl: string, useGoogleSheets: boolean) => {
+    // Get existing email from config
+    const config = getFormDestinationConfig();
+    const notificationEmail = prompt('Enter email address for form notifications:', config.notificationEmail || '');
+    
+    // Save all settings
+    setFormDestinationConfig({
+      zapierWebhookUrl: webhookUrl,
+      useGoogleSheets,
+      notificationEmail: notificationEmail || config.notificationEmail,
+      createSubmissionList: true
+    });
+    
+    // Save email separately for persistence
+    if (notificationEmail) {
+      localStorage.setItem('notificationEmail', notificationEmail);
+    }
+  };
+
   return (
     <footer className="gradient-flow-footer text-luxury-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -24,6 +60,40 @@ const Footer: React.FC = () => {
             </p>
           </div>
         </div>
+        
+        {isAdmin && (
+          <div className="flex justify-center gap-2 mt-2 mb-4">
+            <Button 
+              variant="outline" 
+              className="bg-black/20 text-white hover:bg-black/40 flex items-center gap-2"
+              onClick={() => setShowSubmissionsList(true)}
+            >
+              <FileText size={16} />
+              View Submissions
+            </Button>
+            
+            <Button 
+              variant="outline" 
+              className="bg-black/20 text-white hover:bg-black/40 flex items-center gap-2"
+              onClick={() => setShowZapierSetup(true)}
+            >
+              <Settings size={16} />
+              Configure Form Notifications
+            </Button>
+          </div>
+        )}
+        
+        {/* Modals */}
+        <ZapierSetupModal 
+          open={showZapierSetup} 
+          onOpenChange={setShowZapierSetup}
+          onSave={handleZapierModalSave}
+        />
+        
+        <SubmissionsListModal 
+          open={showSubmissionsList} 
+          onOpenChange={setShowSubmissionsList}
+        />
         
         <div className="border-t border-luxury-neutral-700/50 mt-3 pt-3 text-center">
           <p className="text-luxury-neutral-400 text-xs tracking-wider font-sans">

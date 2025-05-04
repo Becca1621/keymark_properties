@@ -15,7 +15,7 @@ const PropertyFilters = ({
 }: PropertyFiltersProps) => {
   return (
     <div className="mb-8 space-y-4">
-      {/* Property Type Toggle (Rent/Sale) with improved visibility */}
+      {/* Property Type Toggle (Rent/Sale) */}
       <div className="flex justify-center mb-4">
         <ToggleGroup 
           type="single" 
@@ -37,7 +37,7 @@ const PropertyFilters = ({
         </ToggleGroup>
       </div>
 
-      {/* Apartment Filter with improved visibility */}
+      {/* Apartment Filter */}
       <Tabs defaultValue="all" className="w-full">
         <TabsList className="grid w-[500px] max-w-full grid-cols-4 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
           <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">All</TabsTrigger>
