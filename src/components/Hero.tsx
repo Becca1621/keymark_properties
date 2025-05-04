@@ -16,11 +16,15 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&auto=format&fit=crop')",
+          backgroundImage: "url('/lovable-uploads/aeae62ef-90c4-483e-8674-21742948b68f.png')",
+          backgroundPosition: "center 40%",
         }}
       >
-        {/* Stronger dark gradient overlay for better text visibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        {/* Enhanced dark gradient overlay with a more sophisticated fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/75"></div>
+        
+        {/* Add a subtle luxury pattern overlay */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:20px_20px]"></div>
       </div>
       
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 md:px-8 z-10">
@@ -51,7 +55,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-md p-4 md:p-6">
+      <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-md p-4 md:p-6">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between gap-8 text-white">
           <div className="text-center md:text-left animate-slide-up">
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Location</p>
