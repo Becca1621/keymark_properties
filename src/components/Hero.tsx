@@ -35,10 +35,10 @@ const Hero: React.FC = () => {
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 md:px-8 z-10">
         <div className="animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Luxury Living at Its Finest
+            Live.Work.Thrive: Discover KEYMARK Properties
           </h1>
           <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8 drop-shadow-md">
-            Exclusive 3 & 4 bedroom residences and premium retail spaces available in the heart of the city
+            An exceptional office, retail, and apartment complex ideally located in the vibrant heart of Bole. Located in a dynamic neighborhood, our prime location offers everything you need—vibrant cafes, a wide selection of restaurants, shopping hubs, recreational centers, lush parks, and easy access to the airport, all just moments away.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Property Types</p>
-            <p className="font-serif text-lg text-white drop-shadow-sm">Residences & Retail</p>
+            <p className="font-serif text-lg text-white drop-shadow-sm">Office, Retail & Residential</p>
           </div>
           <div className="text-center md:text-right animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Status</p>
