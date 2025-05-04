@@ -82,7 +82,7 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
     ],
-    features: ["Elevator Access", "Parking", "Office", "Shops", "more"]
+    features: ["Elevator Access", "Garage Parking", "Office", "Shops", "24/7 Building Security"]
   }
 ];
 
