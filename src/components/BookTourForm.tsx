@@ -14,6 +14,7 @@ const BookTourForm = () => {
     phone: '',
     date: '',
     interest: 'tour', // Default value
+    propertyType: '3-bedroom', // Default value for property type
     message: ''
   });
 
@@ -38,6 +39,7 @@ const BookTourForm = () => {
       phone: '',
       date: '',
       interest: 'tour',
+      propertyType: '3-bedroom',
       message: ''
     });
   };
@@ -104,20 +106,36 @@ const BookTourForm = () => {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="interest">I'm interested in</Label>
-              <select
-                id="interest"
-                name="interest"
-                value={formData.interest}
-                onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold"
-              >
-                <option value="tour">Scheduling a tour</option>
-                <option value="rent">Renting a property</option>
-                <option value="buy">Buying a property</option>
-                <option value="info">General information</option>
-              </select>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="interest">I'm interested in</Label>
+                <select
+                  id="interest"
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold"
+                >
+                  <option value="tour">Scheduling a tour</option>
+                  <option value="rent">Renting a property</option>
+                  <option value="buy">Buying a property</option>
+                  <option value="info">General information</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="propertyType">Property Interest</Label>
+                <select
+                  id="propertyType"
+                  name="propertyType"
+                  value={formData.propertyType}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold"
+                >
+                  <option value="3-bedroom">3 Bedroom</option>
+                  <option value="4-bedroom">4 Bedroom</option>
+                  <option value="penthouse">Penthouse</option>
+                </select>
+              </div>
             </div>
             
             <div className="space-y-2">
