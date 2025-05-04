@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -185,4 +184,17 @@
 
 .card-gradient {
   background: linear-gradient(to bottom right, #F5F5F0 0%, #C8C8C9 100%);
+}
+
+/* Custom toggle styles for property filters */
+.property-toggle {
+  @apply text-white font-medium;
+}
+
+.property-toggle[data-state="on"] {
+  @apply bg-luxury-green text-white;
+}
+
+.property-toggle-group {
+  @apply bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/20;
 }
