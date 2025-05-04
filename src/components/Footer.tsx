@@ -16,9 +16,6 @@ const Footer: React.FC = () => {
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Instagram">
                 <Instagram className="h-7 w-7" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="WhatsApp">
-                <MessageSquare className="h-7 w-7" />
-              </a>
             </div>
           </div>
           
