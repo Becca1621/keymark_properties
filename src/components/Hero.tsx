@@ -1,23 +1,7 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 
 const Hero: React.FC = () => {
-  // Function to handle smooth scrolling with offset for navbar
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarHeight;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <div id="hero" className="relative h-[90vh] w-full">
       <div 
@@ -43,23 +27,6 @@ const Hero: React.FC = () => {
           <p className="text-m md:text-m text-white max-w-3xl mx-auto mb-8 drop-shadow-md italic">
             Work, live, and thrive in a dynamic community designed for convenience and connection.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-luxury-green hover:bg-white hover:text-luxury-dark text-white font-medium px-8"
-              onClick={() => scrollToSection('properties')}
-            >
-              View Properties
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-dark px-8"
-              onClick={() => scrollToSection('contact')}
-            >
-              Book a Tour
-            </Button>
-          </div>
         </div>
       </div>
       
