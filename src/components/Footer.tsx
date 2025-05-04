@@ -8,7 +8,6 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6">
-            <p className="text-white text-sm uppercase tracking-wider mb-3 font-medium">Follow us</p>
             <div className="flex justify-center space-x-6">
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300" aria-label="Facebook">
                 <Facebook className="h-7 w-7" />
