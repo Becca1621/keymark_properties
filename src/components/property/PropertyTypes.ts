@@ -61,8 +61,9 @@ export const properties: Property[] = [
     size: "800 sq m",
     description: "Expansive four bedroom apartment with premium finishes, chef's kitchen, separate dining area, and panoramic city views.",
     images: [
-      "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
+      "/Penthouse 5.jpg",
+      "/Penthouse 3.jpg",
+      "/Penthouse 1.jpg"
     ],
     features: ["In-unit laundry", "In-unit Spa", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
@@ -78,8 +79,8 @@ export const properties: Property[] = [
     size: "Various sq m",
     description: "Premium retail spaces in a high-traffic location, featuring modern designs with flexible layouts and excellent visibility.",
     images: [
-      "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
+      "/Retail 1.jpg",
+      "/Retail 2.jpg"
     ],
     features: ["Elevator Access", "Parking", "Office", "Shops", "24/7 Building Security"],
     propertyType: 'rent'
