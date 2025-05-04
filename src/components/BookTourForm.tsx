@@ -108,7 +108,7 @@ const BookTourForm = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+### (###)###-###"
+                  placeholder=" "
                 />
               </div>
               <div className="space-y-2">
