@@ -45,10 +45,10 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="mb-4">
             <div className="flex justify-center space-x-6">
-              <a href="#" className="text-luxury-neutral-300 hover:text-luxury-cream transition-colors duration-300" aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Keymark-Properties/61575888689741/?mibextid=wwXIfr&rdid=kyTYlN4FdYQ5A650&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EqENagp5Q%2F%3Fmibextid%3DwwXIfr" className="text-luxury-neutral-300 hover:text-luxury-cream transition-colors duration-300" aria-label="Facebook">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-luxury-neutral-300 hover:text-luxury-cream transition-colors duration-300" aria-label="Instagram">
+              <a href="https://www.instagram.com/keymark_properties?igsh=bGNwYXRvcmFqM3Bj&utm_source=qr" className="text-luxury-neutral-300 hover:text-luxury-cream transition-colors duration-300" aria-label="Instagram">
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
