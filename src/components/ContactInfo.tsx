@@ -16,7 +16,7 @@ const ContactInfo: React.FC = () => {
             <h2 className="font-serif text-3xl font-bold text-luxury-cream">Contact Us</h2>
           </div>
           <p className="text-luxury-cream/90 mb-6">
-            Interested in learning more about our luxury residences? Complete the form and one of our dedicated property specialists will be in touch to answer your questions and schedule a personalized tour.
+            Get in touch with our team. Our property specialists are here to answer your questions and arrange a personalized tour that suits your preferences.
           </p>
           
           <div className="space-y-6">
