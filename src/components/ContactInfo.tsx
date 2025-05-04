@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Building, Navigation } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const ContactInfo: React.FC = () => {
-  const address = "345 Park Avenue, New York, NY 10022";
+  const address = "XQRQ+J3J, Bole, Addis Ababa, Ethiopia";
   // Using the provided direct Google Maps URL instead of constructing one
   const mapUrl = "https://maps.app.goo.gl/ZVrQyzisc843eJUV8";
 
