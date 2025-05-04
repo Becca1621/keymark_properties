@@ -138,36 +138,33 @@
 }
 
 /* Adding ombre gradient backgrounds */
-.bg-ombre-dark-green {
-  background: linear-gradient(135deg, #333333 0%, #8FBC8F 100%);
+.bg-ombre-dark-gray {
+  background: linear-gradient(135deg, #222222 0%, #555555 100%);
 }
 
-.bg-ombre-green-dark {
-  background: linear-gradient(135deg, #8FBC8F 0%, #333333 100%);
+.bg-ombre-gray-light {
+  background: linear-gradient(135deg, #444444 0%, #F1F1F1 100%);
 }
 
-.bg-ombre-gray-green {
-  background: linear-gradient(135deg, #444444 0%, #C1E1C1 100%);
+.bg-ombre-light-gray {
+  background: linear-gradient(135deg, #F1F1F1 0%, #444444 100%);
 }
 
-.bg-ombre-green-gray {
-  background: linear-gradient(135deg, #C1E1C1 0%, #444444 100%);
+.bg-ombre-gray-dark {
+  background: linear-gradient(135deg, #555555 0%, #222222 100%);
 }
 
-.bg-ombre-green-light {
-  background: linear-gradient(135deg, #8FBC8F 20%, #F1F0FB 100%);
-}
-
-/* Continuous gradient for book tour and contact sections */
-.continuous-gradient {
-  background: linear-gradient(to bottom, #333333 0%, #444444 50%, #8FBC8F 100%);
+/* Gray ombre background for landing page */
+.gray-gradient {
+  background: linear-gradient(to bottom, #333333 0%, #555555 50%, #F1F1F1 100%);
+  color: white;
 }
 
 .section-gradient {
-  background: linear-gradient(to bottom, #444444 0%, #8FBC8F 100%);
+  background: linear-gradient(to bottom, #444444 0%, #666666 100%);
   color: white;
 }
 
 .card-gradient {
-  background: linear-gradient(to bottom right, #F1F0FB 0%, #C1E1C1 100%);
+  background: linear-gradient(to bottom right, #F1F1F1 0%, #888888 100%);
 }
