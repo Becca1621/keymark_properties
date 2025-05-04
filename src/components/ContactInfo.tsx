@@ -10,7 +10,7 @@ const ContactInfo: React.FC = () => {
           <div className="animate-fade-in">
             <div className="flex items-center mb-6 mt-4">
               <Building className="h-8 w-8 text-white mr-3" />
-              <h2 className="font-serif text-3xl font-bold text-white">Get in Touch</h2>
+              <h2 className="font-serif text-3xl font-bold text-white">Contact Us</h2>
             </div>
             <p className="text-white/90 mb-6">
               Interested in learning more about our luxury residences? Complete the form and one of our dedicated property specialists will be in touch to answer your questions and schedule a personalized tour.
