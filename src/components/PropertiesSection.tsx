@@ -264,7 +264,7 @@ const PropertiesSection = () => {
     <section id="properties" ref={sectionRef} className="py-20 gradient-flow-start animate-on-scroll">
       <div className="container-custom">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white text-shadow">Live. Work. Thrive.</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white text-shadow">Explore Available Spaces</h2>
           <p className="text-white/90 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments and retail spaces, designed with elegant finishes and modern amenities.</p>
         </div>
 
