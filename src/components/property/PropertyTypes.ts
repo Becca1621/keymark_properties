@@ -26,8 +26,8 @@ export const properties: Property[] = [
     size: "400 sq m",
     description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony with city views.",
     images: [
-      "/3bed 1.jpg",
-      "/3bed 2.jpg"
+      "/3bed 2.jpg",
+      "/3bed 1.jpg"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
     propertyType: 'rent'
@@ -112,8 +112,8 @@ export const properties: Property[] = [
     size: "400 sq m",
     description: "Luxury unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
     images: [
-      "/4bed 2.jpg",
       "/4bed 3.jpg",
+      "/4bed 2.jpg",
       "/4bed 1.jpg"
     ],
     features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
