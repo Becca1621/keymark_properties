@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ArrowLeft, ArrowRight, Bed, Phone, Store } from "lucide-react";
 
 interface Property {
@@ -17,6 +18,7 @@ interface Property {
   description: string;
   images: string[];
   features: string[];
+  propertyType: 'rent' | 'sale'; // Add this property
 }
 
 const properties: Property[] = [
@@ -34,7 +36,8 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"]
+    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
+    propertyType: 'sale'
   },
   {
     id: 2,
@@ -50,7 +53,8 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"]
+    features: ["In-unit laundry", "Stainless steel appliances", "Traditional kitchens", "Walk-in closets", "Private balconies"],
+    propertyType: 'sale'
   },
   {
     id: 3,
@@ -66,7 +70,8 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"]
+    features: ["In-unit laundry", "Stainless steel appliances", "Modern kitchens", "Walk-in closets", "Private balconies"],
+    propertyType: 'rent'
   },
   {
     id: 4,
@@ -82,13 +87,13 @@ const properties: Property[] = [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
     ],
-    features: ["Elevator Access", "Garage Parking", "Office", "Shops", "24/7 Building Security"]
+    features: ["Elevator Access", "Garage Parking", "Office", "Shops", "24/7 Building Security"],
+    propertyType: 'rent'
   }
 ];
 
 const PropertyCard = ({ property }: { property: Property }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [viewType, setViewType] = useState<'rent' | 'sale'>('rent');
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % property.images.length);
@@ -181,13 +186,24 @@ const PropertyCard = ({ property }: { property: Property }) => {
 
 const PropertiesSection = () => {
   const [filter, setFilter] = useState('all');
+  const [propertyTypeFilter, setPropertyTypeFilter] = useState<'all' | 'rent' | 'sale'>('all');
   const sectionRef = useRef<HTMLElement>(null);
   
-  const filteredProperties = filter === 'all' 
-    ? properties 
-    : filter === 'retail'
-    ? properties.filter(p => p.type === 'retail')
-    : properties.filter(p => p.bedrooms === parseInt(filter) && p.type === 'apartment');
+  const filteredProperties = properties.filter(p => {
+    // Filter by apartment type (3-bedroom, 4-bedroom, retail)
+    const typeMatch = filter === 'all' 
+      ? true
+      : filter === 'retail'
+        ? p.type === 'retail'
+        : p.bedrooms === parseInt(filter) && p.type === 'apartment';
+    
+    // Filter by property type (rent/sale)
+    const propertyTypeMatch = propertyTypeFilter === 'all' 
+      ? true
+      : p.propertyType === propertyTypeFilter;
+    
+    return typeMatch && propertyTypeMatch;
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -218,7 +234,30 @@ const PropertiesSection = () => {
           <p className="text-white/90 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments and retail spaces, designed with elegant finishes and modern amenities.</p>
         </div>
 
-        <div className="mb-8">
+        <div className="mb-8 space-y-4">
+          {/* Property Type Toggle (Rent/Sale) */}
+          <div className="flex justify-center mb-4">
+            <ToggleGroup 
+              type="single" 
+              value={propertyTypeFilter}
+              onValueChange={(value) => {
+                if (value) setPropertyTypeFilter(value as 'all' | 'rent' | 'sale');
+              }}
+              className="bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/20"
+            >
+              <ToggleGroupItem value="all" className="data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
+                All
+              </ToggleGroupItem>
+              <ToggleGroupItem value="rent" className="data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
+                Rent
+              </ToggleGroupItem>
+              <ToggleGroupItem value="sale" className="data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
+                Sale
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </div>
+
+          {/* Apartment Filter (All/3-Bedroom/4-Bedroom/Retail) */}
           <Tabs defaultValue="all" className="w-full">
             <TabsList className="grid w-[500px] max-w-full grid-cols-4 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
               <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">All</TabsTrigger>
