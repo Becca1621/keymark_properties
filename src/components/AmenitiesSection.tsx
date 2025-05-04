@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import InteriorAmenities from './amenities/InteriorAmenities';
 import BuildingAmenities from './amenities/BuildingAmenities';
 import ZapierSetupModal, { loadSavedFormConfig } from './ZapierSetupModal';
+import SubmissionsListModal from './SubmissionsListModal';
 import { Button } from '@/components/ui/button';
-import { Settings } from 'lucide-react';
+import { Settings, FileText } from 'lucide-react';
 import { 
   setFormDestinationConfig, 
   getFormDestinationConfig, 
@@ -14,6 +14,7 @@ import {
 const AmenitiesSection: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [showZapierSetup, setShowZapierSetup] = useState(false);
+  const [showSubmissionsList, setShowSubmissionsList] = useState(false);
   
   // Simple admin check via URL parameter - for demo purposes only
   // In a real application, use proper authentication
@@ -70,7 +71,16 @@ const AmenitiesSection: React.FC = () => {
     <div id="amenities" className="py-20 gradient-flow-middle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {isAdmin && (
-          <div className="mb-6 flex justify-end">
+          <div className="mb-6 flex justify-end gap-2">
+            <Button 
+              variant="outline" 
+              className="bg-black/20 text-white hover:bg-black/40 flex items-center gap-2"
+              onClick={() => setShowSubmissionsList(true)}
+            >
+              <FileText size={16} />
+              View Submissions
+            </Button>
+            
             <Button 
               variant="outline" 
               className="bg-black/20 text-white hover:bg-black/40 flex items-center gap-2"
@@ -118,6 +128,12 @@ const AmenitiesSection: React.FC = () => {
           open={showZapierSetup} 
           onOpenChange={setShowZapierSetup}
           onSave={handleZapierModalSave}
+        />
+        
+        {/* Submissions List Modal */}
+        <SubmissionsListModal 
+          open={showSubmissionsList} 
+          onOpenChange={setShowSubmissionsList}
         />
       </div>
     </div>

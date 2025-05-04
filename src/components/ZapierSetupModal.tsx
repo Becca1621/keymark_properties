@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
@@ -10,9 +9,10 @@ import { getFormDestinationConfig, setFormDestinationConfig } from "@/utils/form
 type ZapierSetupModalProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onSave?: (webhookUrl: string, useGoogleSheets: boolean) => void;
 };
 
-const ZapierSetupModal: React.FC<ZapierSetupModalProps> = ({ open, onOpenChange }) => {
+const ZapierSetupModal: React.FC<ZapierSetupModalProps> = ({ open, onOpenChange, onSave }) => {
   const { toast } = useToast();
   const [webhookUrl, setWebhookUrl] = useState("");
   const [useGoogleSheets, setUseGoogleSheets] = useState(true);
@@ -57,6 +57,11 @@ const ZapierSetupModal: React.FC<ZapierSetupModalProps> = ({ open, onOpenChange 
       title: "Configuration Saved",
       description: "Your form notification settings have been updated.",
     });
+    
+    // Call onSave callback if provided
+    if (onSave) {
+      onSave(webhookUrl, useGoogleSheets);
+    }
     
     onOpenChange(false);
   };
