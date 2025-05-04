@@ -1,11 +1,10 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
  
 @layer base {
   :root {
-    --background: 220 20% 97%; /* Changed from pure white to a light gray */
+    --background: 220 20% 97%; /* Light gray background */
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -138,3 +137,32 @@
   @apply bg-white/90 backdrop-filter backdrop-blur-md;
 }
 
+/* Adding ombre gradient backgrounds */
+.bg-ombre-dark-green {
+  background: linear-gradient(135deg, #333333 0%, #8FBC8F 100%);
+}
+
+.bg-ombre-green-dark {
+  background: linear-gradient(135deg, #8FBC8F 0%, #333333 100%);
+}
+
+.bg-ombre-gray-green {
+  background: linear-gradient(135deg, #444444 0%, #C1E1C1 100%);
+}
+
+.bg-ombre-green-gray {
+  background: linear-gradient(135deg, #C1E1C1 0%, #444444 100%);
+}
+
+.bg-ombre-green-light {
+  background: linear-gradient(135deg, #8FBC8F 20%, #F1F0FB 100%);
+}
+
+.section-gradient {
+  background: linear-gradient(to bottom, #444444 0%, #8FBC8F 100%);
+  color: white;
+}
+
+.card-gradient {
+  background: linear-gradient(to bottom right, #F1F0FB 0%, #C1E1C1 100%);
+}

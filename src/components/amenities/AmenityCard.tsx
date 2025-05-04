@@ -16,7 +16,7 @@ const AmenityCard: React.FC<AmenityCardProps> = ({
 }) => {
   return (
     <div 
-      className="bg-luxury-light p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
+      className="card-gradient p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="text-luxury-green mb-4">
@@ -29,7 +29,7 @@ const AmenityCard: React.FC<AmenityCardProps> = ({
       <h3 className="font-serif text-xl font-semibold mb-3 text-luxury-dark">
         {title}
       </h3>
-      <p className="text-luxury-gray">{description}</p>
+      <p className="text-luxury-charcoal">{description}</p>
     </div>
   );
 };

@@ -34,6 +34,8 @@ export default {
 					lime: '#C1E1C1',   // Added light lime green color
 					gray: '#8E9196',   // Gray accent color
 					softgray: '#F1F0FB', // Added soft gray for subtle backgrounds
+					darkgray: '#444444', // Darker gray for ombre effect
+					mediumgray: '#666666', // Medium gray for gradients
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -117,6 +119,12 @@ export default {
 			},
 			boxShadow: {
 				'elegant': '0 4px 20px -2px rgba(0, 0, 0, 0.1)',
+			},
+			backgroundImage: {
+				'ombre-dark-green': 'linear-gradient(135deg, #333333 0%, #8FBC8F 100%)',
+				'ombre-green-dark': 'linear-gradient(135deg, #8FBC8F 0%, #333333 100%)',
+				'ombre-gray-green': 'linear-gradient(135deg, #444444 0%, #C1E1C1 100%)',
+				'ombre-green-gray': 'linear-gradient(135deg, #C1E1C1 0%, #444444 100%)',
 			}
 		}
 	},

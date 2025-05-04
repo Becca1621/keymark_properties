@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -146,7 +145,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
           </>
         )}
       </div>
-      <CardContent className="p-6 card-content">
+      <CardContent className="p-6 card-content card-gradient">
         <div className="mb-4">
           <h3 className="text-xl font-semibold text-luxury-dark">{property.name}</h3>
         </div>
@@ -217,19 +216,19 @@ const PropertiesSection = () => {
   }, []);
 
   return (
-    <section id="properties" ref={sectionRef} className="py-20 bg-luxury-softgray animate-on-scroll">
+    <section id="properties" ref={sectionRef} className="py-20 bg-ombre-dark-green animate-on-scroll">
       <div className="container-custom">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-luxury-dark">Available Properties</h2>
-          <p className="text-luxury-charcoal max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments, each designed with elegant finishes and modern amenities.</p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white text-shadow">Available Properties</h2>
+          <p className="text-white/90 max-w-2xl mx-auto">Discover our premium selection of 3 & 4 bedroom apartments, each designed with elegant finishes and modern amenities.</p>
         </div>
 
         <div className="mb-8">
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-[400px] max-w-full grid-cols-3 mx-auto">
-              <TabsTrigger value="all" onClick={() => setFilter('all')}>All</TabsTrigger>
-              <TabsTrigger value="3" onClick={() => setFilter('3')}>3 Bedroom</TabsTrigger>
-              <TabsTrigger value="4" onClick={() => setFilter('4')}>4 Bedroom</TabsTrigger>
+            <TabsList className="grid w-[400px] max-w-full grid-cols-3 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
+              <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">All</TabsTrigger>
+              <TabsTrigger value="3" onClick={() => setFilter('3')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">3 Bedroom</TabsTrigger>
+              <TabsTrigger value="4" onClick={() => setFilter('4')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white">4 Bedroom</TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
