@@ -23,6 +23,7 @@ const Hero: React.FC = () => {
           </h1>
           <p className="text-m md:text-m text-white max-w-3xl mx-auto mb-2 drop-shadow-md">
             Discover KEYMARK Properties, a premium office, retail, and apartment complex in the heart of Bole. Experience exceptional convenience with effortless access to chic cafés, gourmet restaurants, serene parks, lively entertainment, and the nearby airport.
+          </p>
           <p className="text-m md:text-m text-white max-w-3xl mx-auto mb-8 drop-shadow-md italic">
             Work, live, and thrive in a dynamic community designed for convenience and connection.
           </p>
