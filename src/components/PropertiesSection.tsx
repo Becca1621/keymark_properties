@@ -98,23 +98,6 @@ const PropertyCard = ({ property }: { property: Property }) => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + property.images.length) % property.images.length);
   };
 
-  // Define standard features to display
-  const standardFeatures = [
-    "In-unit Washer/Dryer",
-    "Walk-in Closets",
-    "Private Balcony"
-  ];
-
-  // Check which standard features are included in the property features
-  const availableStandardFeatures = standardFeatures.filter(
-    feature => property.features.some(
-      propFeature => propFeature.toLowerCase().includes(feature.toLowerCase())
-    )
-  );
-
-  // Add "and more" if there are more features than our standard ones
-  const hasMoreFeatures = property.features.length > availableStandardFeatures.length;
-
   return (
     <Card className="overflow-hidden h-full animate-slide-in shadow-lg">
       <div className="relative h-64">
@@ -181,12 +164,9 @@ const PropertyCard = ({ property }: { property: Property }) => {
         <div className="mb-4">
           <h4 className="text-sm font-medium mb-2 text-luxury-charcoal">Features:</h4>
           <div className="flex flex-wrap gap-2">
-            {property.features.slice(0, 3).map((feature, index) => (
+            {property.features.map((feature, index) => (
               <span key={index} className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">{feature}</span>
             ))}
-            {hasMoreFeatures && (
-              <span className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">and more</span>
-            )}
           </div>
         </div>
 
