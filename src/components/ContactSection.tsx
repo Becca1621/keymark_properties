@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Building, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const { toast } = useToast();
@@ -46,14 +46,13 @@ const ContactSection: React.FC = () => {
     <div id="contact" className="py-20 bg-luxury-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="animate-fade-in">
-            <div className="flex items-center mb-6">
-              <Building className="h-8 w-8 text-luxury-gold mr-3" />
-              <h2 className="font-serif text-3xl font-bold">Get in Touch</h2>
+          <div className="space-y-8 animate-fade-in">
+            <div>
+              <h2 className="font-serif text-3xl font-bold mb-4">Get in Touch</h2>
+              <p className="text-luxury-gray mb-6">
+                Interested in learning more about our luxury residences? Complete the form and one of our dedicated property specialists will be in touch to answer your questions and schedule a personalized tour.
+              </p>
             </div>
-            <p className="text-luxury-gray mb-6">
-              Interested in learning more about our luxury residences? Complete the form and one of our dedicated property specialists will be in touch to answer your questions and schedule a personalized tour.
-            </p>
             
             <div className="space-y-6">
               <div className="flex items-center">
@@ -88,7 +87,7 @@ const ContactSection: React.FC = () => {
             </div>
           </div>
           
-          <div id="request-info" className="bg-white p-8 rounded-xl shadow-elegant animate-fade-in">
+          <div className="bg-white p-8 rounded-xl shadow-elegant animate-fade-in">
             <h3 className="font-serif text-2xl font-semibold mb-6">
               Request Information
             </h3>
