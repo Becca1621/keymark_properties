@@ -23,12 +23,12 @@ const properties: Property[] = [
   {
     id: 1,
     name: "Deluxe Three Bedroom",
-    price: "$3,200/month",
-    salePrice: "$680,000",
+    price: "",
+    salePrice: "",
     type: "apartment",
     bedrooms: 3,
-    bathrooms: 2,
-    size: "1,450 sq ft",
+    bathrooms: 3.5,
+    size: "400 sq m",
     description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony with city views.",
     images: [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80",
@@ -38,14 +38,14 @@ const properties: Property[] = [
   },
   {
     id: 2,
-    name: "Premium Three Bedroom",
-    price: "$3,450/month",
-    salePrice: "$720,000",
+    name: "Premium Four Bedroom",
+    price: "",
+    salePrice: "",
     type: "apartment",
-    bedrooms: 3,
-    bathrooms: 2.5,
-    size: "1,550 sq ft",
-    description: "Luxury corner unit with three bedrooms, gourmet kitchen with stainless steel appliances, and floor-to-ceiling windows.",
+    bedrooms: 4,
+    bathrooms: 4.5,
+    size: "400 sq m",
+    description: "Luxury corner unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
     images: [
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&q=80"
@@ -54,13 +54,13 @@ const properties: Property[] = [
   },
   {
     id: 3,
-    name: "Executive Four Bedroom",
-    price: "$4,200/month",
-    salePrice: "$890,000",
+    name: "Penthouse Four Bedroom",
+    price: "",
+    salePrice: "",
     type: "apartment",
     bedrooms: 4,
-    bathrooms: 3,
-    size: "1,950 sq ft",
+    bathrooms: 5,
+    size: "800 sq m",
     description: "Expansive four bedroom apartment with premium finishes, chef's kitchen, separate dining area, and panoramic city views.",
     images: [
       "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&q=80",
@@ -70,19 +70,19 @@ const properties: Property[] = [
   },
   {
     id: 4,
-    name: "Penthouse Four Bedroom",
-    price: "$5,800/month",
-    salePrice: "$1,250,000",
-    type: "apartment",
-    bedrooms: 4,
-    bathrooms: 3.5,
-    size: "2,350 sq ft",
-    description: "Luxury penthouse featuring four spacious bedrooms, designer finishes, wraparound terrace, and breathtaking views.",
+    name: "Retail Space",
+    price: "",
+    salePrice: "",
+    type: "retail",
+    bedrooms: ,
+    bathrooms: ,
+    size: "Various sq m",
+    description: "Various productivity enhancing Retail Space in a prime location.",
     images: [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
     ],
-    features: ["Central Air Conditioning", "In-unit Washer/Dryer", "Walk-in Closets", "Marble Bathrooms", "Home Office Space"]
+    features: ["Elevator Access", "Parking", "Office", "Shops", "more"]
   }
 ];
 
