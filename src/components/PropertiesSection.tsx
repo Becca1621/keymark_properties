@@ -77,7 +77,7 @@ const properties: Property[] = [
     bedrooms: 1,
     bathrooms: 1,
     size: "Various sq m",
-    description: "Various productivity enhancing Retail Space in a prime location.",
+    description: "Premium retail spaces in a high-traffic location, featuring modern designs with flexible layouts and excellent visibility.",
     images: [
       "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80"
