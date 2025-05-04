@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="text-center md:text-right animate-slide-up" style={{ animationDelay: '0.2s' }}>
             <p className="text-sm uppercase tracking-wider mb-1 text-white/80">Status</p>
-            <p className="font-serif text-lg text-white drop-shadow-sm">For Rent & Sale</p>
+            <p className="font-serif text-lg text-white drop-shadow-sm">Available Now</p>
           </div>
         </div>
       </div>
