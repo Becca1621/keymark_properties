@@ -22,7 +22,7 @@ const AmenitiesSection: React.FC = () => {
         
         <div className="mt-16 relative overflow-hidden rounded-xl">
           <img 
-            src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2965&auto=format&fit=crop" 
+            src="/Bldginterior2.jpg" 
             alt="Building Exterior" 
             className="w-full h-96 object-cover"
           />
