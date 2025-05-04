@@ -34,17 +34,17 @@ const buildingAmenities = [
   },
   {
     icon: <Car className="w-6 h-6" />,
-    title: "Secure garage parking",
+    title: "Garage Parking",
     description: "Secure, covered parking for residents and guests."
   },
   {
     icon: <BatteryCharging className="w-6 h-6" />,
-    title: "EV charging station",
+    title: "EV Charging",
     description: "Convenient charging stations for electric vehicles."
   },
   {
     icon: <Power className="w-6 h-6" />,
-    title: "Emergency backup power system",
+    title: "Standby Generator",
     description: "Reliable backup power system for peace of mind."
   },
   {
@@ -75,7 +75,7 @@ const buildingAmenities = [
   {
     icon: <Dumbbell className="w-6 h-6" />,
     title: "Resident fitness center (coming soon)",
-    description: "State-of-the-art fitness equipment and facilities."
+    description: "Modern fitness equipment and facility."
   },
 ];
 
