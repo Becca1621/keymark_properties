@@ -146,7 +146,7 @@ const PropertyCard = ({ property }: { property: Property }) => {
           </>
         )}
       </div>
-      <CardContent className="p-6 card-content card-gradient">
+      <CardContent className={`p-6 card-content ${property.type === 'retail' ? 'bg-luxury-cream/95' : 'card-gradient'}`}>
         <div className="mb-4">
           <h3 className="text-xl font-semibold text-luxury-dark">{property.name}</h3>
         </div>
