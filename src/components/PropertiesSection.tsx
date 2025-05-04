@@ -1,8 +1,9 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { ArrowLeft, ArrowRight, Bed, Wifi } from "lucide-react";
+import { ArrowLeft, ArrowRight, Bed, Phone } from "lucide-react";
 
 interface Property {
   id: number;
@@ -97,6 +98,23 @@ const PropertyCard = ({ property }: { property: Property }) => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + property.images.length) % property.images.length);
   };
 
+  // Define standard features to display
+  const standardFeatures = [
+    "In-unit Washer/Dryer",
+    "Walk-in Closets",
+    "Private Balcony"
+  ];
+
+  // Check which standard features are included in the property features
+  const availableStandardFeatures = standardFeatures.filter(
+    feature => property.features.some(
+      propFeature => propFeature.toLowerCase().includes(feature.toLowerCase())
+    )
+  );
+
+  // Add "and more" if there are more features than our standard ones
+  const hasMoreFeatures = property.features.length > availableStandardFeatures.length;
+
   return (
     <Card className="overflow-hidden h-full animate-slide-in shadow-lg">
       <div className="relative h-64">
@@ -129,22 +147,8 @@ const PropertyCard = ({ property }: { property: Property }) => {
         )}
       </div>
       <CardContent className="p-6 card-content">
-        <div className="flex justify-between items-start mb-4">
+        <div className="mb-4">
           <h3 className="text-xl font-semibold text-luxury-dark">{property.name}</h3>
-          <div>
-            <Tabs value={viewType} onValueChange={(v) => setViewType(v as 'rent' | 'sale')} className="w-[140px]">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="rent">Rent</TabsTrigger>
-                <TabsTrigger value="sale">Sale</TabsTrigger>
-              </TabsList>
-              <TabsContent value="rent" className="mt-2">
-                <p className="text-lg font-bold text-luxury-green">{property.price}</p>
-              </TabsContent>
-              <TabsContent value="sale" className="mt-2">
-                <p className="text-lg font-bold text-luxury-green">{property.salePrice}</p>
-              </TabsContent>
-            </Tabs>
-          </div>
         </div>
 
         <div className="flex mb-4 text-sm text-luxury-charcoal gap-4">
@@ -165,16 +169,19 @@ const PropertyCard = ({ property }: { property: Property }) => {
         <div className="mb-4">
           <h4 className="text-sm font-medium mb-2 text-luxury-charcoal">Features:</h4>
           <div className="flex flex-wrap gap-2">
-            {property.features.slice(0, 3).map((feature, index) => (
+            {availableStandardFeatures.map((feature, index) => (
               <span key={index} className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">{feature}</span>
             ))}
-            {property.features.length > 3 && (
-              <span className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">+{property.features.length - 3} more</span>
+            {hasMoreFeatures && (
+              <span className="text-xs bg-luxury-cream text-luxury-charcoal px-2 py-1 rounded">and more</span>
             )}
           </div>
         </div>
 
-        <Button className="w-full bg-luxury-green hover:bg-luxury-dark text-white">View Details</Button>
+        <div className="w-full text-center py-2 border border-luxury-green text-luxury-green rounded flex items-center justify-center gap-2">
+          <Phone size={16} /> 
+          <span>Call for details</span>
+        </div>
       </CardContent>
     </Card>
   );
