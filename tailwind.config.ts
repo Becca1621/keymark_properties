@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -34,6 +33,7 @@ export default {
 					green: '#8FBC8F',  // Original light green color
 					lime: '#C1E1C1',   // Added light lime green color
 					gray: '#8E9196',   // Gray accent color
+					softgray: '#F1F0FB', // Added soft gray for subtle backgrounds
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',

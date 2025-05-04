@@ -217,7 +217,7 @@ const PropertiesSection = () => {
   }, []);
 
   return (
-    <section id="properties" ref={sectionRef} className="py-20 bg-luxury-cream animate-on-scroll">
+    <section id="properties" ref={sectionRef} className="py-20 bg-luxury-softgray animate-on-scroll">
       <div className="container-custom">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-luxury-dark">Available Properties</h2>

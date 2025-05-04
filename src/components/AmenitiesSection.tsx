@@ -5,7 +5,7 @@ import BuildingAmenities from './amenities/BuildingAmenities';
 
 const AmenitiesSection: React.FC = () => {
   return (
-    <div id="amenities" className="py-20 bg-white">
+    <div id="amenities" className="py-20 bg-luxury-softgray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-luxury-dark">
