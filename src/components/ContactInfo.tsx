@@ -37,7 +37,7 @@ const ContactInfo: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-luxury-cream">Email</h3>
-                <p className="text-luxury-cream/80">info@keymarkaddis.com</p>
+                <p className="text-luxury-cream/80">keymarkproperties@gmail.com</p>
               </div>
             </div>
             
