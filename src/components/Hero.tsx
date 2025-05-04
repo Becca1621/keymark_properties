@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: "url('/lovable-uploads/aeae62ef-90c4-483e-8674-21742948b68f.png')",
-          backgroundPosition: "center 40%",
+          backgroundImage: "url('/lovable-uploads/bed67368-504c-4dba-bc24-6b13554b2ce3.png')",
+          backgroundPosition: "center 30%",
         }}
       >
         {/* Enhanced dark gradient overlay with a more sophisticated fade */}
