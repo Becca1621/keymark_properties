@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -216,7 +217,7 @@ const PropertiesSection = () => {
   }, []);
 
   return (
-    <section id="properties" ref={sectionRef} className="py-20 bg-ombre-dark-green animate-on-scroll">
+    <section id="properties" ref={sectionRef} className="py-20 gradient-flow-start animate-on-scroll">
       <div className="container-custom">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white text-shadow">Available Properties</h2>

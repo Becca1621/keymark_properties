@@ -154,7 +154,7 @@
   background: linear-gradient(135deg, #555555 0%, #222222 100%);
 }
 
-/* Gray ombre background for landing page */
+/* Smooth flowing gradients for landing page sections */
 .gray-gradient {
   background: linear-gradient(to bottom, #333333 0%, #555555 50%, #F1F1F1 100%);
   color: white;
@@ -163,6 +163,23 @@
 .section-gradient {
   background: linear-gradient(to bottom, #444444 0%, #666666 100%);
   color: white;
+}
+
+/* New smooth flowing gradients for page sections */
+.gradient-flow-start {
+  background: linear-gradient(to bottom, #333333 0%, #444444 100%);
+}
+
+.gradient-flow-middle {
+  background: linear-gradient(to bottom, #444444 0%, #555555 100%);
+}
+
+.gradient-flow-end {
+  background: linear-gradient(to bottom, #555555 0%, #666666 100%);
+}
+
+.gradient-flow-footer {
+  background: linear-gradient(to bottom, #666666 0%, #333333 100%);
 }
 
 .card-gradient {

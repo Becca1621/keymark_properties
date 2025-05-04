@@ -4,7 +4,7 @@ import { Facebook, Instagram, MessageSquare } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-b from-gray-700 to-gray-900 text-white">
+    <footer className="gradient-flow-footer text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="flex flex-col items-center justify-center">
           <div className="mb-6">
