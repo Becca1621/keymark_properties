@@ -33,17 +33,17 @@ const interiorAmenities = [
   },
   {
     icon: "🧩",
-    title: "Granite or quartz countertops",
+    title: "Granite countertops",
     description: "Elegant, durable stone countertops in kitchens and bathrooms."
   },
   {
     icon: "🏠",
-    title: "Open and traditional layouts",
+    title: "Open and Traditional Kitchen layouts",
     description: "Choose from modern open concept or classic traditional floor plans."
   },
   {
     icon: "🪑",
-    title: "Luxury floors",
+    title: "Luxury Hardwood and Ceramic floors",
     description: "Hardwood and premium ceramic flooring throughout."
   },
   {
@@ -66,13 +66,13 @@ const interiorAmenities = [
 const buildingAmenities = [
   {
     icon: <Cctv className="w-6 h-6" />,
-    title: "Security service with CCTV surveillance",
+    title: "Security and CCTV surveillance",
     description: "State-of-the-art security monitoring for your peace of mind."
   },
   {
     icon: "🔍",
-    title: "X-ray & walk-through scanners",
-    description: "Enhanced security measures at building entrances."
+    title: "Ground Water",
+    description: ""
   },
   {
     icon: <Accessibility className="w-6 h-6" />,
@@ -118,11 +118,6 @@ const buildingAmenities = [
     icon: <ConciergeBell className="w-6 h-6" />, // Fixed casing
     title: "Concierge service",
     description: "Personalized concierge services to enhance your lifestyle."
-  },
-  {
-    icon: <Users className="w-6 h-6" />, // Changed from SwimmingPool
-    title: "Swimming pool (coming soon)",
-    description: "Luxurious swimming facilities for recreation and relaxation."
   },
   {
     icon: <Dumbbell className="w-6 h-6" />, // Changed from Fitness
