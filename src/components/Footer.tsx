@@ -20,14 +20,14 @@ const Footer: React.FC = () => {
           
           <div className="text-center mb-4">
             <p className="text-luxury-neutral-300 font-sans text-sm leading-relaxed italic">
-              Redefining luxury living with exceptional residences in the heart of Addis.
+              Redefining luxury living with exceptional residences in the heart of Addis Ababa.
             </p>
           </div>
         </div>
         
         <div className="border-t border-luxury-neutral-700/50 mt-3 pt-3 text-center">
           <p className="text-luxury-neutral-400 text-xs tracking-wider font-sans">
-            © {new Date().getFullYear()} All rights reserved.
+            © {new Date().getFullYear()} KEYMARK Properties. All rights reserved.
           </p>
         </div>
       </div>
