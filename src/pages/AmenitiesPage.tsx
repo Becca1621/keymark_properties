@@ -144,7 +144,7 @@ const AmenitiesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-white text-shadow">
-              Explore our Premium Amenities
+              Explore Our Premium Amenities
             </h1>
             <p className="text-white/90 max-w-2xl mx-auto">
               Our residences are complemented by a suite of premium amenities designed to elevate your lifestyle and provide ultimate comfort and convenience.
