@@ -12,42 +12,49 @@ import {
   Sun 
 } from "lucide-react";
 import AmenityCard from './AmenityCard';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 const interiorAmenities = [
   {
-    icon: <WashingMachine className="w-6 h-6" />,
+    icon: <WashingMachine className="w-8 h-8" />,
     title: "In-unit washer & dryer",
   },
   {
-    icon: <UtensilsCrossed className="w-6 h-6" />,
+    icon: <UtensilsCrossed className="w-8 h-8" />,
     title: "Stainless steel appliances",
   },
   {
-    icon: <Bath className="w-6 h-6" />,
+    icon: <Bath className="w-8 h-8" />,
     title: "In-unit Hot tub/ Sauna",
   },
   {
-    icon: <LayoutDashboard className="w-6 h-6" />,
+    icon: <LayoutDashboard className="w-8 h-8" />,
     title: "Granite countertops",
   },
   {
-    icon: <Columns className="w-6 h-6" />,
+    icon: <Columns className="w-8 h-8" />,
     title: "Open & Traditional Kitchen layouts",
   },
   {
-    icon: <LampFloor className="w-6 h-6" />,
+    icon: <LampFloor className="w-8 h-8" />,
     title: "Luxury Hardwood & Ceramic floors",
   },
   {
-    icon: <ShoppingBag className="w-6 h-6" />,
+    icon: <ShoppingBag className="w-8 h-8" />,
     title: "Walk-in closets",
   },
   {
-    icon: <Sofa className="w-6 h-6" />,
+    icon: <Sofa className="w-8 h-8" />,
     title: "Private balconies",
   },
   {
-    icon: <Sun className="w-6 h-6" />,
+    icon: <Sun className="w-8 h-8" />,
     title: "Large windows for natural light",
   },
 ];
@@ -60,15 +67,28 @@ const InteriorAmenities: React.FC<InteriorAmenitiesProps> = ({ className = '' })
   return (
     <div className={className}>
       <h3 className="text-center font-serif text-3xl font-bold mb-10 text-white">Interior Features</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {interiorAmenities.map((amenity, index) => (
-          <AmenityCard 
-            key={index} 
-            icon={amenity.icon} 
-            title={amenity.title}
-            index={index}
-          />
-        ))}
+      <div className="relative px-4 sm:px-10">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {interiorAmenities.map((amenity, index) => (
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+                <AmenityCard 
+                  icon={amenity.icon} 
+                  title={amenity.title}
+                  index={index}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-0" />
+          <CarouselNext className="right-0" />
+        </Carousel>
       </div>
     </div>
   );
