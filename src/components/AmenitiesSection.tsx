@@ -9,7 +9,7 @@ const AmenitiesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-white text-shadow">
-            Premium Amenities
+            Discover Elevated Living
           </h2>
           <p className="text-white/90 max-w-2xl mx-auto">
             Our thoughtfully curated collection of high-end amenities has been crafted to elevate your everyday experience. From luxury interior finishes to convenient community features, every detail has been designed to offer comfort, convenience, and a lifestyle of effortless sophistication.
