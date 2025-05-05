@@ -14,7 +14,7 @@ const SocialTooltip = () => {
     <div
       id="tooltip-container"
       className={`fixed bottom-2 right-2 z-[60] flex flex-col gap-2 p-2 rounded-lg transition-all duration-500 transform ${
-        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+        isVisible ? 'translate-x-0 opacity-80' : 'translate-x-10 opacity-0'
       }`}
     >
       {/* Phone Icon */}
