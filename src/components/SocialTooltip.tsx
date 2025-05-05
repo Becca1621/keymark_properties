@@ -14,7 +14,7 @@ const SocialTooltip = () => {
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Call us"
           >
-            <Phone className="h-5 w-5 text-luxury-cream" />
+            <Phone className="h-5 w-5 text-luxury-green" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
@@ -32,7 +32,7 @@ const SocialTooltip = () => {
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Visit our Facebook page"
           >
-            <Facebook className="h-5 w-5 text-luxury-cream" />
+            <Facebook className="h-5 w-5 text-luxury-green" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
@@ -50,7 +50,7 @@ const SocialTooltip = () => {
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Follow us on Instagram"
           >
-            <Instagram className="h-5 w-5 text-luxury-cream" />
+            <Instagram className="h-5 w-5 text-luxury-green" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
@@ -68,7 +68,7 @@ const SocialTooltip = () => {
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Find our location"
           >
-            <MapPin className="h-5 w-5 text-luxury-cream" />
+            <MapPin className="h-5 w-5 text-luxury-green" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
