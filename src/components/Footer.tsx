@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Facebook, Instagram, FileText, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -113,7 +112,6 @@ const Footer: React.FC = () => {
         <ZapierSetupModal
           open={showZapierSetup}
           onOpenChange={setShowZapierSetup}
-          onSave={handleZapierModalSave}
         />
 
         <SubmissionsListModal
