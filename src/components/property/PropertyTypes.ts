@@ -45,7 +45,7 @@ export const properties: Property[] = [
       "/4bed3.jpg",
       "/4bed2.jpg"
     ],
-    features: ["Modern & Traditional Kitchen", "Walk-in closets","In-unit laundry", "Private balcony"],
+    features: ["Modern & Traditional Kitchen", "Walk-in closets", "In-unit laundry", "Private balcony"],
     propertyType: 'rent'
   },
   {
@@ -95,7 +95,7 @@ export const properties: Property[] = [
      "/3bed1.jpg",
       "/3bed2.jpg"
     ],
-    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balcony"],
     propertyType: 'sale'
   },
   {
@@ -113,7 +113,7 @@ export const properties: Property[] = [
       "/4bed2.jpg",
       "/4bed1.jpg"
     ],
-    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balconies],
+    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balcony"],
     propertyType: 'sale'
   }
 ];
