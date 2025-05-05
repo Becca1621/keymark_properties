@@ -1,64 +1,65 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+
+  const handleNavClick = (sectionId: string) => {
+    if (location.pathname === '/') {
+      scrollToSection(sectionId);
+    } else {
+      navigate(`/#${sectionId}`);
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6 py-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Brand Logo Scrolls to Hero Section on Home */}
-        <Link
-          to="/#hero"
-          className="flex items-center cursor-pointer"
-          onClick={() => setMobileMenuOpen(false)}
-        >
+        <Link to="/" className="flex items-center cursor-pointer">
           <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-green transition-colors">
             KEYMARK Properties
           </span>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link
-            to="/#hero"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
-          >
+          <Link to="/" className="font-medium text-gray-800 hover:text-luxury-green transition-colors">
             Home
           </Link>
-          <Link
-            to="/#properties"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
-          >
+          <button onClick={() => handleNavClick('properties')} className="font-medium text-gray-800 hover:text-luxury-green transition-colors">
             Properties
-          </Link>
-          <Link
-            to="/amenities"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
-          >
+          </button>
+          <Link to="/amenities" className="font-medium text-gray-800 hover:text-luxury-green transition-colors">
             Amenities
           </Link>
-          <Link
-            to="/#contact-info"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
-          >
+          <button onClick={() => handleNavClick('contact-info')} className="font-medium text-gray-800 hover:text-luxury-green transition-colors">
             Contact Us
-          </Link>
-          <Link to="/#book-tour">
-            <Button className="bg-luxury-green hover:bg-luxury-dark text-white">
-              Book a Tour
-            </Button>
-          </Link>
+          </button>
+          <Button onClick={() => handleNavClick('book-tour')} className="bg-luxury-green hover:bg-luxury-dark text-white">
+            Book a Tour
+          </Button>
         </div>
 
-        {/* Mobile menu toggle button */}
+        {/* Mobile menu button */}
         <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-800 hover:text-luxury-green focus:outline-none"
-          >
+          <button onClick={toggleMobileMenu} className="text-gray-800 hover:text-luxury-green focus:outline-none">
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -68,44 +69,21 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md z-50 animate-fade-in">
           <div className="px-6 py-4 space-y-4">
-            <Link
-              to="/#hero"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block font-medium text-gray-800 hover:text-luxury-green">
               Home
             </Link>
-            <Link
-              to="/#properties"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <button onClick={() => handleNavClick('properties')} className="block font-medium text-gray-800 hover:text-luxury-green">
               Properties
-            </Link>
-            <Link
-              to="/amenities"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            </button>
+            <Link to="/amenities" onClick={() => setMobileMenuOpen(false)} className="block font-medium text-gray-800 hover:text-luxury-green">
               Amenities
             </Link>
-            <Link
-              to="/#contact-info"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <button onClick={() => handleNavClick('contact-info')} className="block font-medium text-gray-800 hover:text-luxury-green">
               Contact Us
-            </Link>
-            <Link to="/#book-tour" onClick={() => setMobileMenuOpen(false)}>
-              <Button className="w-full bg-luxury-green hover:bg-luxury-dark text-white">
-                Book a Tour
-              </Button>
-            </Link>
+            </button>
+            <Button onClick={() => handleNavClick('book-tour')} className="w-full bg-luxury-green hover:bg-luxury-dark text-white">
+              Book a Tour
+            </Button>
           </div>
         </div>
       )}
-    </nav>
-  );
-};
-
-export default Navbar;
