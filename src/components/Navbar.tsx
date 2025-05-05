@@ -39,24 +39,24 @@ const Navbar: React.FC = () => {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <button 
-            onClick={() => scrollToSection('hero')} 
+          <Link 
+            to="/" 
             className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Home
-          </button>
+          </Link>
           <button 
             onClick={() => scrollToSection('properties')} 
             className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Properties
           </button>
-          <button 
-            onClick={() => scrollToSection('amenities')} 
+          <Link 
+            to="/amenities" 
             className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
           >
             Amenities
-          </button>
+          </Link>
           <button 
             onClick={() => scrollToSection('contact-info')} 
             className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
@@ -86,24 +86,26 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md z-50 animate-fade-in">
           <div className="px-6 py-4 space-y-4">
-            <button
-              onClick={() => scrollToSection('hero')}
+            <Link
+              to="/"
               className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Home
-            </button>
+            </Link>
             <button
               onClick={() => scrollToSection('properties')}
               className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
             >
               Properties
             </button>
-            <button
-              onClick={() => scrollToSection('amenities')}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
+            <Link
+              to="/amenities"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors" 
+              onClick={() => setMobileMenuOpen(false)}
             >
               Amenities
-            </button>
+            </Link>
             <button
               onClick={() => scrollToSection('contact-info')}
               className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
