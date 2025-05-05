@@ -22,7 +22,7 @@ const SocialTooltip = () => {
         <TooltipTrigger asChild>
           <a
             href="tel:+251952111000"
-            className="bg-luxury-grey/100 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/60 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
             aria-label="Call us"
           >
             <Phone className="h-5 w-5 text-luxury-green" />
