@@ -123,6 +123,7 @@ const BookTourForm = () => {
                   type="date"
                   value={formData.date}
                   onChange={handleChange}
+                  placeholder="mm/dd/yy"
                   required
                 />
               </div>
