@@ -5,7 +5,7 @@ import { Phone, Facebook, Instagram, MapPin } from "lucide-react";
 
 const SocialTooltip = () => {
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-2">
+    <div className="fixed bottom-4 right-4 z-50 flex gap-2">
       {/* Phone Icon */}
       <Tooltip>
         <TooltipTrigger asChild>
