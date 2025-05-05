@@ -15,7 +15,14 @@ const AmenitiesSection: React.FC = () => {
             Our thoughtfully curated collection of high-end amenities has been crafted to elevate your everyday experience. From luxury interior finishes to convenient community features, every detail has been designed to offer comfort, convenience, and a lifestyle of effortless sophistication.
           </p>
         </div>
-        
+        <div className="flex justify-center mb-12">
+          <a
+            href="/amenities"
+            className="inline-block px-6 py-2 text-sm font-medium text-white bg-gradient-to-r from-gray-700 to-gray-900 rounded-full shadow hover:from-gray-600 hover:to-gray-800 transition"
+          >
+            View All Amenities
+          </a>
+        </div>
         <InteriorAmenities className="mb-20" />
         
         <BuildingAmenities className="mb-20" />
