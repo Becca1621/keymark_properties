@@ -32,7 +32,7 @@ const AmenitiesPage = () => {
     {
       icon: <WashingMachine className="w-6 h-6" />,
       title: "In-unit washer & dryer",
-      description: "Convenient in-unit laundry facilities for your comfort."
+      description: "Convenient in-unit laundry for your comfort."
     },
     {
       icon: <UtensilsCrossed className="w-6 h-6" />,
@@ -41,7 +41,7 @@ const AmenitiesPage = () => {
     },
     {
       icon: <Bath className="w-6 h-6" />,
-      title: "In-unit Hot tub/ Sauna",
+      title: "In-unit Hot tub/Steam bath",
       description: "Luxury spa experience in the comfort of your own home."
     },
     {
@@ -52,7 +52,7 @@ const AmenitiesPage = () => {
     {
       icon: <Columns className="w-6 h-6" />,
       title: "Open & Traditional Kitchen layouts",
-      description: "Choose from modern open concept or classic traditional floor plans."
+      description: "Two Kitchen layouts in every unit - modern open concept and classic traditional floor plans."
     },
     {
       icon: <LampFloor className="w-6 h-6" />,
@@ -66,7 +66,7 @@ const AmenitiesPage = () => {
     },
     {
       icon: <Sofa className="w-6 h-6" />,
-      title: "Private balconies",
+      title: "Private Balconies",
       description: "Enjoy outdoor living with private balconies and stunning views."
     },
     {
