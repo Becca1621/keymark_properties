@@ -88,7 +88,7 @@ const ContactInfo: React.FC = () => {
             {/* Embedded Google Map */}
             <div className="w-full h-64 mb-4">
               <iframe
-                src={iframeSrc}
+                src={https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3940.7889063182674!2d38.7876875!3d8.991562499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x164b85d728c9aead%3A0xe99b5f22c73f9c46!2sXQRQ%2BJ3J%20KEYMARK%20Properties%2C%20Addis%20Ababa%2C%20Ethiopia!3m2!1d8.991562499999999!2d38.7876875!5e0!3m2!1sen!2sus!4v1746466271481!5m2!1sen!2sus}
                 width="100%"
                 height="100%"
                 frameBorder="0"
