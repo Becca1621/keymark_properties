@@ -80,3 +80,14 @@ const SocialTooltip = () => {
             aria-label="Find our location"
           >
             <MapPin className="h-5 w-5 text-luxury-green" />
+          </a>
+        </TooltipTrigger>
+        <TooltipContent side="right">
+          <p>Find our location</p>
+        </TooltipContent>
+      </Tooltip>
+    </div>
+  );
+};
+
+export default SocialTooltip;
