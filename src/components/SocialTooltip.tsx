@@ -22,14 +22,14 @@ const SocialTooltip = () => {
         <TooltipTrigger asChild>
           <a
             href="tel:+251952111000"
-            className="bg-luxury-grey/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/40 hover:bg-luxury-green p-2 rounded-full transition-colors duration-300"
             aria-label="Call us"
           >
-            <Phone className="h-5 w-5 text-luxury-green" />
+            <Phone className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="right">
-          <p>+251 95 211 1000</p>
+          <p>Call Us</p>
         </TooltipContent>
       </Tooltip>
 
@@ -40,10 +40,10 @@ const SocialTooltip = () => {
             href="https://www.facebook.com/people/Keymark-Properties/61575888689741/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-luxury-grey/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/40 hover:bg-luxury-green p-2 rounded-full transition-colors duration-300"
             aria-label="Visit our Facebook page"
           >
-            <Facebook className="h-5 w-5 text-luxury-green" />
+            <Facebook className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="right">
@@ -58,10 +58,10 @@ const SocialTooltip = () => {
             href="https://www.instagram.com/keymark_properties"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-luxury-grey/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/40 hover:bg-luxury-green p-2 rounded-full transition-colors duration-300"
             aria-label="Follow us on Instagram"
           >
-            <Instagram className="h-5 w-5 text-luxury-green" />
+            <Instagram className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="right">
@@ -76,10 +76,10 @@ const SocialTooltip = () => {
             href="https://maps.app.goo.gl/ZVrQyzisc843eJUV8"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-luxury-grey/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/40 hover:bg-luxury-green p-2 rounded-full transition-colors duration-300"
             aria-label="Find our location"
           >
-            <MapPin className="h-5 w-5 text-luxury-green" />
+            <MapPin className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="right">
