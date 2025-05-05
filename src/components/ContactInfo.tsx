@@ -1,29 +1,24 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Building, Navigation, Map } from 'lucide-react';
+import { MapPin, Phone, Mail, Building, Navigation } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const ContactInfo: React.FC = () => {
   const address = "Bole near Millennium Hall Entrance, Addis Ababa, Ethiopia";
-  const mapUrl = "https://maps.app.goo.gl/ZVrQyzisc843eJUV8";
-  const iframeSrc = "https://www.google.com/maps/embed/v1/place?q=Bole+near+Millennium+Hall+Entrance,+Addis+Ababa,+Ethiopia&key=YOUR_GOOGLE_MAPS_API_KEY"; // Replace with your actual Google Maps API key
+  // Using the provided direct Google Maps URL instead of constructing one
 
   return (
     <div id="contact-info" className="pb-16 gradient-flow-start">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="animate-fade-in">
-          {/* Contact Heading */}
           <div className="flex items-center mb-6 mt-4">
             <Building className="h-8 w-8 text-luxury-cream mr-3" />
             <h2 className="font-serif text-3xl font-bold text-luxury-cream">Contact Us</h2>
           </div>
-
           <p className="text-luxury-cream/90 mb-6">
             Get in touch with our team. Our property specialists are here to answer your questions and arrange a personalized tour that suits your preferences.
           </p>
-
-          {/* Contact Details */}
+          
           <div className="space-y-6">
-            {/* Phone */}
             <div className="flex items-center">
               <div className="bg-luxury-neutral-700/30 p-3 rounded-full mr-4">
                 <Phone className="h-6 w-6 text-luxury-cream" />
@@ -34,8 +29,7 @@ const ContactInfo: React.FC = () => {
                 <p className="text-luxury-cream/80">+251 95 211 1000</p>
               </div>
             </div>
-
-            {/* Email */}
+            
             <div className="flex items-center">
               <div className="bg-luxury-neutral-700/30 p-3 rounded-full mr-4">
                 <Mail className="h-6 w-6 text-luxury-cream" />
@@ -45,8 +39,7 @@ const ContactInfo: React.FC = () => {
                 <p className="text-luxury-cream/80">keymarkproperties@gmail.com</p>
               </div>
             </div>
-
-            {/* Address */}
+            
             <div className="flex items-center">
               <div className="bg-luxury-neutral-700/30 p-3 rounded-full mr-4">
                 <MapPin className="h-6 w-6 text-luxury-cream" />
@@ -73,40 +66,6 @@ const ContactInfo: React.FC = () => {
                 </TooltipProvider>
               </div>
             </div>
-          </div>
-
-          {/* Location Section with Embedded Map */}
-          <div className="mt-10">
-            <div className="flex items-center mb-4">
-              <Map className="h-7 w-7 text-luxury-cream mr-2" />
-              <h3 className="text-2xl font-bold text-luxury-cream font-serif">Location</h3>
-            </div>
-            <p className="text-luxury-cream/80 mb-4">
-              Find us easily using the map below. You can also click the link to open in Google Maps.
-            </p>
-            
-            {/* Embedded Google Map */}
-            <div className="w-full h-64 mb-4">
-              <iframe
-                src={iframeSrc}
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                style={{ border: 0 }}
-                allowFullScreen
-                aria-hidden="false"
-                tabIndex={0}
-              ></iframe>
-            </div>
-
-            <a
-              href={mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-luxury-neutral-700/30 text-luxury-cream hover:bg-luxury-neutral-600 transition-colors px-6 py-3 rounded-xl font-medium"
-            >
-              View on Google Maps
-            </a>
           </div>
         </div>
       </div>
