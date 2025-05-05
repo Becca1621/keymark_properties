@@ -62,7 +62,7 @@ export const properties: Property[] = [
       "/Penthouse3.jpg",
       "/Penthouse1.jpg"
     ],
-    features: ["In-unit laundry", "In-unit Spa", "Walk-in closets", "Private balcony"],
+    features: ["In-unit laundry", "Two Spacious kitchens", "In-unit Spa", "Walk-in closets", "Private balcony with views"],
     propertyType: 'rent'
   },
   {
