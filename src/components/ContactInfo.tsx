@@ -98,15 +98,6 @@ const ContactInfo: React.FC = () => {
                 tabIndex={0}
               ></iframe>
             </div>
-
-            <a
-              href={mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-luxury-neutral-700/30 text-luxury-cream hover:bg-luxury-neutral-600 transition-colors px-6 py-3 rounded-xl font-medium"
-            >
-              View on Google Maps
-            </a>
           </div>
         </div>
       </div>
