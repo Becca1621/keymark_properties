@@ -95,7 +95,7 @@ export const properties: Property[] = [
      "/3bed1.jpg",
       "/3bed2.jpg"
     ],
-    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balconies],
+    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balconies"],
     propertyType: 'sale'
   },
   {
