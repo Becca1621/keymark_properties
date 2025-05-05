@@ -76,7 +76,7 @@ const SocialTooltip = () => {
             href="https://maps.app.goo.gl/ZVrQyzisc843eJUV8"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-luxury-charcoal/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
             aria-label="Find our location"
           >
             <MapPin className="h-5 w-5 text-luxury-green" />
