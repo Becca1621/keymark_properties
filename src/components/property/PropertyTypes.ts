@@ -23,12 +23,12 @@ export const properties: Property[] = [
     bedrooms: 3,
     bathrooms: 3.5,
     size: "400 sq m",
-    description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony with city views.",
+    description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony.",
     images: [
       "/3bed2.jpg",
       "/3bed1.jpg"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balcony"],
     propertyType: 'rent'
   },
   {
@@ -39,13 +39,13 @@ export const properties: Property[] = [
     bedrooms: 4,
     bathrooms: 4.5,
     size: "400 sq m",
-    description: "Luxury unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balconies.",
+    description: "Luxury unit with four bedrooms, gourmet kitchen with stainless steel appliances, and private balcony.",
     images: [
       "/4bed1.jpg",
       "/4bed3.jpg",
       "/4bed2.jpg"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
+    features: ["Modern & Traditional Kitchen", "Walk-in closets","In-unit laundry", "Private balcony"],
     propertyType: 'rent'
   },
   {
@@ -56,13 +56,13 @@ export const properties: Property[] = [
     bedrooms: 4,
     bathrooms: 5,
     size: "800 sq m",
-    description: "Expansive four bedroom apartment with premium finishes, chef's kitchen, separate dining area, and panoramic city views.",
+    description: "Expansive four bedroom apartment with premium finishes, Two Spacious kitchens: Open & Traditional layouts, and City views.",
     images: [
       "/Penthouse5.jpg",
       "/Penthouse3.jpg",
       "/Penthouse1.jpg"
     ],
-    features: ["In-unit laundry", "In-unit Spa", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "In-unit Spa", "Walk-in closets", "Private balcony"],
     propertyType: 'rent'
   },
   {
@@ -90,12 +90,12 @@ export const properties: Property[] = [
     bedrooms: 3,
     bathrooms: 3.5,
     size: "400 sq m",
-    description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony with city views.",
+    description: "Spacious three bedroom apartment with modern finishes, open concept living area and a private balcony.",
     images: [
      "/3bed1.jpg",
       "/3bed2.jpg"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balconies],
     propertyType: 'sale'
   },
   {
@@ -113,7 +113,7 @@ export const properties: Property[] = [
       "/4bed2.jpg",
       "/4bed1.jpg"
     ],
-    features: ["In-unit laundry", "Stainless steel appliances", "Walk-in closets", "Private balconies"],
+    features: ["In-unit laundry", "Modern & Traditional Kitchen", "Walk-in closets", "Private balconies],
     propertyType: 'sale'
   }
 ];
