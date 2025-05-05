@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { 
   WashingMachine, 
   UtensilsCrossed, 
@@ -15,9 +15,8 @@ import AmenityCard from './AmenityCard';
 import { 
   Carousel, 
   CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious
+  CarouselItem,
+  type CarouselApi
 } from "@/components/ui/carousel";
 
 const interiorAmenities = [
@@ -64,6 +63,25 @@ interface InteriorAmenitiesProps {
 }
 
 const InteriorAmenities: React.FC<InteriorAmenitiesProps> = ({ className = '' }) => {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const intervalRef = useRef<number | null>(null);
+  
+  useEffect(() => {
+    if (!api) return;
+    
+    // Start auto-scrolling when the component mounts
+    intervalRef.current = window.setInterval(() => {
+      api.scrollNext();
+    }, 3000); // Change slides every 3 seconds
+    
+    // Clean up the interval when the component unmounts
+    return () => {
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [api]);
+
   return (
     <div className={className}>
       <h3 className="text-center font-serif text-3xl font-bold mb-10 text-white">Interior Features</h3>
@@ -73,6 +91,7 @@ const InteriorAmenities: React.FC<InteriorAmenitiesProps> = ({ className = '' })
             align: "start",
             loop: true,
           }}
+          setApi={setApi}
           className="w-full"
         >
           <CarouselContent>
@@ -86,8 +105,6 @@ const InteriorAmenities: React.FC<InteriorAmenitiesProps> = ({ className = '' })
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
         </Carousel>
       </div>
     </div>
