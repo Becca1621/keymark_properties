@@ -1,4 +1,4 @@
-React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Phone, Facebook, Instagram, MapPin } from "lucide-react";
 
@@ -13,9 +13,9 @@ const SocialTooltip = () => {
   return (
     <div
       id="tooltip-container"
-      className={fixed top-[5.5rem] right-4 z-[60] flex gap-2 transition-all duration-500 transform ${
+      className={`fixed top-[5.5rem] right-4 z-[60] flex gap-4 p-2 rounded-lg border-2 border-luxury-cream transition-all duration-500 transform ${
         isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-      }}
+      }`}
     >
       {/* Phone Icon */}
       <Tooltip>
