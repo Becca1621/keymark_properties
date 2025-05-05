@@ -20,62 +20,50 @@ const buildingAmenities = [
   {
     icon: <Cctv className="w-6 h-6" />,
     title: "Security and CCTV surveillance",
-    description: "State-of-the-art security monitoring for your peace of mind."
   },
   {
     icon: <Droplet className="w-6 h-6" />,
     title: "Ground Water",
-    description: "Sustainable ground water system providing clean, filtered water throughout the property."
   },
   {
     icon: <Accessibility className="w-6 h-6" />,
     title: "Accessible building entrance",
-    description: "Designed for accessibility and convenience for all residents."
   },
   {
     icon: <Car className="w-6 h-6" />,
     title: "Garage Parking",
-    description: "Secure, covered parking for residents and guests."
   },
   {
     icon: <BatteryCharging className="w-6 h-6" />,
     title: "EV Charging",
-    description: "Convenient charging stations for electric vehicles."
   },
   {
     icon: <Power className="w-6 h-6" />,
     title: "Standby Generator",
-    description: "Reliable backup power system for peace of mind."
   },
   {
     icon: <Users2 className="w-6 h-6" />,
     title: "Community lounge",
-    description: "Elegant social spaces for relaxation and entertaining."
   },
   {
     icon: <ArrowUpDown className="w-6 h-6" />,
     title: "Elevator access",
-    description: "Modern elevators for convenient building navigation."
   },
   {
     icon: <Building className="w-6 h-6" />,
     title: "On-site management",
-    description: "Professional management team located on premises."
   },
   {
     icon: <Clock className="w-6 h-6" />,
     title: "24/7 maintenance support",
-    description: "Round-the-clock maintenance services available."
   },
   {
     icon: <Trash2 className="w-6 h-6" />,
     title: "Garbage shooter",
-    description: "Convenient waste disposal system on each floor."
   },
   {
     icon: <Dumbbell className="w-6 h-6" />,
     title: "Resident fitness center (coming soon)",
-    description: "Modern fitness equipment and facility."
   },
 ];
 
@@ -87,13 +75,12 @@ const BuildingAmenities: React.FC<BuildingAmenitiesProps> = ({ className = '' })
   return (
     <div className={className}>
       <h3 className="text-center font-serif text-3xl font-bold mb-10 text-white">Building & Community Highlights</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {buildingAmenities.map((amenity, index) => (
           <AmenityCard 
             key={index} 
             icon={amenity.icon} 
-            title={amenity.title} 
-            description={amenity.description}
+            title={amenity.title}
             index={index}
           />
         ))}

@@ -4,32 +4,29 @@ import React, { ReactNode } from 'react';
 interface AmenityCardProps {
   icon: ReactNode;
   title: string;
-  description: string;
   index: number;
 }
 
 const AmenityCard: React.FC<AmenityCardProps> = ({ 
   icon, 
-  title, 
-  description,
+  title,
   index
 }) => {
   return (
     <div 
-      className="card-gradient p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green" 
+      className="card-gradient p-4 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green flex flex-col items-center justify-center text-center" 
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="text-luxury-green mb-4">
+      <div className="text-luxury-green mb-3">
         {typeof icon === 'string' ? (
-          <div className="text-4xl">{icon}</div>
+          <div className="text-3xl">{icon}</div>
         ) : (
           icon
         )}
       </div>
-      <h3 className="font-serif text-xl font-semibold mb-3 text-luxury-dark">
+      <h3 className="font-serif text-base font-semibold text-luxury-dark">
         {title}
       </h3>
-      <p className="text-luxury-charcoal">{description}</p>
     </div>
   );
 };

@@ -16,9 +16,9 @@ const AmenitiesSection: React.FC = () => {
           </p>
         </div>
         
-        <InteriorAmenities className="mb-16" />
+        <InteriorAmenities className="mb-20" />
         
-        <BuildingAmenities className="mb-16" />
+        <BuildingAmenities className="mb-20" />
         
         <div className="mt-16 relative overflow-hidden rounded-xl">
           <img 
