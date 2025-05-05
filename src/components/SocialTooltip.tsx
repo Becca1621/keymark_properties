@@ -83,7 +83,7 @@ const SocialTooltip = () => {
           </a>
         </TooltipTrigger>
         <TooltipContent side="right">
-          <p>Find our location</p>
+          <p>Get Directions</p>
         </TooltipContent>
       </Tooltip>
     </div>
