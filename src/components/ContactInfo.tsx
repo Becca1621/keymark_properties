@@ -82,7 +82,7 @@ const ContactInfo: React.FC = () => {
               <h3 className="text-2xl font-bold text-luxury-cream font-serif">Location</h3>
             </div>
             <p className="text-luxury-cream/80 mb-4">
-              Find us easily using the map below. You can also click the link to open in Google Maps.
+              Find us easily using the map below.
             </p>
             
             {/* Embedded Google Map */}
