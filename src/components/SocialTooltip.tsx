@@ -14,7 +14,7 @@ const SocialTooltip = () => {
     <div
       id="tooltip-container"
       className={`fixed top-[5.5rem] right-4 z-[60] flex gap-2 transition-all duration-500 transform ${
-        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-80'
+        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
       }`}
     >
       {/* Phone Icon */}
@@ -22,7 +22,7 @@ const SocialTooltip = () => {
         <TooltipTrigger asChild>
           <a
             href="tel:+251952111000"
-            className="bg-luxury-cream/60 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
+            className="bg-luxury-grey/40 hover:bg-luxury-cream p-2 rounded-full transition-colors duration-300"
             aria-label="Call us"
           >
             <Phone className="h-5 w-5 text-luxury-green" />
