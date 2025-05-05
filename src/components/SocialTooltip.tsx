@@ -1,20 +1,31 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Phone, Facebook, Instagram, MapPin } from "lucide-react";
 
 const SocialTooltip = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    // Toggle visibility after a brief delay
+    setTimeout(() => setIsVisible(true), 200);  // Delays for initial load
+  }, []);
+
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex gap-2">
+    <div
+      id="tooltip-container"
+      className={`fixed top-[5.5rem] right-4 z-[60] flex gap-2 transition-all duration-500 transform ${
+        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+      }`}
+    >
       {/* Phone Icon */}
       <Tooltip>
         <TooltipTrigger asChild>
-          <a 
-            href="tel:+251952111000" 
+          <a
+            href="tel:+251952111000"
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Call us"
           >
-            <Phone className="h-5 w-5 text-luxury-green" />
+            <Phone className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
@@ -25,14 +36,14 @@ const SocialTooltip = () => {
       {/* Facebook Icon */}
       <Tooltip>
         <TooltipTrigger asChild>
-          <a 
+          <a
             href="https://www.facebook.com/people/Keymark-Properties/61575888689741/"
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Visit our Facebook page"
           >
-            <Facebook className="h-5 w-5 text-luxury-green" />
+            <Facebook className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
@@ -43,14 +54,14 @@ const SocialTooltip = () => {
       {/* Instagram Icon */}
       <Tooltip>
         <TooltipTrigger asChild>
-          <a 
-            href="https://www.instagram.com/keymark_properties" 
-            target="_blank" 
+          <a
+            href="https://www.instagram.com/keymark_properties"
+            target="_blank"
             rel="noopener noreferrer"
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Follow us on Instagram"
           >
-            <Instagram className="h-5 w-5 text-luxury-green" />
+            <Instagram className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
@@ -61,14 +72,14 @@ const SocialTooltip = () => {
       {/* Location Icon */}
       <Tooltip>
         <TooltipTrigger asChild>
-          <a 
-            href="https://maps.app.goo.gl/ZVrQyzisc843eJUV8" 
+          <a
+            href="https://maps.app.goo.gl/ZVrQyzisc843eJUV8"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
             aria-label="Find our location"
           >
-            <MapPin className="h-5 w-5 text-luxury-green" />
+            <MapPin className="h-5 w-5 text-luxury-cream" />
           </a>
         </TooltipTrigger>
         <TooltipContent side="bottom">
