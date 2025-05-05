@@ -62,7 +62,7 @@ const SocialTooltip = () => {
       <Tooltip>
         <TooltipTrigger asChild>
           <a 
-            href="https://maps.app.goo.gl/KN31MzMA2K4Mvien7" 
+            href="https://maps.app.goo.gl/ZVrQyzisc843eJUV8" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-luxury-charcoal/80 hover:bg-luxury-charcoal p-2 rounded-full transition-colors duration-300"
