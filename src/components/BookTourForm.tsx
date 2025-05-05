@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const BookTourForm = () => {
   const { toast } = useToast();
@@ -28,55 +29,33 @@ const BookTourForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer YOUR_SENDGRID_API_KEY`
-        },
-        body: JSON.stringify({
-          personalizations: [
-            {
-              to: [{ email: 'your-business@example.com' }],
-              subject: 'New Book a Tour Request'
-            }
-          ],
-          from: { email: formData.email, name: formData.name },
-          content: [
-            {
-              type: 'text/plain',
-              value: 
-                `Name: ${formData.name}\n` +
-                `Email: ${formData.email}\n` +
-                `Phone: ${formData.phone || 'Not provided'}\n` +
-                `Preferred Date: ${formData.date}\n` +
-                `Interest: ${formData.interest}\n` +
-                `Property Type: ${formData.propertyType}\n\n` +
-                `Message:\n${formData.message}`
-            }
-          ]
-        })
-      });
+      // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_USER_ID' with your actual EmailJS IDs
+      const result = await emailjs.send(
+        'service_6anfl59',  // Your EmailJS service ID
+        'template_44cytub', // Your EmailJS template ID
+        formData,           // Form data to send
+        '6YgG2pFPPEuiC-PUm'      // Your EmailJS user ID
+      );
 
-      if (!response.ok) throw new Error('Failed to send tour request');
+      if (result.status === 200) {
+        toast({
+          title: "Tour Request Submitted",
+          description: "Your request has been received. We'll contact you shortly.",
+        });
 
-      toast({
-        title: "Tour Request Submitted",
-        description: "Your request has been received. We'll contact you shortly.",
-      });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        date: '',
-        interest: 'tour',
-        propertyType: '3-bedroom',
-        message: ''
-      });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          interest: 'tour',
+          propertyType: '3-bedroom',
+          message: ''
+        });
+      }
     } catch (error) {
-      console.error('Tour form submission error:', error);
+      console.error('EmailJS error:', error);
       toast({
         title: "Submission Error",
         description: "There was a problem submitting your request. Please try again.",
