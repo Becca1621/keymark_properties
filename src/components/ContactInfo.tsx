@@ -5,7 +5,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 const ContactInfo: React.FC = () => {
   const address = "Bole near Millennium Hall Entrance, Addis Ababa, Ethiopia";
   // Using the provided direct Google Maps URL instead of constructing one
-  const mapUrl = "https://maps.app.goo.gl/ZVrQyzisc843eJUV8";
 
   return (
     <div id="contact-info" className="pb-16 gradient-flow-start">
