@@ -13,7 +13,7 @@ const SocialTooltip = () => {
   return (
     <div
       id="tooltip-container"
-      className={`fixed top-[5.5rem] right-4 z-[60] flex flex-col gap-4 p-2 rounded-lg border-2 border-luxury-cream transition-all duration-500 transform ${
+      className={`fixed top-[5.5rem] right-4 z-[60] flex flex-col gap-4 p-2 rounded-lg transition-all duration-500 transform ${
         isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
       }`}
     >
@@ -80,15 +80,3 @@ const SocialTooltip = () => {
             aria-label="Find our location"
           >
             <MapPin className="h-5 w-5 text-luxury-green" />
-          </a>
-        </TooltipTrigger>
-        <TooltipContent side="right">
-          <p>Find our location</p>
-        </TooltipContent>
-      </Tooltip>
-    </div>
-  );
-};
-
-export default SocialTooltip;
-
