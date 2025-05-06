@@ -155,7 +155,7 @@ const AmenitiesPage = () => {
                 Explore Our Premium Amenities
               </h1>
               <p className="text-white/90 max-w-2xl mx-auto">
-                Our residences are enhanced by a curated selection of premium amenities, thoughtfully designed to elevate your lifestyle with unmatched comfort and convenience. Blending timeless elegance with modern design, this is the perfect place to call home.
+                Our residences are enhanced by a curated selection of premium amenities, thoughtfully designed to elevate your lifestyle with unmatched comfort and convenience. Blending timeless elegance with modern design. A perfect place to call home.
               </p>
             </div>
 
