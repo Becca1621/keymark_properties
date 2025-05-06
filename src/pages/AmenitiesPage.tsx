@@ -19,7 +19,8 @@ const AmenitiesPage = () => {
         <div className="w-20 h-1 bg-[#9a8478] mx-auto mb-8"></div>
         
         <p className="text-center text-neutral-600 max-w-3xl mx-auto mb-12">
-          Our residences are enhanced by a curated selection of premium amenities, thoughtfully designed to elevate your lifestyle with unmatched comfort and convenience. Blending timeless elegance with modern design, this is the perfect place to call home.
+          KEYMARK Properties offers a suite of premium amenities designed to enhance your living experience.
+          From state-of-the-art fitness facilities to elegant communal spaces, every detail is crafted for comfort and luxury.
         </p>
         
         <BuildingAmenities />
