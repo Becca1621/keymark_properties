@@ -13,19 +13,20 @@ const Navbar: React.FC = () => {
   // Handle scroll behavior when navigating between pages
   useEffect(() => {
   if (location.state && location.state.scrollTo) {
-    const element = document.getElementById(location.state.scrollTo);
-    if (element) {
-      setTimeout(() => {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start', // Scroll to the top of the element
-        });
-      }, 100);
-    }
-    // Clear the state after scrolling
-    window.history.replaceState({}, document.title);
+    const scrollToElement = () => {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.replaceState({}, document.title);
+      } else {
+        // Retry after delay
+        setTimeout(scrollToElement, 100);
+      }
+    };
+    scrollToElement();
   }
 }, [location]);
+
 
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6 py-4">
