@@ -1,32 +1,38 @@
 
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import PropertiesSection from '@/components/PropertiesSection';
-import AmenitiesSection from '@/components/AmenitiesSection';
-import BookTourForm from '@/components/BookTourForm';
-import ContactInfo from '@/components/ContactInfo';
-import Footer from '@/components/Footer';
-import SocialTooltip from '@/components/SocialTooltip';
-import { TooltipProvider } from '@/components/ui/tooltip';
+import Hero from "../components/Hero";
+import PropertiesSection from "../components/PropertiesSection";
+import AmenitiesSection from "../components/AmenitiesSection";
+import ContactSection from "../components/ContactSection";
+import BookTourForm from "../components/BookTourForm";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <TooltipProvider>
-        <SocialTooltip />
-        <Navbar />
+      <Navbar />
+      
+      <section id="hero">
         <Hero />
+      </section>
+      
+      <section id="properties">
         <PropertiesSection />
-        <div id="amenities">
-          <AmenitiesSection />
-        </div>
-        <div id="contact">
-          <BookTourForm />
-          <ContactInfo />
-        </div>
-        <Footer />
-      </TooltipProvider>
+      </section>
+      
+      <section id="amenities">
+        <AmenitiesSection />
+      </section>
+      
+      <section id="contact">
+        <ContactSection />
+      </section>
+      
+      <section id="book-tour">
+        <BookTourForm />
+      </section>
+      
+      <Footer />
     </div>
   );
 };

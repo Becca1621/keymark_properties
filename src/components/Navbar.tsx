@@ -1,109 +1,86 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
 
-const Navbar: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigation } from "../hooks/useNavigation";
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { handleNavigation } = useNavigation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Brand Logo Scrolls to Hero Section on Home */}
-        <Link
-          to="/#hero"
-          className="flex items-center cursor-pointer"
-          onClick={() => setMobileMenuOpen(false)}
+    <nav
+      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
+        isScrolled || isMenuOpen
+          ? "bg-white text-black shadow-md py-4"
+          : "bg-transparent text-white py-6"
+      }`}
+    >
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        <div 
+          className="text-2xl font-bold cursor-pointer"
+          onClick={() => handleNavigation('/')}
         >
-          <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-green transition-colors">
-            KEYMARK Properties
-          </span>
-        </Link>
+          KEYMARK Properties
+        </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Link
-            to="/#hero"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-xl"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? "✕" : "☰"}
+        </button>
+
+        {/* Desktop & Mobile Navigation Menu */}
+        <div
+          className={`${
+            isMenuOpen
+              ? "absolute top-full left-0 right-0 bg-white text-black shadow-md"
+              : "hidden md:flex"
+          } md:items-center space-y-4 md:space-y-0 md:space-x-8 p-4 md:p-0`}
+        >
+          <div
+            className="cursor-pointer font-medium hover:text-[#9a8478] transition-colors"
+            onClick={() => handleNavigation('/', 'hero')}
           >
             Home
-          </Link>
-          <Link
-            to="/#properties"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+          </div>
+          <div
+            className="cursor-pointer font-medium hover:text-[#9a8478] transition-colors"
+            onClick={() => handleNavigation('/', 'properties')}
           >
             Properties
-          </Link>
-          <Link
-            to="/amenities"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+          </div>
+          <div
+            className="cursor-pointer font-medium hover:text-[#9a8478] transition-colors"
+            onClick={() => handleNavigation('/amenities')}
           >
             Amenities
-          </Link>
-          <Link
-            to="/#contact-info"
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+          </div>
+          <div
+            className="cursor-pointer font-medium hover:text-[#9a8478] transition-colors"
+            onClick={() => handleNavigation('/', 'contact')}
           >
             Contact Us
-          </Link>
-          <Link to="/#book-tour">
-            <Button className="bg-luxury-green hover:bg-luxury-dark text-white">
-              Book a Tour
-            </Button>
-          </Link>
-        </div>
-
-        {/* Mobile menu toggle button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-800 hover:text-luxury-green focus:outline-none"
+          </div>
+          <div
+            className="cursor-pointer font-medium hover:text-[#9a8478] transition-colors"
+            onClick={() => handleNavigation('/', 'book-tour')}
           >
-            {mobileMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md z-50 animate-fade-in">
-          <div className="px-6 py-4 space-y-4">
-            <Link
-              to="/#hero"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/#properties"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Properties
-            </Link>
-            <Link
-              to="/amenities"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Amenities
-            </Link>
-            <Link
-              to="/#contact-info"
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact Us
-            </Link>
-            <Link to="/#book-tour" onClick={() => setMobileMenuOpen(false)}>
-              <Button className="w-full bg-luxury-green hover:bg-luxury-dark text-white">
-                Book a Tour
-              </Button>
-            </Link>
+            Book a Tour
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
