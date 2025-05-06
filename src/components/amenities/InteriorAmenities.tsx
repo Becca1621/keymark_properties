@@ -30,7 +30,7 @@ const interiorAmenities = [
   },
   {
     icon: <Bath className="w-8 h-8" />,
-    title: "In-unit Hot tub/ Sauna",
+    title: "In-unit Hot tub/Steam Bath",
   },
   {
     icon: <LayoutDashboard className="w-8 h-8" />,
