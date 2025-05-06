@@ -1,5 +1,5 @@
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Toaster } from "sonner";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -10,7 +10,7 @@ import ScrollManager from "./components/ScrollManager";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <ScrollManager />
       <Routes>
         <Route path="/" element={<Index />} />
@@ -20,7 +20,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster richColors position="top-center" />
-    </>
+    </BrowserRouter>
   );
 }
 
