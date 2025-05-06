@@ -5,10 +5,10 @@ import BuildingAmenities from './amenities/BuildingAmenities';
 
 const AmenitiesSection: React.FC = () => {
   return (
-    <div id="amenities" className="py-20 gradient-flow-middle">
+    <div id="amenities" className="pt-12 pb-20 gradient-flow-middle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-white text-shadow">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-white text-shadow">
             Discover Elevated Living
           </h2>
           <p className="text-white/90 max-w-2xl mx-auto">
