@@ -15,14 +15,14 @@ import {
 
 // Amenity card component
 const AmenityPageCard = ({ icon, title, description }) => (
-  <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green flex flex-col text-left h-full">
+  <div className="bg-gradient-to-br from-luxury-cream to-luxury-neutral-400 p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green flex flex-col text-left h-full">
     <div className="text-luxury-green mb-4">
       <div className="w-8 h-8">{icon}</div>
     </div>
-    <h3 className="font-serif text-base font-semibold text-white mb-2">
+    <h3 className="font-serif text-base font-semibold text-luxury-dark mb-2">
       {title}
     </h3>
-    <p className="text-white/80 text-sm">
+    <p className="text-luxury-dark/80 text-sm">
       {description}
     </p>
   </div>
@@ -175,6 +175,15 @@ const AmenitiesPage = () => {
                   <AmenityPageCard key={index} icon={amenity.icon} title={amenity.title} description={amenity.description} />
                 ))}
               </div>
+            </div>
+
+            <div className="flex justify-center mt-12">
+              <Button 
+                onClick={() => handleNavigation('/#book-tour')} 
+                className="bg-luxury-green text-white hover:bg-luxury-green/90 px-8 py-6 rounded-full text-lg font-medium"
+              >
+                Book a Tour
+              </Button>
             </div>
           </div>
         </div>
