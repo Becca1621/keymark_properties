@@ -164,34 +164,78 @@
   background: linear-gradient(135deg, #555555 0%, #333333 100%);
 }
 
-/* Smooth flowing gradients for landing page sections */
+/* Consistent color scheme variables */
+:root {
+  --color-cream: #F5F5F0;
+  --color-soft-gray: #F1F0FB;
+  --color-green: #8FBC8F;
+  --color-dark-gray: #333333;
+  --color-medium-gray: #666666;
+}
+
+/* Smooth flowing gradients with consistent colors */
 .gray-gradient {
-  background: linear-gradient(to bottom, #333333 0%, #555555 50%, #F5F5F0 100%);
-  color: #F5F5F0;
+  background: linear-gradient(to bottom, var(--color-dark-gray) 0%, var(--color-medium-gray) 50%, var(--color-cream) 100%);
+  color: var(--color-cream);
 }
 
 .section-gradient {
-  background: linear-gradient(to bottom, #333333 0%, #444444 100%);
-  color: #F5F5F0;
+  background: linear-gradient(to bottom, var(--color-dark-gray) 0%, #444444 100%);
+  color: var(--color-cream);
 }
 
 /* New smooth flowing gradients for page sections */
 .gradient-flow-start {
-  background: linear-gradient(to bottom, #333333 0%, #444444 100%);
+  background: linear-gradient(to bottom, var(--color-dark-gray) 0%, #444444 100%);
 }
 
 .gradient-flow-middle {
-  background: linear-gradient(to bottom, #444444 0%, #555555 100%);
+  background: linear-gradient(to bottom, #444444 0%, var(--color-medium-gray) 100%);
 }
 
 .gradient-flow-end {
-  background: linear-gradient(to bottom, #555555 0%, #666666 100%);
+  background: linear-gradient(to bottom, var(--color-medium-gray) 0%, #777777 100%);
 }
 
 .gradient-flow-footer {
-  background: linear-gradient(to bottom, #444444 0%, #333333 100%);
+  background: linear-gradient(to bottom, #444444 0%, var(--color-dark-gray) 100%);
 }
 
 .card-gradient {
-  background: linear-gradient(to bottom right, #F5F5F0 0%, #C8C8C9 100%);
+  background: linear-gradient(to bottom right, var(--color-cream) 0%, #C8C8C9 100%);
+}
+
+/* Uniform cream & green backgrounds */
+.bg-luxury-cream {
+  background-color: var(--color-cream);
+}
+
+.bg-luxury-soft-gray {
+  background-color: var(--color-soft-gray);
+}
+
+.bg-luxury-green {
+  background-color: var(--color-green);
+}
+
+/* Text colors matching our scheme */
+.text-luxury-cream {
+  color: var(--color-cream);
+}
+
+.text-luxury-dark {
+  color: var(--color-dark-gray);
+}
+
+.text-luxury-green {
+  color: var(--color-green);
+}
+
+/* Consistent button and accent styling */
+.accent-border {
+  border-color: var(--color-green);
+}
+
+.accent-bg {
+  background-color: var(--color-green);
 }
