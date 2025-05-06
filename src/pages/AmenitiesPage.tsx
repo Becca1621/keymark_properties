@@ -176,15 +176,6 @@ const AmenitiesPage = () => {
                 ))}
               </div>
             </div>
-            
-            <div className="text-center mt-12">
-              <Button 
-                className="bg-luxury-green hover:bg-luxury-dark text-white px-8 py-6 text-lg"
-                onClick={() => handleNavigation('/', 'book-tour')}
-              >
-                Book a Tour
-              </Button>
-            </div>
           </div>
         </div>
 
