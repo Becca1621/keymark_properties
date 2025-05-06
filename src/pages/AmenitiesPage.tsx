@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SocialTooltip from '@/components/SocialTooltip';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { useNavigation } from '@/hooks/useNavigation';
 import {
   WashingMachine, UtensilsCrossed, Bath, LayoutDashboard, Columns,
   LampFloor, ShoppingBag, Sofa, Sun, Cctv, Droplet, Accessibility,
@@ -28,6 +29,8 @@ const AmenityPageCard = ({ icon, title, description }) => (
 );
 
 const AmenitiesPage = () => {
+  const { handleNavigation } = useNavigation();
+  
   const interiorAmenities = [
     {
       icon: <WashingMachine className="w-6 h-6" />,
@@ -172,6 +175,15 @@ const AmenitiesPage = () => {
                   <AmenityPageCard key={index} icon={amenity.icon} title={amenity.title} description={amenity.description} />
                 ))}
               </div>
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button 
+                className="bg-luxury-green hover:bg-luxury-dark text-white px-8 py-6 text-lg"
+                onClick={() => handleNavigation('/', 'book-tour')}
+              >
+                Book a Tour
+              </Button>
             </div>
           </div>
         </div>
