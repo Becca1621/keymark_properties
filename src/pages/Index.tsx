@@ -42,11 +42,11 @@ const Index = () => {
         <div id="amenities">
           <AmenitiesSection />
         </div>
-        <div id="contact">
-          <ContactInfo />
-        </div>
         <div id="book-tour">
           <BookTourForm />
+        </div>
+        <div id="contact">
+          <ContactInfo />
         </div>
         <Footer />
       </TooltipProvider>
