@@ -20,6 +20,7 @@ const AmenitiesPage = () => {
         
         <p className="text-center text-neutral-600 max-w-3xl mx-auto mb-12">
           Our residences are enhanced by a curated selection of premium amenities, thoughtfully designed to elevate your lifestyle with unmatched comfort and convenience. Blending timeless elegance with modern design, this is the perfect place to call home.
+        </p>
         
         <BuildingAmenities />
         <InteriorAmenities />
