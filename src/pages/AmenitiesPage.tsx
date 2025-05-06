@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SocialTooltip from '@/components/SocialTooltip';
@@ -175,15 +174,6 @@ const AmenitiesPage = () => {
                   <AmenityPageCard key={index} icon={amenity.icon} title={amenity.title} description={amenity.description} />
                 ))}
               </div>
-            </div>
-
-            <div className="flex justify-center mt-12">
-              <Button 
-                onClick={() => handleNavigation('/#book-tour')} 
-                className="bg-luxury-green text-white hover:bg-luxury-green/90 px-8 py-6 rounded-full text-lg font-medium"
-              >
-                Book a Tour
-              </Button>
             </div>
           </div>
         </div>
