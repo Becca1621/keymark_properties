@@ -42,12 +42,6 @@ const AmenitiesSection: React.FC = () => {
               <p className="max-w-2xl mx-auto text-lg text-white/90">
                 Schedule a private tour today and discover why our residences are the pinnacle of sophisticated urban living.
               </p>
-              <Button 
-                className="mt-6 px-6 py-2 bg-white text-luxury-dark hover:bg-luxury-cream transition-colors"
-                asChild
-              >
-                <a href="/book-tour">Request Tour</a>
-              </Button>
             </div>
           </div>
         </div>
