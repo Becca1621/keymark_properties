@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -176,7 +177,7 @@ const BookTourForm = () => {
 
             <Button 
               type="submit" 
-              className="w-full bg-luxury-green hover:bg-luxury-green/90 text-white"
+              className="w-full bg-white border border-luxury-navy text-luxury-dark font-medium hover:bg-luxury-cream transition-colors"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Request Tour"}
