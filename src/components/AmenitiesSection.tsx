@@ -2,6 +2,7 @@
 import React from 'react';
 import InteriorAmenities from './amenities/InteriorAmenities';
 import BuildingAmenities from './amenities/BuildingAmenities';
+import { Button } from './ui/button';
 
 const AmenitiesSection: React.FC = () => {
   return (
@@ -16,12 +17,12 @@ const AmenitiesSection: React.FC = () => {
           </p>
         </div>
         <div className="flex justify-center mb-12">
-          <a
-            href="/amenities"
-            className="inline-block px-6 py-2 text-sm font-medium text-luxury-dark bg-luxury-navy rounded-full shadow hover:bg-luxury-navy/90 transition"
+          <Button
+            asChild
+            className="px-6 py-2 text-sm font-medium bg-white text-luxury-dark hover:bg-luxury-cream transition-colors"
           >
-            View All Amenities
-          </a>
+            <a href="/amenities">View All Amenities</a>
+          </Button>
         </div>
         <InteriorAmenities className="mb-20" />
         
@@ -41,6 +42,12 @@ const AmenitiesSection: React.FC = () => {
               <p className="max-w-2xl mx-auto text-lg text-white/90">
                 Schedule a private tour today and discover why our residences are the pinnacle of sophisticated urban living.
               </p>
+              <Button 
+                className="mt-6 px-6 py-2 bg-white text-luxury-dark hover:bg-luxury-cream transition-colors"
+                asChild
+              >
+                <a href="/book-tour">Request Tour</a>
+              </Button>
             </div>
           </div>
         </div>
