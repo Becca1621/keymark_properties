@@ -12,20 +12,20 @@ const Navbar: React.FC = () => {
 
   // Handle scroll behavior when navigating between pages
   useEffect(() => {
-  if (location.state && location.state.scrollTo) {
-    const scrollToElement = () => {
-      const element = document.getElementById(location.state.scrollTo);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.history.replaceState({}, document.title);
-      } else {
-        // Retry after delay
-        setTimeout(scrollToElement, 100);
-      }
-    };
-    scrollToElement();
-  }
-}, [location]);
+    if (location.state && location.state.scrollTo) {
+      const scrollToElement = () => {
+        const element = document.getElementById(location.state.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.replaceState({}, document.title);
+        } else {
+          // Retry after delay
+          setTimeout(scrollToElement, 100);
+        }
+      };
+      scrollToElement();
+    }
+  }, [location]);
 
 
   return (
@@ -36,6 +36,11 @@ const Navbar: React.FC = () => {
           className="flex items-center cursor-pointer"
           onClick={() => handleNavigation('/')}
         >
+          <img 
+            src="/placeholder.svg" 
+            alt="KEYMARK Logo" 
+            className="h-8 w-8 mr-2" 
+          />
           <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-navy transition-colors">
             KEYMARK Properties
           </span>
