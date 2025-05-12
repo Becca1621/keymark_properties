@@ -19,7 +19,7 @@ const AmenitiesSection: React.FC = () => {
         <div className="flex justify-center mb-12">
           <Button
             asChild
-            className="px-6 py-2 text-sm font-medium bg-white text-luxury-dark hover:bg-luxury-cream transition-colors"
+            className="px-6 py-2 text-sm font-medium bg-white text-luxury-dark hover:bg-luxury-dark transition-colors"
           >
             <a href="/amenities">View All Amenities</a>
           </Button>
