@@ -176,8 +176,8 @@ const BookTourForm = () => {
             </div>
 
             <Button 
-              type="submit" 
-              classname="block mx-auto g-luxury-navy hover:bg-luxury-dark text-white font-medium hover:bg-luxury-cream transition-colors"
+              type="submit"
+              className="w-auto bg-luxury-navy hover:bg-luxury-dark text-white font-medium hover:bg-luxury-cream transition-colors"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Request Tour"}
