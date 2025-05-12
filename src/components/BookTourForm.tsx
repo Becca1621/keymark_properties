@@ -174,7 +174,7 @@ const BookTourForm = () => {
                 rows={4}
               />
             </div>
-
+            <div className="flex justify-center mb-12">
             <Button 
               type="submit"
               className="w-auto bg-luxury-navy hover:bg-luxury-dark text-white font-medium hover:bg-luxury-cream transition-colors"
@@ -182,7 +182,7 @@ const BookTourForm = () => {
             >
               {isSubmitting ? "Submitting..." : "Request Tour"}
             </Button>
-
+            </div>
             {isSubmitting && (
               <div className="text-center text-sm text-luxury-gray">
                 <p>Submitting your request...</p>
