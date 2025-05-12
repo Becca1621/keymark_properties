@@ -14,10 +14,10 @@ const AmenityCard: React.FC<AmenityCardProps> = ({
 }) => {
   return (
     <div 
-      className="card-gradient p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green flex flex-col items-center justify-center text-center mx-2 h-36 w-full"
+      className="card-gradient p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-navy flex flex-col items-center justify-center text-center mx-2 h-36 w-full"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="text-luxury-green mb-3">
+      <div className="text-luxury-navy mb-3">
         {typeof icon === 'string' ? (
           <div className="text-3xl">{icon}</div>
         ) : (

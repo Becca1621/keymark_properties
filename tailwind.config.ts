@@ -31,8 +31,8 @@ export default {
 					cream: '#F5F5F0',
 					light: '#F9F9F7',
 					dark: '#1A1A1A',
-					green: '#8FBC8F',  // Original light green color
-					lime: '#C1E1C1',   // Added light lime green color
+					navy: '#1C3879',  // Changed from green to navy blue
+					lime: '#C1E1C1',   // Keeping this lighter shade for now
 					gray: '#8E9196',   // Gray accent color
 					softgray: '#F1F0FB', // Added soft gray for subtle backgrounds
 					darkgray: '#444444', // Darker gray for ombre effect
@@ -133,10 +133,10 @@ export default {
 				'elegant': '0 4px 20px -2px rgba(0, 0, 0, 0.1)',
 			},
 			backgroundImage: {
-				'ombre-dark-green': 'linear-gradient(135deg, #333333 0%, #8FBC8F 100%)',
-				'ombre-green-dark': 'linear-gradient(135deg, #8FBC8F 0%, #333333 100%)',
-				'ombre-gray-green': 'linear-gradient(135deg, #444444 0%, #C1E1C1 100%)',
-				'ombre-green-gray': 'linear-gradient(135deg, #C1E1C1 0%, #444444 100%)',
+				'ombre-dark-navy': 'linear-gradient(135deg, #333333 0%, #1C3879 100%)',
+				'ombre-navy-dark': 'linear-gradient(135deg, #1C3879 0%, #333333 100%)',
+				'ombre-gray-navy': 'linear-gradient(135deg, #444444 0%, #1C3879 100%)',
+				'ombre-navy-gray': 'linear-gradient(135deg, #1C3879 0%, #444444 100%)',
 				'ombre-charcoal-cream': 'linear-gradient(135deg, #333333 0%, #F5F5F0 100%)',
 				'ombre-cream-charcoal': 'linear-gradient(135deg, #F5F5F0 0%, #333333 100%)',
 			}

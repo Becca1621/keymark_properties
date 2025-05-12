@@ -14,8 +14,8 @@ import {
 
 // Amenity card component
 const AmenityPageCard = ({ icon, title, description }) => (
-  <div className="bg-gradient-to-br from-luxury-cream to-luxury-neutral-400 p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-green flex flex-col text-left h-full">
-    <div className="text-luxury-green mb-4">
+  <div className="bg-gradient-to-br from-luxury-cream to-luxury-neutral-400 p-6 rounded-lg transition-all duration-300 hover:shadow-elegant border-l-4 border-luxury-navy flex flex-col text-left h-full">
+    <div className="text-luxury-navy mb-4">
       <div className="w-8 h-8">{icon}</div>
     </div>
     <h3 className="font-serif text-base font-semibold text-luxury-dark mb-2">

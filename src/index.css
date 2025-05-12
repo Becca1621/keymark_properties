@@ -168,7 +168,7 @@
 :root {
   --color-cream: #F5F5F0;
   --color-soft-gray: #F1F0FB;
-  --color-green: #8FBC8F;
+  --color-navy: #1C3879;  /* Changed from green to navy blue */
   --color-dark-gray: #333333;
   --color-medium-gray: #666666;
 }
@@ -214,8 +214,8 @@
   background-color: var(--color-soft-gray);
 }
 
-.bg-luxury-green {
-  background-color: var(--color-green);
+.bg-luxury-navy {
+  background-color: var(--color-navy);
 }
 
 /* Text colors matching our scheme */
@@ -227,15 +227,15 @@
   color: var(--color-dark-gray);
 }
 
-.text-luxury-green {
-  color: var(--color-green);
+.text-luxury-navy {
+  color: var(--color-navy);
 }
 
 /* Consistent button and accent styling */
 .accent-border {
-  border-color: var(--color-green);
+  border-color: var(--color-navy);
 }
 
 .accent-bg {
-  background-color: var(--color-green);
+  background-color: var(--color-navy);
 }

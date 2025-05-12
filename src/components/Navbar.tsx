@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           className="flex items-center cursor-pointer"
           onClick={() => handleNavigation('/')}
         >
-          <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-green transition-colors">
+          <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-navy transition-colors">
             KEYMARK Properties
           </span>
         </div>
@@ -45,30 +45,30 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-8">
           <button
             onClick={() => handleNavigation('/', 'hero')}
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-navy transition-colors"
           >
             Home
           </button>
           <button
             onClick={() => handleNavigation('/', 'properties')}
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-navy transition-colors"
           >
             Properties
           </button>
           <button
             onClick={() => handleNavigation('/amenities')}
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-navy transition-colors"
           >
             Amenities
           </button>
           <button
             onClick={() => handleNavigation('/', 'contact')}
-            className="font-medium text-gray-800 hover:text-luxury-green transition-colors"
+            className="font-medium text-gray-800 hover:text-luxury-navy transition-colors"
           >
             Contact Us
           </button>
           <Button 
-            className="bg-luxury-green hover:bg-luxury-dark text-white"
+            className="bg-luxury-navy hover:bg-luxury-dark text-white"
             onClick={() => handleNavigation('/', 'book-tour')}
           >
             Book a Tour
@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-800 hover:text-luxury-green focus:outline-none"
+            className="text-gray-800 hover:text-luxury-navy focus:outline-none"
           >
             {mobileMenuOpen ? <X /> : <Menu />}
           </button>
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
                 handleNavigation('/', 'hero');
                 setMobileMenuOpen(false);
               }}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-navy transition-colors"
             >
               Home
             </button>
@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
                 handleNavigation('/', 'properties');
                 setMobileMenuOpen(false);
               }}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-navy transition-colors"
             >
               Properties
             </button>
@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
                 handleNavigation('/amenities');
                 setMobileMenuOpen(false);
               }}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-navy transition-colors"
             >
               Amenities
             </button>
@@ -122,12 +122,12 @@ const Navbar: React.FC = () => {
                 handleNavigation('/', 'contact');
                 setMobileMenuOpen(false);
               }}
-              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-green transition-colors"
+              className="block w-full text-left font-medium text-gray-800 hover:text-luxury-navy transition-colors"
             >
               Contact Us
             </button>
             <Button 
-              className="w-full bg-luxury-green hover:bg-luxury-dark text-white"
+              className="w-full bg-luxury-navy hover:bg-luxury-dark text-white"
               onClick={() => {
                 handleNavigation('/', 'book-tour');
                 setMobileMenuOpen(false);

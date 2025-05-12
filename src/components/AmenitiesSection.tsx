@@ -18,7 +18,7 @@ const AmenitiesSection: React.FC = () => {
         <div className="flex justify-center mb-12">
           <a
             href="/amenities"
-            className="inline-block px-6 py-2 text-sm font-medium text-luxury-dark bg-luxury-green rounded-full shadow hover:bg-luxury-green/90 transition"
+            className="inline-block px-6 py-2 text-sm font-medium text-luxury-dark bg-luxury-navy rounded-full shadow hover:bg-luxury-navy/90 transition"
           >
             View All Amenities
           </a>
