@@ -177,6 +177,7 @@ const BookTourForm = () => {
 
             <Button 
               type="submit" 
+              class="flex justify-center"
               className="flex justify-center w-auto bg-luxury-navy hover:bg-luxury-dark text-white font-medium hover:bg-luxury-cream transition-colors"
               disabled={isSubmitting}
             >
