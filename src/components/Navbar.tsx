@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
           onClick={() => handleNavigation('/')}
         >
           <img 
-            src="/LogoClear.png" 
+            src="/LogoClear" 
             alt="KEYMARK Logo" 
             className="h-8 w-8 mr-2" 
           />
