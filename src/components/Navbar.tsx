@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
           <img 
             src="/LogoClear.jpg" 
             alt="KEYMARK Logo" 
-            className="h-8 w-8 mr-2 -mt-1" 
+            className="h-8 w-8 mr-2 -mt-2" 
           />
           <span className="font-serif text-2xl font-bold text-luxury-dark hover:text-luxury-navy transition-colors">
             KEYMARK Properties
