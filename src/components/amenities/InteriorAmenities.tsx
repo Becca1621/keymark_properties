@@ -21,39 +21,39 @@ import {
 
 const interiorAmenities = [
   {
-    icon: <WashingMachine className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <WashingMachine className="w-8 h-8" />,
     title: "In-unit washer & dryer",
   },
   {
-    icon: <UtensilsCrossed className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <UtensilsCrossed className="w-8 h-8" />,
     title: "Stainless steel appliances",
   },
   {
-    icon: <Bath className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <Bath className="w-8 h-8" />,
     title: "In-unit Hot tub/Steam Bath",
   },
   {
-    icon: <LayoutDashboard className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <LayoutDashboard className="w-8 h-8" />,
     title: "Granite countertops",
   },
   {
-    icon: <Columns className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <Columns className="w-8 h-8" />,
     title: "Open & Traditional Kitchen layouts",
   },
   {
-    icon: <LampFloor className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <LampFloor className="w-8 h-8" />,
     title: "Luxury Hardwood & Ceramic floors",
   },
   {
-    icon: <ShoppingBag className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <ShoppingBag className="w-8 h-8" />,
     title: "Walk-in closets",
   },
   {
-    icon: <Sofa className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <Sofa className="w-8 h-8" />,
     title: "Private balconies",
   },
   {
-    icon: <Sun className="w-6 h-6 sm:w-8 sm:h-8" />,
+    icon: <Sun className="w-8 h-8" />,
     title: "Large windows for natural light",
   },
 ];
@@ -84,8 +84,8 @@ const InteriorAmenities: React.FC<InteriorAmenitiesProps> = ({ className = '' })
 
   return (
     <div className={className}>
-      <h3 className="text-center font-serif text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-white">Interior Features</h3>
-      <div className="relative px-1 sm:px-4 md:px-10">
+      <h3 className="text-center font-serif text-3xl font-bold mb-10 text-white">Interior Features</h3>
+      <div className="relative px-4 sm:px-10">
         <Carousel
           opts={{
             align: "start",
@@ -96,7 +96,7 @@ const InteriorAmenities: React.FC<InteriorAmenitiesProps> = ({ className = '' })
         >
           <CarouselContent>
             {interiorAmenities.map((amenity, index) => (
-              <CarouselItem key={index} className="basis-1/2 sm:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
                 <AmenityCard 
                   icon={amenity.icon} 
                   title={amenity.title}

@@ -20,15 +20,7 @@ const Index = () => {
       const element = document.getElementById(location.state.scrollTo);
       if (element) {
         setTimeout(() => {
-          // Use a smaller offset on mobile devices
-          const isMobile = window.innerWidth < 768;
-          const offset = isMobile ? 60 : 80;
-          
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({
-            top: elementPosition - offset,
-            behavior: 'smooth'
-          });
+          element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
       // Clear the state after scrolling
