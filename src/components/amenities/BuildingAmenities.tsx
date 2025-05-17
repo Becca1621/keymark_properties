@@ -24,51 +24,51 @@ import {
 
 const buildingAmenities = [
   {
-    icon: <Cctv className="w-8 h-8" />,
+    icon: <Cctv className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Security and CCTV surveillance",
   },
   {
-    icon: <Droplet className="w-8 h-8" />,
+    icon: <Droplet className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Ground Water",
   },
   {
-    icon: <Accessibility className="w-8 h-8" />,
+    icon: <Accessibility className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Accessible building entrance",
   },
   {
-    icon: <Car className="w-8 h-8" />,
+    icon: <Car className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Garage Parking",
   },
   {
-    icon: <BatteryCharging className="w-8 h-8" />,
+    icon: <BatteryCharging className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "EV Charging",
   },
   {
-    icon: <Power className="w-8 h-8" />,
+    icon: <Power className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Standby Generator",
   },
   {
-    icon: <Users2 className="w-8 h-8" />,
+    icon: <Users2 className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Community lounge",
   },
   {
-    icon: <ArrowUpDown className="w-8 h-8" />,
+    icon: <ArrowUpDown className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Elevator access",
   },
   {
-    icon: <Building className="w-8 h-8" />,
+    icon: <Building className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "On-site management",
   },
   {
-    icon: <Clock className="w-8 h-8" />,
+    icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "24/7 maintenance support",
   },
   {
-    icon: <Trash2 className="w-8 h-8" />,
+    icon: <Trash2 className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Garbage shooter",
   },
   {
-    icon: <Dumbbell className="w-8 h-8" />,
+    icon: <Dumbbell className="w-6 h-6 sm:w-8 sm:h-8" />,
     title: "Resident fitness center (coming soon)",
   },
 ];
@@ -99,8 +99,8 @@ const BuildingAmenities: React.FC<BuildingAmenitiesProps> = ({ className = '' })
 
   return (
     <div className={className}>
-      <h3 className="text-center font-serif text-3xl font-bold mb-10 text-white">Building & Community Highlights</h3>
-      <div className="relative px-4 sm:px-10">
+      <h3 className="text-center font-serif text-2xl sm:text-3xl font-bold mb-6 sm:mb-10 text-white">Building & Community Highlights</h3>
+      <div className="relative px-1 sm:px-4 md:px-10">
         <Carousel
           opts={{
             align: "start",
@@ -111,7 +111,7 @@ const BuildingAmenities: React.FC<BuildingAmenitiesProps> = ({ className = '' })
         >
           <CarouselContent>
             {buildingAmenities.map((amenity, index) => (
-              <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={index} className="basis-1/2 sm:basis-1/3 lg:basis-1/4">
                 <AmenityCard 
                   icon={amenity.icon} 
                   title={amenity.title}

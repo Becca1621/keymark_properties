@@ -47,11 +47,11 @@ const PropertiesSection = () => {
   }, []);
 
   return (
-    <section id="properties" ref={sectionRef} className="py-20 gradient-flow-start animate-on-scroll">
-      <div className="container-custom">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-white text-shadow">Explore Available Spaces</h2>
-          <p className="text-white/90 max-w-2xl mx-auto">Explore our premium selection of three and four bedroom residences, offered in both furnished and unfurnished options, along with retail spaces, all thoughtfully designed with elegant finishes and modern amenities.</p>
+    <section id="properties" ref={sectionRef} className="py-10 sm:py-20 gradient-flow-start animate-on-scroll">
+      <div className="container-custom px-3 sm:px-4">
+        <div className="mb-8 sm:mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold mb-3 sm:mb-4 text-white text-shadow">Explore Available Spaces</h2>
+          <p className="text-sm sm:text-base text-white/90 max-w-2xl mx-auto">Explore our premium selection of three and four bedroom residences, offered in both furnished and unfurnished options, along with retail spaces, all thoughtfully designed with elegant finishes and modern amenities.</p>
         </div>
 
         <PropertyFilters 
@@ -60,7 +60,7 @@ const PropertiesSection = () => {
           setFilter={setFilter}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-2 md:gap-8">
           {filteredProperties.map(property => (
             <PropertyCard key={property.id} property={property} />
           ))}
