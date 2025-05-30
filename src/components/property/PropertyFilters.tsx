@@ -14,9 +14,9 @@ const PropertyFilters = ({
   setFilter 
 }: PropertyFiltersProps) => {
   return (
-    <div className="mb-8 space-y-4">
+    <div className="space-y-4 px-2">
       {/* Property Type Toggle (Rent/Sale) */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center">
         <ToggleGroup 
           type="single" 
           value={propertyTypeFilter}
@@ -25,13 +25,13 @@ const PropertyFilters = ({
           }}
           className="bg-luxury-dark/50 backdrop-blur-sm rounded-md border border-luxury-dark/20"
         >
-          <ToggleGroupItem value="all" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
+          <ToggleGroupItem value="all" className="toggle-group-item data-[state=on]:bg-luxury-navy data-[state=on]:text-white px-4 sm:px-6">
             All
           </ToggleGroupItem>
-          <ToggleGroupItem value="rent" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
+          <ToggleGroupItem value="rent" className="toggle-group-item data-[state=on]:bg-luxury-navy data-[state=on]:text-white px-4 sm:px-6">
             Rent
           </ToggleGroupItem>
-          <ToggleGroupItem value="sale" className="toggle-group-item data-[state=on]:bg-luxury-green data-[state=on]:text-white px-6">
+          <ToggleGroupItem value="sale" className="toggle-group-item data-[state=on]:bg-luxury-navy data-[state=on]:text-white px-4 sm:px-6">
             Sale
           </ToggleGroupItem>
         </ToggleGroup>
@@ -39,11 +39,11 @@ const PropertyFilters = ({
 
       {/* Apartment Filter */}
       <Tabs defaultValue="all" className="w-full">
-        <TabsList className="grid w-[500px] max-w-full grid-cols-4 mx-auto bg-luxury-dark/50 backdrop-blur-sm">
-          <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">All</TabsTrigger>
-          <TabsTrigger value="3" onClick={() => setFilter('3')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">3 Bedroom</TabsTrigger>
-          <TabsTrigger value="4" onClick={() => setFilter('4')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">4 Bedroom</TabsTrigger>
-          <TabsTrigger value="retail" onClick={() => setFilter('retail')} className="data-[state=active]:bg-luxury-green data-[state=active]:text-white text-white/80">Retail</TabsTrigger>
+        <TabsList className="grid w-full max-w-md sm:max-w-lg grid-cols-4 mx-auto bg-luxury-dark/50 backdrop-blur-sm rounded-md">
+          <TabsTrigger value="all" onClick={() => setFilter('all')} className="data-[state=active]:bg-luxury-navy data-[state=active]:text-white text-white/80 text-xs sm:text-sm">All</TabsTrigger>
+          <TabsTrigger value="3" onClick={() => setFilter('3')} className="data-[state=active]:bg-luxury-navy data-[state=active]:text-white text-white/80 text-xs sm:text-sm">3 Bed</TabsTrigger>
+          <TabsTrigger value="4" onClick={() => setFilter('4')} className="data-[state=active]:bg-luxury-navy data-[state=active]:text-white text-white/80 text-xs sm:text-sm">4 Bed</TabsTrigger>
+          <TabsTrigger value="retail" onClick={() => setFilter('retail')} className="data-[state=active]:bg-luxury-navy data-[state=active]:text-white text-white/80 text-xs sm:text-sm">Retail</TabsTrigger>
         </TabsList>
       </Tabs>
     </div>
