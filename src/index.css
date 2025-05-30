@@ -74,6 +74,113 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Responsive Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Responsive Typography */
+  html {
+    font-size: 16px;
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    html {
+      font-size: 13px;
+    }
+  }
+}
+
+/* Mobile-First Responsive Design */
+@layer components {
+  /* Container with responsive padding */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4;
+  }
+  
+  @media (min-width: 640px) {
+    .container-responsive {
+      @apply px-6;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-responsive {
+      @apply px-8;
+    }
+  }
+  
+  /* Responsive text sizing */
+  .text-responsive-xl {
+    @apply text-2xl;
+  }
+  
+  @media (min-width: 640px) {
+    .text-responsive-xl {
+      @apply text-3xl;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .text-responsive-xl {
+      @apply text-4xl;
+    }
+  }
+  
+  .text-responsive-lg {
+    @apply text-xl;
+  }
+  
+  @media (min-width: 640px) {
+    .text-responsive-lg {
+      @apply text-2xl;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .text-responsive-lg {
+      @apply text-3xl;
+    }
+  }
+  
+  /* Mobile navigation improvements */
+  .mobile-nav-overlay {
+    @apply fixed inset-0 bg-black/50 z-40 lg:hidden;
+  }
+  
+  .mobile-nav-panel {
+    @apply fixed top-0 right-0 h-full w-80 max-w-[80vw] bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out;
+  }
+  
+  /* Responsive grid layouts */
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-4;
+  }
+  
+  @media (min-width: 640px) {
+    .grid-responsive {
+      @apply grid-cols-2 gap-6;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-responsive {
+      @apply gap-8;
+    }
+  }
+  
+  /* Touch-friendly buttons */
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px] px-4 py-2;
+  }
 }
 
 /* Custom toggle styles for better visibility */
@@ -238,4 +345,58 @@
 
 .accent-bg {
   background-color: var(--color-navy);
+}
+
+/* Mobile-specific media queries */
+@media (max-width: 640px) {
+  .hero-height {
+    height: 70vh;
+  }
+  
+  .hero-text {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .section-padding {
+    padding: 2rem 0;
+  }
+  
+  .card-spacing {
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1.75rem;
+  }
+  
+  .section-padding {
+    padding: 1.5rem 0;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+  button, a[role="button"], input[type="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .clickable-area {
+    padding: 0.75rem;
+  }
 }

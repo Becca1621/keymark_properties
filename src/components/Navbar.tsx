@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from 'lucide-react';
 import { useNavigation } from '@/hooks/useNavigation';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -20,30 +22,12 @@ const Navbar: React.FC = () => {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
           window.history.replaceState({}, document.title);
         } else {
-          // Retry after delay
           setTimeout(scrollToElement, 100);
         }
       };
       scrollToElement();
     }
   }, [location]);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const navElement = document.getElementById('mobile-menu');
-      if (mobileMenuOpen && navElement && !navElement.contains(event.target as Node)) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    if (mobileMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [mobileMenuOpen]);
 
   // Close mobile menu on resize if screen becomes larger
   useEffect(() => {
@@ -52,125 +36,93 @@ const Navbar: React.FC = () => {
     }
   }, [isMobile, mobileMenuOpen]);
 
+  const navigationItems = [
+    { label: 'Home', action: () => handleNavigation('/', 'hero') },
+    { label: 'Properties', action: () => handleNavigation('/', 'properties') },
+    { label: 'Amenities', action: () => handleNavigation('/amenities') },
+    { label: 'Contact', action: () => handleNavigation('/', 'contact') },
+  ];
+
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-3 py-2">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Brand Logo - More compact for mobile */}
-        <div
-          className="flex items-center cursor-pointer"
-          onClick={() => handleNavigation('/')}
-        >
-          <img 
-            src="/LogoClear.jpg" 
-            alt="KEYMARK Logo" 
-            className="h-6 w-6 sm:h-8 sm:w-8 mr-1 -mt-1" 
-          />
-          <span className="font-serif text-lg sm:text-2xl font-bold text-luxury-dark hover:text-luxury-navy transition-colors truncate">
-            KEYMARK Properties
-          </span>
-        </div>
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+      <div className="container-responsive py-3">
+        <div className="flex justify-between items-center">
+          {/* Brand Logo */}
+          <div
+            className="flex items-center cursor-pointer flex-shrink-0"
+            onClick={() => handleNavigation('/')}
+          >
+            <img 
+              src="/LogoClear.jpg" 
+              alt="KEYMARK Logo" 
+              className="h-8 w-8 sm:h-10 sm:w-10 mr-2 object-contain" 
+            />
+            <span className="font-serif text-lg sm:text-xl lg:text-2xl font-bold text-luxury-dark hover:text-luxury-navy transition-colors">
+              KEYMARK Properties
+            </span>
+          </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-2 lg:space-x-6">
-          <button
-            onClick={() => handleNavigation('/', 'hero')}
-            className="font-medium text-sm lg:text-base text-gray-800 hover:text-luxury-navy transition-colors px-2"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => handleNavigation('/', 'properties')}
-            className="font-medium text-sm lg:text-base text-gray-800 hover:text-luxury-navy transition-colors px-2"
-          >
-            Properties
-          </button>
-          <button
-            onClick={() => handleNavigation('/amenities')}
-            className="font-medium text-sm lg:text-base text-gray-800 hover:text-luxury-navy transition-colors px-2"
-          >
-            Amenities
-          </button>
-          <button
-            onClick={() => handleNavigation('/', 'contact')}
-            className="font-medium text-sm lg:text-base text-gray-800 hover:text-luxury-navy transition-colors px-2"
-          >
-            Contact
-          </button>
-          <Button 
-            className="bg-luxury-navy hover:bg-luxury-dark text-white text-xs lg:text-sm py-1 px-3 h-auto"
-            onClick={() => handleNavigation('/', 'book-tour')}
-          >
-            Book a Tour
-          </Button>
-        </div>
-
-        {/* Mobile menu toggle button - Smaller touch target */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-800 hover:text-luxury-navy focus:outline-none p-1"
-            aria-label="Toggle mobile menu"
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu - More compact with smaller text and padding */}
-      {mobileMenuOpen && (
-        <div 
-          id="mobile-menu"
-          className="md:hidden fixed top-[49px] left-0 right-0 bg-white shadow-lg z-50 animate-slide-up max-h-[calc(100vh-49px)] overflow-y-auto"
-        >
-          <div className="px-3 py-2 space-y-1 flex flex-col">
-            <button
-              onClick={() => {
-                handleNavigation('/', 'hero');
-                setMobileMenuOpen(false);
-              }}
-              className="block w-full text-left py-2 px-3 font-medium text-gray-800 hover:text-luxury-navy hover:bg-gray-50 rounded-md transition-colors"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => {
-                handleNavigation('/', 'properties');
-                setMobileMenuOpen(false);
-              }}
-              className="block w-full text-left py-2 px-3 font-medium text-gray-800 hover:text-luxury-navy hover:bg-gray-50 rounded-md transition-colors"
-            >
-              Properties
-            </button>
-            <button
-              onClick={() => {
-                handleNavigation('/amenities');
-                setMobileMenuOpen(false);
-              }}
-              className="block w-full text-left py-2 px-3 font-medium text-gray-800 hover:text-luxury-navy hover:bg-gray-50 rounded-md transition-colors"
-            >
-              Amenities
-            </button>
-            <button
-              onClick={() => {
-                handleNavigation('/', 'contact');
-                setMobileMenuOpen(false);
-              }}
-              className="block w-full text-left py-2 px-3 font-medium text-gray-800 hover:text-luxury-navy hover:bg-gray-50 rounded-md transition-colors"
-            >
-              Contact
-            </button>
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-6">
+            {navigationItems.map((item) => (
+              <button
+                key={item.label}
+                onClick={item.action}
+                className="font-medium text-gray-800 hover:text-luxury-navy transition-colors px-3 py-2"
+              >
+                {item.label}
+              </button>
+            ))}
             <Button 
-              className="w-full bg-luxury-navy hover:bg-luxury-dark text-white py-1 px-3 h-auto text-sm"
-              onClick={() => {
-                handleNavigation('/', 'book-tour');
-                setMobileMenuOpen(false);
-              }}
+              className="bg-luxury-navy hover:bg-luxury-dark text-white"
+              onClick={() => handleNavigation('/', 'book-tour')}
             >
               Book a Tour
             </Button>
           </div>
+
+          {/* Mobile Menu */}
+          <div className="lg:hidden">
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-gray-800 hover:text-luxury-navy btn-touch"
+                  aria-label="Toggle mobile menu"
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-80 sm:w-96">
+                <div className="flex flex-col space-y-4 mt-8">
+                  {navigationItems.map((item) => (
+                    <button
+                      key={item.label}
+                      onClick={() => {
+                        item.action();
+                        setMobileMenuOpen(false);
+                      }}
+                      className="text-left py-3 px-4 text-lg font-medium text-gray-800 hover:text-luxury-navy hover:bg-gray-50 rounded-lg transition-colors btn-touch"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                  <Button 
+                    className="bg-luxury-navy hover:bg-luxury-dark text-white mt-4 btn-touch"
+                    onClick={() => {
+                      handleNavigation('/', 'book-tour');
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    Book a Tour
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
