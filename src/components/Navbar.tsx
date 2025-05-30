@@ -19,7 +19,9 @@ const Navbar: React.FC = () => {
       const scrollToElement = () => {
         const element = document.getElementById(location.state.scrollTo);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const yOffset = -80; // Adjust based on your navbar height (e.g., 80px)
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
           window.history.replaceState({}, document.title);
         } else {
           setTimeout(scrollToElement, 100);
