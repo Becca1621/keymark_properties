@@ -33,16 +33,16 @@ const Hero: React.FC = () => {
       
       <div className="absolute bottom-0 left-0 right-0 bg-black/50 backdrop-blur-md p-3 sm:p-4 md:p-6">
         <div className="container-responsive">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-white text-center sm:text-left">
-            <div className="animate-slide-up">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-white text-center sm:text-left justify-items-center sm:justify-items-start">
+            <div className="animate-slide-up w-full">
               <p className="text-xs sm:text-sm uppercase tracking-wider mb-1 text-white/80">Prime Location</p>
               <p className="font-serif text-sm sm:text-base lg:text-lg text-white drop-shadow-sm">Bole near Millennium Hall Entrance</p>
             </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <div className="animate-slide-up w-full" style={{ animationDelay: '0.1s' }}>
               <p className="text-xs sm:text-sm uppercase tracking-wider mb-1 text-white/80">Property Types</p>
               <p className="font-serif text-sm sm:text-base lg:text-lg text-white drop-shadow-sm">Residences & Retail</p>
             </div>
-            <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-slide-up w-full" style={{ animationDelay: '0.2s' }}>
               <p className="text-xs sm:text-sm uppercase tracking-wider mb-1 text-white/80">Status</p>
               <p className="font-serif text-sm sm:text-base lg:text-lg text-white drop-shadow-sm">For Rent & Sale</p>
             </div>
