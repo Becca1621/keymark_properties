@@ -56,7 +56,7 @@ const PropertiesSection = () => {
           </p>
         </div>
 
-        <div className="mb-8">
+        <div className="mb-8 sm:mb-12 pb-4 sm:pb-6">
           <PropertyFilters 
             propertyTypeFilter={propertyTypeFilter}
             setPropertyTypeFilter={setPropertyTypeFilter}
