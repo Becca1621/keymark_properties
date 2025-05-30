@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
       const scrollToElement = () => {
         const element = document.getElementById(location.state.scrollTo);
         if (element) {
-          const yOffset = -80; // Adjust based on your navbar height (e.g., 80px)
+          const yOffset = -80; 
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
           window.history.replaceState({}, document.title);
