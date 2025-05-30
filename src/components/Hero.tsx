@@ -38,11 +38,11 @@ const Hero: React.FC = () => {
               <p className="text-xs sm:text-sm uppercase tracking-wider mb-1 text-white/80">Prime Location</p>
               <p className="font-serif text-sm sm:text-base lg:text-lg text-white drop-shadow-sm">Bole near Millennium Hall Entrance</p>
             </div>
-            <div className="animate-slide-up w-full" style={{ animationDelay: '0.1s' }}>
+            <div className="animate-slide-up w-full sm:text-center" style={{ animationDelay: '0.1s' }}>
               <p className="text-xs sm:text-sm uppercase tracking-wider mb-1 text-white/80">Property Types</p>
               <p className="font-serif text-sm sm:text-base lg:text-lg text-white drop-shadow-sm">Residences & Retail</p>
             </div>
-            <div className="animate-slide-up w-full" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-slide-up w-full sm:text-right" style={{ animationDelay: '0.2s' }}>
               <p className="text-xs sm:text-sm uppercase tracking-wider mb-1 text-white/80">Status</p>
               <p className="font-serif text-sm sm:text-base lg:text-lg text-white drop-shadow-sm">For Rent & Sale</p>
             </div>
